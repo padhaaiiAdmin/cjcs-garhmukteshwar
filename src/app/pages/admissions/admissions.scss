@@ -1,0 +1,64 @@
+@use 'mixins' as *;
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  @include up(lg) {
+    grid-column: 2;
+  }
+}
+.portal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  margin-top: var(--sp-8);
+  h3 {
+    margin-bottom: var(--sp-2);
+  }
+  p {
+    margin: 0;
+    color: var(--c-text-soft);
+  }
+}
+.elig {
+  display: grid;
+  gap: var(--sp-7);
+}
+.big li {
+  font-size: var(--fs-md);
+}
+.docs {
+  display: grid;
+  gap: var(--sp-8) var(--grid-gap);
+  @include up(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  app-section-heading {
+    margin-bottom: var(--sp-5);
+  }
+  ::ng-deep h2 {
+    font-size: var(--fs-xl);
+  }
+}
+.muted {
+  color: var(--c-text-soft);
+}
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-4);
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    font-size: var(--fs-md);
+  }
+  app-icon {
+    color: var(--c-gold-600);
+  }
+}

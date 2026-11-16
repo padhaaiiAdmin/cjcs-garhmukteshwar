@@ -1,0 +1,178 @@
+<app-page-hero
+  eyebrow="Campus & boarding"
+  title="Room to learn, room to grow"
+  [intro]="fac.intro"
+  [image]="{
+    id: 'id25-ground',
+    alt: 'Students marching across the green school ground lined with trees',
+  }"
+  position="50% 60%"
+/>
+
+<nav class="subnav" aria-label="On this page">
+  <div class="container">
+    <ul>
+      <li><a routerLink="." fragment="facilities">Facilities</a></li>
+      <li><a routerLink="." fragment="boarding">Boarding</a></li>
+      <li><a routerLink="." fragment="safety">Safety & care</a></li>
+      <li><a routerLink="." fragment="service">Service</a></li>
+      <li><a routerLink="." fragment="photos">Photos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="facilities" class="section" aria-labelledby="fac-title">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Facilities"
+      title="Everything a full school day needs"
+      headingId="fac-title"
+    />
+    <div class="features">
+      @for (f of featured; track f.id; let odd = $odd) {
+        <article class="duo feature" [class.duo--reverse]="odd" appReveal>
+          <div class="frame">
+            <app-picture
+              [id]="f.image!.id"
+              [alt]="f.image!.alt"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+            />
+          </div>
+          <div>
+            <h3>{{ f.title }}</h3>
+            <p>{{ f.text }}</p>
+            @if (f.details) {
+              <p class="details"><app-rich [text]="f.details" /></p>
+            }
+          </div>
+        </article>
+      }
+    </div>
+    <ul class="ruled ruled--3 others">
+      @for (f of others; track f.id) {
+        <li appReveal>
+          <h3>{{ f.title }}</h3>
+          <p>{{ f.text }}</p>
+          @if (f.details) {
+            <p class="details"><app-rich [text]="f.details" /></p>
+          }
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section id="boarding" class="boarding band-dark" aria-labelledby="boarding-title">
+  <div class="boarding__media">
+    <app-picture
+      [id]="fac.boarding.image.id"
+      [alt]="fac.boarding.image.alt"
+      fill
+      sizes="(min-width: 1024px) 50vw, 100vw"
+    />
+  </div>
+  <div class="boarding__text">
+    <p class="eyebrow">{{ fac.boarding.title }}</p>
+    <h2 id="boarding-title">{{ fac.boarding.lead }}</h2>
+    @for (p of fac.boarding.text; track $index) {
+      <p>{{ p }}</p>
+    }
+    <ul class="ticks">
+      @for (p of fac.boarding.points; track p) {
+        <li><app-rich [text]="p" /></li>
+      }
+    </ul>
+    <a class="btn btn--gold" routerLink="/contact" fragment="visit"
+      >Visit the boarding <app-icon name="arrow"
+    /></a>
+  </div>
+</section>
+
+<section id="safety" class="section" aria-labelledby="safety-title">
+  <div class="container split">
+    <div>
+      <app-section-heading
+        eyebrow="Safety & care"
+        title="Calm, ordered and watched over"
+        headingId="safety-title"
+        intro="Parents entrust us with their children. These are the safeguards we keep."
+      />
+    </div>
+    <ul class="ruled ruled--2">
+      @for (s of fac.safety; track s.title) {
+        <li appReveal>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section id="service" class="section section--paper" aria-labelledby="service-title">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Humanitarian service"
+      title="The rent we pay for our room on this earth"
+      headingId="service-title"
+      intro="Service to others is part of what a Christu Jyoti education means."
+    />
+    <ul class="ruled ruled--3">
+      @for (s of fac.service; track s.title) {
+        <li appReveal>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+        </li>
+      }
+    </ul>
+    <details class="parents">
+      <summary>Guidelines for parents</summary>
+      <ul class="ticks">
+        @for (p of fac.parents; track p) {
+          <li>{{ p }}</li>
+        }
+      </ul>
+    </details>
+  </div>
+</section>
+
+<section id="photos" class="section" aria-labelledby="photos-title">
+  <div class="container">
+    <div class="filters">
+      <app-section-heading eyebrow="Around campus" title="Take a look" headingId="photos-title" />
+      <div class="chips" role="group" aria-label="Filter photos">
+        @for (c of categories; track c) {
+          <button
+            type="button"
+            class="chip"
+            [attr.aria-pressed]="filter() === c"
+            (click)="filter.set(c)"
+          >
+            {{ c }}
+          </button>
+        }
+      </div>
+    </div>
+    <p class="count" aria-live="polite">{{ shown().length }} photos</p>
+    <ul class="masonry photos">
+      @for (g of shown(); track g.id; let i = $index) {
+        <li>
+          <button
+            type="button"
+            class="tile"
+            (click)="open.set(i)"
+            [attr.aria-label]="'Open photo: ' + g.alt"
+          >
+            <app-picture
+              [id]="g.id"
+              [alt]="g.alt"
+              sizes="(min-width: 1280px) 22vw, (min-width: 768px) 30vw, 50vw"
+            />
+          </button>
+        </li>
+      }
+    </ul>
+    <app-lightbox [images]="shown()" [(index)]="open" />
+  </div>
+</section>

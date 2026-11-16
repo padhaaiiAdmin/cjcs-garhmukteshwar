@@ -1,0 +1,83 @@
+<app-page-hero
+  eyebrow="Gallery"
+  title="School life, in pictures"
+  intro="Celebrations, achievements and everyday moments from Christu Jyoti, gathered into albums by event and year."
+/>
+
+<section class="section gallery" aria-label="Albums">
+  <div class="container">
+    <div class="filters">
+      <div class="chips" role="group" aria-label="Filter albums by year">
+        @for (y of years; track y) {
+          <button
+            type="button"
+            class="chip"
+            [attr.aria-pressed]="year() === y"
+            (click)="year.set(y)"
+          >
+            {{ y }}
+          </button>
+        }
+      </div>
+      <p class="count" aria-live="polite">
+        {{ shown().length }} {{ shown().length === 1 ? 'album' : 'albums' }}
+      </p>
+    </div>
+
+    <nav class="album-index" aria-label="Albums">
+      <ul>
+        @for (a of shown(); track a.id; let i = $index) {
+          <li>
+            <a [href]="'#' + a.id" class="album-card">
+              <span class="album-card__img">
+                <app-picture
+                  [id]="a.cover.id"
+                  [alt]="''"
+                  fill
+                  [priority]="i < 2"
+                  sizes="(min-width: 1024px) 20vw, 45vw"
+                />
+              </span>
+              <span class="album-card__title">{{ a.title }}</span>
+              <span class="album-card__meta"
+                >{{ a.year }} · {{ a.images.length }}
+                {{ a.images.length === 1 ? 'photo' : 'photos' }}</span
+              >
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    @for (a of shown(); track a.id) {
+      <section class="album" [id]="a.id" [attr.aria-labelledby]="a.id + '-title'">
+        <header class="album__head">
+          <p class="eyebrow">{{ a.category }} · {{ a.year }}</p>
+          <h2 [id]="a.id + '-title'">{{ a.title }}</h2>
+          @if (a.note) {
+            <p class="album__note"><app-rich [text]="a.note" /></p>
+          }
+        </header>
+        <ul class="masonry">
+          @for (img of a.images; track img.id; let i = $index) {
+            <li>
+              <button
+                type="button"
+                class="tile"
+                (click)="view(a, i)"
+                [attr.aria-label]="'Open photo: ' + img.alt"
+              >
+                <app-picture
+                  [id]="img.id"
+                  [alt]="img.alt"
+                  sizes="(min-width: 1280px) 22vw, (min-width: 768px) 30vw, 50vw"
+                />
+              </button>
+            </li>
+          }
+        </ul>
+      </section>
+    }
+  </div>
+  <app-lightbox [images]="lightboxImages()" [(index)]="open" />
+</section>

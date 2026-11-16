@@ -1,0 +1,117 @@
+@use 'mixins' as *;
+
+.dl {
+  padding-top: 0;
+}
+.note {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+  margin-bottom: var(--sp-6);
+}
+.toolbar {
+  display: grid;
+  gap: var(--sp-4);
+  padding: var(--sp-5) 0;
+  border-block: 1px solid var(--c-line);
+  margin-bottom: var(--sp-5);
+  @include up(lg) {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+.selects {
+  display: grid;
+  gap: var(--sp-3);
+  grid-template-columns: 1fr 1fr;
+  @include up(md) {
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
+  }
+  .search {
+    grid-column: 1 / -1;
+    @include up(md) {
+      grid-column: auto;
+    }
+  }
+  select,
+  input {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--c-stone);
+    border-radius: var(--radius-pill);
+    background: var(--c-surface);
+    font-size: 1rem;
+  }
+}
+.files {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--c-line);
+}
+.file {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--sp-3) var(--sp-4);
+  align-items: center;
+  padding: var(--sp-4) 0;
+  border-bottom: 1px solid var(--c-line);
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+  @include up(sm) {
+    grid-template-columns: auto 1fr auto;
+  }
+  .btn,
+  .file__pending {
+    grid-column: 2;
+    justify-self: start;
+    @include up(sm) {
+      grid-column: auto;
+    }
+  }
+  h3 {
+    font-family: var(--font-sans);
+    font-size: var(--fs-base);
+    font-weight: 600;
+    margin: 0 0 0.2rem;
+    color: var(--c-ink);
+  }
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    margin: 0;
+    font-size: var(--fs-xs);
+    color: var(--c-ink-mute);
+  }
+}
+.file__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius);
+  background: var(--c-maroon-100);
+  color: var(--c-maroon-700);
+  font-size: 1.4rem;
+  span {
+    position: absolute;
+    bottom: -0.35rem;
+    right: -0.35rem;
+    padding: 0.05rem 0.3rem;
+    border-radius: var(--radius-sm);
+    background: var(--c-maroon-700);
+    color: var(--c-snow);
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+  }
+}
+.file__pending {
+  font-size: var(--fs-xs);
+}
+.empty {
+  padding: var(--sp-8) 0;
+  text-align: center;
+  color: var(--c-ink-mute);
+}

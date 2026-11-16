@@ -1,0 +1,167 @@
+{
+  "intro": "One continuous journey from Nursery to Class XII under the Council for the Indian School Certificate Examinations (CISCE), taught in English by teachers who know each child by name.",
+  "stages": [
+    {
+      "id": "early-years",
+      "name": "Early Years",
+      "classes": "Nursery · LKG · UKG",
+      "board": "Foundational",
+      "summary": "A gentle, joyful start where curiosity, language and good habits take root.",
+      "points": [
+        "Play-rich learning in a warm, safe setting",
+        "Early literacy and numeracy in English",
+        "Holiday homework and activities for every class"
+      ]
+    },
+    {
+      "id": "icse",
+      "name": "ICSE",
+      "classes": "Class I – Class X",
+      "board": "Indian Certificate of Secondary Education",
+      "summary": "A broad, rigorous curriculum culminating in the ICSE board examination at the end of Class X.",
+      "points": [
+        "English-medium instruction across all subjects",
+        "Science laboratories for Physics, Chemistry and Biology",
+        "Computer education guided by professionals",
+        "15 ICSE batches passed out with meritorious results by the Silver Jubilee"
+      ]
+    },
+    {
+      "id": "isc",
+      "name": "ISC",
+      "classes": "Class XI – Class XII",
+      "board": "Indian School Certificate",
+      "summary": "Senior secondary study that prepares students for university, the professions and life.",
+      "points": [
+        "Science subjects with Mathematics or Biology",
+        "Computer Science and Physical Education options",
+        "Career counselling seminars",
+        "Alumni include IITians and doctors serving in India and abroad"
+      ]
+    }
+  ],
+  "iscSubjects": {
+    "compulsory": ["English", "S.U.P.W."],
+    "electives": [
+      "Physics",
+      "Chemistry",
+      "Mathematics / Biology",
+      "Computer Science",
+      "Hindi",
+      "Physical Education"
+    ],
+    "note": "Subject options for Class XI as published by the school. [[TO CONFIRM: are Commerce or Humanities streams offered?]]"
+  },
+  "xiAdmission": {
+    "criteria": [
+      "Available classroom and laboratory capacity",
+      "Overall performance in the ICSE examination",
+      "Character, conduct and behaviour in Classes VIII, IX and X, as assessed by the school"
+    ],
+    "note": "Students who appear for the ICSE examination must apply afresh for Class XI. Students whose presence may prove detrimental to school discipline will not be re-admitted for the ISC course, irrespective of academic results."
+  },
+  "pedagogy": [
+    {
+      "title": "Holistic, NEP-aligned",
+      "text": "We have embraced the key principles of the National Education Policy to offer a holistic, future-ready education."
+    },
+    {
+      "title": "Digitally enabled",
+      "text": "Access to online resources and interactive learning platforms prepares students for a digital age."
+    },
+    {
+      "title": "Parents as partners",
+      "text": "Regular interactions and workshops help parents understand and support their child’s learning at home."
+    },
+    {
+      "title": "Teachers who keep learning",
+      "text": "Professional development and in-service programmes keep our teaching methods fresh and improving."
+    },
+    {
+      "title": "Character, health & careers",
+      "text": "Seminars on character building, health and hygiene, and career counselling are held through the year."
+    },
+    {
+      "title": "A safe, orderly campus",
+      "text": "Clear discipline policies and safety measures create a calm atmosphere where learning comes first."
+    }
+  ],
+  "coCurricular": [
+    {
+      "title": "Sports",
+      "text": "Football, basketball, kabaddi, kho-kho, cricket and athletics build fitness, teamwork and fair play. CJCians compete at regional and national level."
+    },
+    {
+      "title": "Arts",
+      "text": "Music, drama, dance and the visual arts nurture creativity, self-expression and a love of culture."
+    },
+    {
+      "title": "Clubs & societies",
+      "text": "Science, debate and environment clubs encourage enquiry, critical thinking and specialised interests."
+    },
+    {
+      "title": "Competitions",
+      "text": "Olympiads, spelling bees, science fairs, speech, essay and debate competitions sharpen skills."
+    },
+    {
+      "title": "Exhibitions",
+      "text": "Students showcase creative, innovative projects and grow in confidence as presenters."
+    },
+    {
+      "title": "Picnics & study tours",
+      "text": "Educational outings bring curiosity, wonder and experiential learning beyond the classroom."
+    },
+    {
+      "title": "Community service",
+      "text": "Visits to old-age homes, orphanages, jails, government hospitals and a leprosy colony teach empathy and citizenship."
+    },
+    {
+      "title": "Celebrations",
+      "text": "Independence Day, Republic Day, Diwali, Christmas, Teachers’ Day, Labour Day and Children’s Day bring the community together."
+    }
+  ],
+  "codeOfDiscipline": [
+    "Be honest and truthful.",
+    "Respect all elders and be kind to all.",
+    "Love work, and be ready for any kind of work.",
+    "Be punctual and diligent.",
+    "Be clean in thoughts, words and deeds.",
+    "Be just.",
+    "Be cheerful.",
+    "Do to others what you wish others to do to you."
+  ],
+  "uniform": [
+    {
+      "group": "Girls · Nursery – UKG",
+      "regular": "Green skirt, half-sleeve shirt, black shoes, green socks. Winter: add green leggings, full-sleeve shirt, green sweater, green blazer and green cap.",
+      "wedSat": "White skirt, half-sleeve white shirt, white shoes and socks. Winter: white leggings, full-sleeve white shirt, green sweater, green blazer and green cap."
+    },
+    {
+      "group": "Girls · Classes I – V",
+      "regular": "As for Nursery – UKG, with green ribbons.",
+      "wedSat": "Wednesday: the white uniform with red ribbons (winter: add green sweater and blazer). Saturday: house track suit."
+    },
+    {
+      "group": "Girls · Classes VI – XII",
+      "regular": "Green trousers, light-green half-sleeve T-shirt, green upper, black shoes, green socks, green ribbons. Winter: full-sleeve T-shirt, green sweater and green blazer.",
+      "wedSat": "Wednesday: white salwar kameez, white upper, white shoes and socks, red ribbons (winter: add green sweater and blazer). Saturday: house track suit."
+    },
+    {
+      "group": "Boys · Nursery – UKG",
+      "regular": "Green shorts, half-sleeve shirt, black shoes, green socks. Winter: green trousers, green leggings, full-sleeve lined shirt, green sweater, green blazer and green cap.",
+      "wedSat": "White shorts, half-sleeve white shirt, white shoes and socks. Winter: white trousers, full-sleeve white shirt, green sweater, green blazer and green cap."
+    },
+    {
+      "group": "Boys · Classes I – V",
+      "regular": "Green shorts, half-sleeve shirt, black shoes, green socks. Winter: green trousers, full-sleeve shirt, green sweater, green blazer and green cap.",
+      "wedSat": "Wednesday: white trousers, half-sleeve white shirt, white shoes and socks (winter: full-sleeve, add green sweater and blazer). Saturday: house track suit."
+    },
+    {
+      "group": "Boys · Classes VI – XII",
+      "regular": "Green trousers, half-sleeve shirt, black shoes, green socks. Winter: full-sleeve shirt, green sweater and green blazer.",
+      "wedSat": "Wednesday: white trousers, half-sleeve white shirt, white shoes and socks (winter: full-sleeve, add green sweater and blazer). Saturday: house track suit."
+    }
+  ],
+  "uniformNote": "The school uniform is compulsory. It builds a sense of belonging, unity and, above all, equality among students. Students who do not come in uniform may be sent home at the parents’ risk.",
+  "fees": "Fees are payable by the 15th of the first month of each quarter. A late fine of ₹20 applies up to the 15th of the following month, and all dues must be cleared before examinations begin. Each year about ten percent of our students, those who are financially weak and eligible, receive a fee concession."
+}

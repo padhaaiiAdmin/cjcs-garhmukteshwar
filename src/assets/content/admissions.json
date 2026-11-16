@@ -1,0 +1,98 @@
+{
+  "intro": "Christu Jyoti is a co-educational school, and admission is open to all good and earnest students, irrespective of caste or creed. Places are offered after a test and an interview, in line with age-limit norms.",
+  "steps": [
+    {
+      "title": "Online registration",
+      "text": "Register your child on the school’s online admission portal, or visit the school office for help."
+    },
+    {
+      "title": "Entrance test",
+      "text": "Your child sits a short, age-appropriate test. [[TO CONFIRM: test format and syllabus by class]]"
+    },
+    {
+      "title": "Interview",
+      "text": "We meet the child and parents to get to know your family and answer your questions."
+    },
+    {
+      "title": "Admission",
+      "text": "Successful applicants complete formalities, submit documents and pay fees to confirm the place."
+    }
+  ],
+  "eligibility": [
+    "Open to all good and earnest students, irrespective of caste or creed.",
+    "Admission is granted only after the entrance test and interview.",
+    "Every admission is subject to the school’s age-limit norms.",
+    "Class XI: students appearing for the ICSE examination must apply afresh. Selection considers class and laboratory capacity, ICSE performance, and conduct in Classes VIII–X."
+  ],
+  "ageNorms": [
+    { "stage": "Nursery", "age": "[[TO CONFIRM: minimum age as on 31 March]]" },
+    { "stage": "LKG", "age": "[[TO CONFIRM]]" },
+    { "stage": "UKG", "age": "[[TO CONFIRM]]" },
+    { "stage": "Class I", "age": "[[TO CONFIRM]]" }
+  ],
+  "documents": [
+    "[[TO CONFIRM: list of documents required at admission, e.g. birth certificate, photographs, previous report card, transfer certificate, Aadhaar]]"
+  ],
+  "dates": [
+    { "label": "Registration opens", "value": "[[TO CONFIRM: date for the next session]]" },
+    { "label": "Entrance test", "value": "[[TO CONFIRM]]" },
+    { "label": "Interviews", "value": "[[TO CONFIRM]]" },
+    { "label": "Session begins", "value": "[[TO CONFIRM]]" },
+    {
+      "label": "Last cycle",
+      "value": "Registration opened 29 December 2025 for Nursery to Class IX"
+    }
+  ],
+  "feesNote": "Fees are paid quarterly, by the 15th of the first month of each quarter. Around ten percent of students who are financially weak and eligible receive a fee concession each year. [[TO CONFIRM: fee structure by class]]",
+  "faq": [
+    {
+      "q": "Who can apply?",
+      "a": "Every good and earnest student, irrespective of caste or creed. Christu Jyoti is co-educational and English-medium."
+    },
+    {
+      "q": "How do I register?",
+      "a": "Use the Online Registration link on this page. If you need help, call the school office on +91 75000 01547 between 9:00 AM and 1:00 PM, or visit us at Jyotinagar."
+    },
+    {
+      "q": "Which classes can I apply for?",
+      "a": "In the last admission cycle, registration was open for Nursery to Class IX. Class XI admission is for students who have appeared for the ICSE examination. [[TO CONFIRM: classes open for the next session]]"
+    },
+    {
+      "q": "Is there an entrance test?",
+      "a": "Yes. Admission is granted only after a test and an interview, and is subject to age-limit norms."
+    },
+    {
+      "q": "What are the fees?",
+      "a": "Fees are payable quarterly. The office will share the current fee structure at registration. About ten percent of eligible students receive a fee concession every year. [[TO CONFIRM: publish the fee structure?]]"
+    },
+    {
+      "q": "Is boarding available?",
+      "a": "Yes. Boarding offers an environment that is the next best thing to being at home. Please contact the office for availability. [[TO CONFIRM: boarding for boys, girls, or both; from which class]]"
+    },
+    {
+      "q": "Does the school provide transport?",
+      "a": "Yes, the school runs its own transport for safe conveyance. [[TO CONFIRM: routes and areas covered]]"
+    },
+    {
+      "q": "When can I meet the Principal?",
+      "a": "On working days from 9:00 AM to 12:00 noon in summer and 10:00 AM to 1:00 PM in winter, or by appointment."
+    }
+  ],
+  "classes": [
+    "Nursery",
+    "LKG",
+    "UKG",
+    "Class I",
+    "Class II",
+    "Class III",
+    "Class IV",
+    "Class V",
+    "Class VI",
+    "Class VII",
+    "Class VIII",
+    "Class IX",
+    "Class X",
+    "Class XI",
+    "Class XII"
+  ]
+}

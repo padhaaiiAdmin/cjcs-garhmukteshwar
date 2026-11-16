@@ -1,0 +1,107 @@
+{
+  "latest": "2025–26",
+  "years": [
+    {
+      "session": "2025–26",
+      "note": "ICSE and ISC board results, session 2025–26, as published by the school. [[TO CONFIRM: exam year 2026]]",
+      "classX": [
+        { "name": "Anushka Thakur", "percent": "96.6", "image": "topper-anushka-thakur" },
+        { "name": "Subhvan Singh", "percent": "95.4", "image": "topper-subhvan-singh" },
+        { "name": "Parv Bansal", "percent": "94", "image": "topper-parv-bansal" },
+        { "name": "Aditya Rajput", "percent": "93.3", "image": "topper-aditya-rajput" },
+        { "name": "Mayank Chauhan", "percent": "93", "image": "topper-mayank-chauhan" },
+        { "name": "Gunjan", "percent": "92.6", "image": "topper-gunjan" },
+        { "name": "Sakshi Tyagi", "percent": "91.2", "image": "topper-sakshi-tyagi" },
+        { "name": "Saksham Tyagi", "percent": "90.4", "image": "topper-saksham-tyagi" },
+        { "name": "Vanshika Rathore", "percent": "90", "image": "topper-vanshika-rathore" },
+        { "name": "Muhammad Faiz", "percent": "90", "image": "topper-muhammad-faiz" },
+        { "name": "Navya Garg", "percent": "90", "image": "topper-navya-garg" },
+        { "name": "Satakshi Tavar", "percent": "90", "image": "topper-satakshi-tavar" }
+      ],
+      "classXII": [
+        { "name": "Dishant Ravi", "percent": "95", "image": "topper-dishant-ravi" },
+        { "name": "Izma Anjum", "percent": "94.75", "image": "topper-izma-anjum" },
+        { "name": "Om Agarwal", "percent": "93.25", "image": "topper-om-agarwal" },
+        { "name": "Srishti Agarwal", "percent": "93", "image": "topper-srishti-agarwal" },
+        { "name": "Nalin Purshottam", "percent": "92.25", "image": "topper-nalin-purshottam" },
+        { "name": "Ojasvi Gautam", "percent": "92", "image": "topper-ojasvi-gautam" },
+        { "name": "Anubhooti Singh", "percent": "91.5", "image": "topper-anubhooti-singh" }
+      ]
+    },
+    {
+      "session": "2023–24",
+      "classX": [
+        { "name": "Diskha Agrawal", "percent": "94.8" },
+        { "name": "Srishti Agarwal", "percent": "93.2" },
+        { "name": "Vani Jain", "percent": "93.2" },
+        { "name": "Izma Anjum", "percent": "92.4" },
+        { "name": "Aarush Shishodia", "percent": "92.2" },
+        { "name": "Nalin Purshottam", "percent": "91.6" },
+        { "name": "Kanishka Goyal", "percent": "91.4" },
+        { "name": "Ojasvi Gautam", "percent": "91.4" },
+        { "name": "Anubhooti Singh", "percent": "91.2" },
+        { "name": "Tanmay Parashar", "percent": "91.2" },
+        { "name": "Zuhaib Singh", "percent": "90.6" },
+        { "name": "Yuraj Singh", "percent": "90.6" },
+        { "name": "Dishant Ravi", "percent": "90" },
+        { "name": "Shivani", "percent": "89.6" },
+        { "name": "Khushi Agarwal", "percent": "89" },
+        { "name": "Kartika Chawla", "percent": "89" },
+        { "name": "Labdhi Jain", "percent": "88.6" },
+        { "name": "Om Agarwal", "percent": "88.6" }
+      ],
+      "classXII": [
+        { "name": "Priyanshu Kumar", "percent": "93.5" },
+        { "name": "Tanisha", "percent": "93.23" },
+        { "name": "Pallavi Garg", "percent": "92.25" },
+        { "name": "Akshara Garg", "percent": "90.75" },
+        { "name": "Anshika", "percent": "88.25" },
+        { "name": "Kanishka Shishodia", "percent": "87.5" },
+        { "name": "Vaishali Garg", "percent": "86.75" },
+        { "name": "Rishabh Sagar", "percent": "86.5" },
+        { "name": "Palak Samania", "percent": "85" },
+        { "name": "Nidhi Chauhan", "percent": "84.25" },
+        { "name": "Saniya", "percent": "83.75" },
+        { "name": "Naman Garg", "percent": "83.75" },
+        { "name": "Aditiya Pratap Singh", "percent": "82.5" },
+        { "name": "Aqudas Arkan", "percent": "82.25" },
+        { "name": "Preet Chaudhary", "percent": "82" },
+        { "name": "Sahdev", "percent": "80.75" }
+      ]
+    },
+    {
+      "session": "2022–23",
+      "classX": [
+        { "name": "Khyati Garg", "percent": "98" },
+        { "name": "Arslan", "percent": "96.8" },
+        { "name": "Shreya Agarwal", "percent": "95.4" },
+        { "name": "Taru Shree", "percent": "95.2" },
+        { "name": "Urfa Anjum", "percent": "95.2" },
+        { "name": "Vidhi Arora", "percent": "95" },
+        { "name": "Shubh Arora", "percent": "94.8" },
+        { "name": "Shrikant Kaushik", "percent": "93.8" },
+        { "name": "Deepesh Kumar", "percent": "93.6" },
+        { "name": "Sandhiya Verma", "percent": "93.6" },
+        { "name": "Mohd. Abuzar", "percent": "93.4" },
+        { "name": "Shreya Kansal", "percent": "93.2" },
+        { "name": "Nitanshi Tyagi", "percent": "92.2" },
+        { "name": "Shubh Agarwal", "percent": "91.2" },
+        { "name": "Krishna Mittal", "percent": "90.8" },
+        { "name": "Tejas Kumar", "percent": "90.2" },
+        { "name": "Pari Chaudhary", "percent": "90" }
+      ],
+      "classXII": [
+        { "name": "Ganika Sharma", "percent": "94.25" },
+        { "name": "Vaibhav", "percent": "90" },
+        { "name": "Rishabh Kumar", "percent": "89" },
+        { "name": "Mahir Punyani", "percent": "86.55" },
+        { "name": "Jayant", "percent": "86.25" },
+        { "name": "Mansi Tomar", "percent": "85.5" },
+        { "name": "Sahal Mirza", "percent": "85.5" },
+        { "name": "Vanshika", "percent": "84" },
+        { "name": "Sarthak Goel", "percent": "83.7" },
+        { "name": "Prateek Kumar", "percent": "83.5" }
+      ]
+    }
+  ]
+}

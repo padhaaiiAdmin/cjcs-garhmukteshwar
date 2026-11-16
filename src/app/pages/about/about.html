@@ -1,0 +1,187 @@
+<app-page-hero
+  eyebrow="About the school"
+  title="Twenty-five years of light"
+  [intro]="about.intro"
+  [image]="{
+    id: 'jubilee-choir',
+    alt: 'Students in white and red singing on a lit stage beside a large ‘25’ at the Silver Jubilee',
+  }"
+  position="50% 40%"
+/>
+
+<nav class="subnav" aria-label="On this page">
+  <div class="container">
+    <ul>
+      <li><a routerLink="." fragment="history">Brief History</a></li>
+      <li><a routerLink="." fragment="vision">Vision & Mission</a></li>
+      <li><a routerLink="." fragment="management">Management</a></li>
+      <li><a routerLink="." fragment="principal">Principal’s Desk</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- History -->
+<section id="history" class="section" aria-labelledby="history-title">
+  <div class="container split split--sticky">
+    <div>
+      <app-section-heading
+        eyebrow="Brief history"
+        title="A town’s hope, answered"
+        headingId="history-title"
+      />
+    </div>
+    <div>
+      <div class="prose story">
+        @for (p of about.story; track $index) {
+          <p appReveal>{{ p }}</p>
+        }
+      </div>
+      <ol class="timeline" aria-label="Milestones">
+        @for (t of about.timeline; track t.year) {
+          <li appReveal>
+            <span class="timeline__year">{{ t.year }}</span>
+            <div>
+              <h3>{{ t.title }}</h3>
+              <p>{{ t.text }}</p>
+            </div>
+          </li>
+        }
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- Motto -->
+<section class="motto band-dark" aria-labelledby="motto-title">
+  <div class="container motto__inner">
+    <p class="eyebrow">Our motto</p>
+    <h2 id="motto-title" class="motto__words">
+      @for (w of about.motto.words; track w; let last = $last) {
+        <span>{{ w }}</span>
+        @if (!last) {
+          <span class="motto__dot" aria-hidden="true">·</span>
+        }
+      }
+    </h2>
+    <p class="motto__scripture">{{ about.motto.scripture }}</p>
+    <p class="motto__text">{{ about.motto.text }}</p>
+  </div>
+</section>
+
+<!-- Vision & Mission -->
+<section id="vision" class="section" aria-labelledby="vision-title">
+  <div class="container split">
+    <div>
+      <app-section-heading
+        eyebrow="Vision & mission"
+        title="What we stand for"
+        headingId="vision-title"
+      />
+      <p class="vision"><app-rich [text]="about.vision" /></p>
+    </div>
+    <ol class="ruled ruled--2 mission">
+      @for (m of about.mission; track m; let i = $index) {
+        <li appReveal>
+          <span class="mission__num" aria-hidden="true">{{
+            i + 1 < 10 ? '0' + (i + 1) : i + 1
+          }}</span>
+          <p>{{ m }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- Management -->
+<section id="management" class="section section--paper" aria-labelledby="mgmt-title">
+  <div class="container duo">
+    <div class="frame" appReveal>
+      <app-picture
+        [id]="about.management.image.id"
+        [alt]="about.management.image.alt"
+        fill
+        sizes="(min-width: 1024px) 45vw, 100vw"
+      />
+    </div>
+    <div>
+      <app-section-heading
+        eyebrow="Management"
+        [title]="about.management.society"
+        headingId="mgmt-title"
+      />
+      <div class="prose">
+        @for (p of about.management.text; track $index) {
+          <p>{{ p }}</p>
+        }
+      </div>
+      <dl class="facts">
+        <div>
+          <dt>Congregation</dt>
+          <dd>{{ site.congregation }}</dd>
+        </div>
+        <div>
+          <dt>Board</dt>
+          <dd>{{ site.board }}: {{ site.boardExams }}</dd>
+        </div>
+        <div>
+          <dt>Type</dt>
+          <dd>{{ site.type }}</dd>
+        </div>
+        <div>
+          <dt>Manager</dt>
+          <dd><app-rich text="[[TO CONFIRM: name of the present Manager]]" /></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- Principal -->
+<section id="principal" class="section" aria-labelledby="principal-title">
+  <div class="container principal">
+    <aside class="principal__aside">
+      <div class="frame frame--tall" appReveal>
+        <app-picture
+          [id]="about.principal.image.id"
+          [alt]="about.principal.image.alt"
+          fill
+          position="50% 35%"
+          sizes="(min-width: 1024px) 34vw, 100vw"
+        />
+      </div>
+      <p class="principal__name">
+        {{ about.principal.name }}<span>{{ about.principal.title }}</span>
+      </p>
+    </aside>
+    <article class="principal__letter">
+      <p class="eyebrow">Principal’s desk</p>
+      <h2 id="principal-title">“Let your light shine”</h2>
+      <p class="principal__greeting">{{ about.principal.greeting }}</p>
+      <blockquote class="scripture">
+        <p>{{ about.principal.scripture.text }}</p>
+        <cite>{{ about.principal.scripture.ref }}</cite>
+      </blockquote>
+      <div class="prose">
+        @for (p of about.principal.paragraphs; track $index) {
+          <p>{{ p }}</p>
+        }
+      </div>
+      <p class="pull closing">“{{ about.principal.closingQuote }}”</p>
+      <p class="signoff">
+        {{ about.principal.signOff }}<br />
+        <strong>{{ about.principal.name }}</strong>
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- Gratitude -->
+<section class="section section--paper section--tight" aria-labelledby="thanks-title">
+  <div class="container container--narrow thanks">
+    <h2 id="thanks-title" class="eyebrow">With gratitude</h2>
+    <p class="pull">{{ about.gratitude }}</p>
+    <a class="btn" routerLink="/admissions"
+      >Join the Christu Jyoti family <app-icon name="arrow"
+    /></a>
+  </div>
+</section>

@@ -1,0 +1,6 @@
+dist
+.angular
+node_modules
+src/assets/content/images.json
+src/assets/images
+src/assets/downloads

@@ -1,0 +1,162 @@
+@use 'mixins' as *;
+
+.stages {
+  list-style: none;
+  margin: 0 0 var(--sp-7);
+  padding: 0;
+  display: grid;
+  gap: var(--grid-gap);
+  @include up(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.stage {
+  padding: var(--sp-6) 0 0;
+  border-top: 2px solid var(--c-maroon-700);
+  h3 {
+    font-size: var(--fs-2xl);
+    margin: var(--sp-2) 0 0.2rem;
+  }
+  > p:not(.stage__classes):not(.stage__board) {
+    color: var(--c-text-soft);
+    margin: var(--sp-4) 0 var(--sp-5);
+  }
+}
+.stage__classes {
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-gold-600);
+}
+.stage__board {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--c-ink-mute);
+}
+.isc {
+  display: grid;
+  gap: var(--sp-6) var(--sp-7);
+  @include up(lg) {
+    grid-template-columns: 3fr 4fr 5fr;
+  }
+  h3 {
+    font-size: var(--fs-lg);
+  }
+}
+.isc__note,
+.isc__small {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+}
+.isc__label {
+  margin: 0 0 var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-ink-mute);
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  list-style: none;
+  margin: 0 0 var(--sp-5);
+  padding: 0;
+  li {
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--c-stone);
+    border-radius: var(--radius-pill);
+    background: var(--c-surface);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+  }
+}
+.isc__xi {
+  @include up(lg) {
+    padding-left: var(--sp-7);
+    border-left: 1px solid var(--c-line);
+  }
+  .ticks {
+    margin-bottom: var(--sp-4);
+  }
+}
+.ped__img {
+  display: none;
+  margin-top: var(--sp-7);
+  @include up(lg) {
+    display: block;
+  }
+}
+.beyond__strip {
+  display: grid;
+  gap: var(--sp-3);
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: var(--sp-7);
+  .frame:not(:first-child) {
+    @include down(md) {
+      display: none;
+    }
+  }
+  @include down(md) {
+    grid-template-columns: 1fr;
+  }
+}
+.results__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-6);
+  app-section-heading {
+    margin-bottom: 0;
+  }
+}
+.results__note {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-mute);
+  margin-bottom: var(--sp-6);
+}
+.handbook {
+  display: grid;
+  gap: var(--sp-8);
+  h3 {
+    font-size: var(--fs-xl);
+  }
+}
+.code {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: code;
+  display: grid;
+  gap: 0;
+  @include up(md) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--grid-gap);
+  }
+  li {
+    counter-increment: code;
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    padding: var(--sp-3) 0;
+    border-bottom: 1px solid var(--c-line);
+    font-family: var(--font-serif);
+    font-size: var(--fs-md);
+    color: var(--c-maroon-900);
+    &::before {
+      content: counter(code, upper-roman);
+      font-style: italic;
+      font-size: var(--fs-sm);
+      color: var(--c-gold-600);
+      padding-top: 0.2rem;
+    }
+  }
+}
+.muted {
+  color: var(--c-text-soft);
+}

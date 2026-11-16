@@ -1,0 +1,209 @@
+{
+  "intro": "A green, well-kept campus at Jyotinagar with the labs, library, fields and stages that a full school life needs, and the quiet order in which children flourish.",
+  "facilities": [
+    {
+      "id": "laboratories",
+      "title": "Science laboratories",
+      "category": "learning",
+      "text": "Well-maintained Physics, Chemistry and Biology laboratories where students and teachers carry out the full range of practical work.",
+      "image": {
+        "id": "lab-science",
+        "alt": "Senior students in white lab coats conducting an experiment at a laboratory bench"
+      }
+    },
+    {
+      "id": "computers",
+      "title": "Computer education",
+      "category": "learning",
+      "text": "A dedicated computer lab where students learn with the help of trained professionals, from first clicks to Computer Science at ISC.",
+      "image": {
+        "id": "lab-computer",
+        "alt": "Students seated at rows of computers in the school computer lab, facing a projected lesson"
+      }
+    },
+    {
+      "id": "library",
+      "title": "Library",
+      "category": "learning",
+      "text": "A well-equipped library with a complete collection of the latest encyclopaedias. Students are encouraged to borrow widely, for free periods at school and for reading at home.",
+      "details": "[[TO CONFIRM: number of books and a real photograph of the library]]"
+    },
+    {
+      "id": "sports",
+      "title": "Games & athletics",
+      "category": "sports",
+      "text": "Wide playing fields and coaching in basketball, football, kabaddi, kho-kho and athletics. Our teams have won gold at ASISC regional and national level.",
+      "image": {
+        "id": "y24-race",
+        "alt": "Young students sprinting across the green school field on sports day"
+      }
+    },
+    {
+      "id": "culture",
+      "title": "Cultural activities",
+      "category": "arts",
+      "text": "Year-round training in speech, essay writing, debate, skits, dance, music and drawing, and the open-air Divine Mercy Rangmanch stage to perform on.",
+      "image": {
+        "id": "id25-dance",
+        "alt": "Students in colourful folk costumes performing a dance on the school stage"
+      }
+    },
+    {
+      "id": "infrastructure",
+      "title": "Campus & classrooms",
+      "category": "campus",
+      "text": "A purpose-built campus opened in 2005, with landscaped gardens, airy classrooms and a large assembly ground.",
+      "details": "[[TO CONFIRM: campus area, number of classrooms, which spaces are air-conditioned]]",
+      "image": {
+        "id": "building-front",
+        "alt": "Front of the school building with its tall cross motifs, a statue and gardens under a blue sky"
+      }
+    },
+    {
+      "id": "transport",
+      "title": "School transport",
+      "category": "care",
+      "text": "The school runs its own transport so that students travel to and from school safely.",
+      "details": "[[TO CONFIRM: routes, areas covered and transport contact]]"
+    },
+    {
+      "id": "surveillance",
+      "title": "Under surveillance",
+      "category": "care",
+      "text": "The campus is under surveillance, and only a parent or guardian whose photograph is registered in the school handbook may take a child home during school hours.",
+      "details": "[[TO CONFIRM: CCTV coverage details]]"
+    }
+  ],
+  "boarding": {
+    "title": "Boarding",
+    "lead": "An environment close to home",
+    "text": [
+      "Boarding offers children an opportunity to grow, in an environment that is the next best thing to being at home.",
+      "Boarders live within the rhythm of a convent school: regular study, prayer, play and the care of the sisters."
+    ],
+    "points": [
+      "[[TO CONFIRM: boarding for boys, girls or both]]",
+      "[[TO CONFIRM: from which class]]",
+      "[[TO CONFIRM: dormitories, meals, supervised study, visiting days]]"
+    ],
+    "image": {
+      "id": "campus-assembly-building",
+      "alt": "Students in house sashes assembled in front of the school building with flags"
+    }
+  },
+  "safety": [
+    {
+      "title": "Supervised campus",
+      "text": "The campus is under surveillance, and visitors deal with the school office rather than meeting teachers or children in class."
+    },
+    {
+      "title": "Registered pick-up",
+      "text": "During school hours a child leaves only in real necessity, with written permission, and only with a parent or guardian whose photograph is in the handbook."
+    },
+    {
+      "title": "Safe conveyance",
+      "text": "School transport brings children to and from school safely."
+    },
+    {
+      "title": "Order & discipline",
+      "text": "Clear discipline policies and safety measures keep the school calm and conducive to learning."
+    }
+  ],
+  "service": [
+    {
+      "title": "Sneha Sadan",
+      "text": "The school runs Sneha Sadan, a home for girls from poor families, providing free boarding, lodging and education to uplift them."
+    },
+    {
+      "title": "Outreach",
+      "text": "Management, staff and students reach out together to the less privileged, with medical assistance for the needy and help to build homes for the homeless."
+    },
+    {
+      "title": "Fee concession",
+      "text": "Each year about ten percent of our students, those who are financially weak and eligible, receive a fee concession."
+    }
+  ],
+  "parents": [
+    "Parent–teacher meetings run from 9:00 AM to 12:00 noon, when teachers are available to discuss progress, conduct and attendance. On other days, please contact teachers through the Principal.",
+    "Parents are joint educators: we ask you to help instil noble ideals, good discipline and polite behaviour.",
+    "Please mention your child’s class and division in any letter to the Principal.",
+    "Parents may not enter classrooms or speak to teachers during class hours.",
+    "Please raise any concern with the Principal rather than criticising teachers or the school in front of children.",
+    "No private tuition should be arranged without the Principal’s permission."
+  ],
+  "gallery": [
+    {
+      "id": "campus-hero",
+      "category": "Campus",
+      "alt": "The school building at Jyotinagar with cross motifs, a curved stair tower and trimmed hedges"
+    },
+    {
+      "id": "building-front",
+      "category": "Campus",
+      "alt": "Front entrance of the school building with a statue and potted plants"
+    },
+    {
+      "id": "id25-ground",
+      "category": "Campus",
+      "alt": "Students marching across the green school ground lined with trees"
+    },
+    {
+      "id": "y24-field",
+      "category": "Sports",
+      "alt": "Children running across the school field with the building in the distance"
+    },
+    {
+      "id": "lab-science",
+      "category": "Learning",
+      "alt": "Students in lab coats conducting an experiment"
+    },
+    { "id": "lab-computer", "category": "Learning", "alt": "Students in the computer lab" },
+    {
+      "id": "lab-practical",
+      "category": "Learning",
+      "alt": "Students in lab coats at practical benches during an examination"
+    },
+    {
+      "id": "lab-chemistry",
+      "category": "Learning",
+      "alt": "Students working at laboratory tables under ceiling fans"
+    },
+    {
+      "id": "y24-expo",
+      "category": "Learning",
+      "alt": "Students presenting a bicycle-powered science model at an exhibition"
+    },
+    {
+      "id": "y24-football",
+      "category": "Sports",
+      "alt": "Students playing football on the school court"
+    },
+    {
+      "id": "y24-volleyball",
+      "category": "Sports",
+      "alt": "The school volleyball team posing with their coaches"
+    },
+    {
+      "id": "y24-sports-day",
+      "category": "Sports",
+      "alt": "Colourful flags lining the field on sports day"
+    },
+    {
+      "id": "y24-winners",
+      "category": "Sports",
+      "alt": "Medal-winning students with trophies and teachers"
+    },
+    { "id": "id25-dance", "category": "Arts", "alt": "Students performing a folk dance on stage" },
+    {
+      "id": "id25-classical",
+      "category": "Arts",
+      "alt": "Girls in orange costumes performing a group dance"
+    },
+    { "id": "y24-choir", "category": "Arts", "alt": "The school choir in white and red on stage" },
+    {
+      "id": "id25-salute",
+      "category": "Campus",
+      "alt": "Students in uniform saluting in front of the Divine Mercy Rangmanch stage"
+    }
+  ]
+}

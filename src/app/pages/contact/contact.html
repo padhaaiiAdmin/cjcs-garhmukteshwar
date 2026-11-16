@@ -1,0 +1,113 @@
+<app-page-hero
+  eyebrow="Contact"
+  title="We’d love to hear from you"
+  intro="Call, WhatsApp or write to the school office, or come and see the campus for yourself."
+/>
+
+<section class="section contact" aria-label="Ways to reach us">
+  <div class="container">
+    <ul class="ways">
+      <li>
+        <a class="way" [href]="'tel:' + site.phone.tel">
+          <app-icon name="phone" />
+          <span class="way__label">Call the office</span>
+          <span class="way__value">{{ site.phone.display }}</span>
+          <span class="way__hint">{{ site.officeHours }}</span>
+        </a>
+      </li>
+      <li>
+        <a class="way" [href]="whatsapp" target="_blank" rel="noopener">
+          <app-icon name="whatsapp" />
+          <span class="way__label">WhatsApp</span>
+          <span class="way__value">{{ site.phone.display }}</span>
+          <span class="way__hint"><app-rich [text]="site.whatsapp.note" /></span>
+        </a>
+      </li>
+      <li>
+        <a class="way" [href]="'mailto:' + site.email">
+          <app-icon name="mail" />
+          <span class="way__label">Email</span>
+          <span class="way__value">{{ site.email }}</span>
+          <span class="way__hint">We reply on working days</span>
+        </a>
+      </li>
+      <li>
+        <a class="way" [href]="directions" target="_blank" rel="noopener">
+          <app-icon name="pin" />
+          <span class="way__label">Visit</span>
+          <span class="way__value">{{ site.address.line1 }}, {{ site.address.city }}</span>
+          <span class="way__hint"
+            >{{ site.address.state }} {{ site.address.postalCode }} · Directions ↗</span
+          >
+        </a>
+      </li>
+    </ul>
+
+    <div class="info">
+      <div class="map frame">
+        <iframe
+          [src]="mapSrc"
+          title="Map showing Christu Jyoti Convent School, Jyotinagar, Garhmukteshwar"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="hours">
+        <h2>Timings</h2>
+        <table class="kv">
+          <caption class="visually-hidden">
+            School and office timings
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Type</span></th>
+              <th scope="col">Summer</th>
+              <th scope="col">Winter</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (t of site.timings; track t.label) {
+              <tr>
+                <th scope="row">{{ t.label }}</th>
+                <td>{{ t.summer }}</td>
+                <td>{{ t.winter }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+        <p class="muted">{{ site.principalHours }}</p>
+        @for (p of site.altPhones; track p.tel) {
+          <p class="muted">
+            Also listed: <a [href]="'tel:' + p.tel">{{ p.display }}</a>.
+            <app-rich [text]="p.note" />
+          </p>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="section section--paper" aria-labelledby="visit-title">
+  <div class="container visit">
+    <div>
+      <app-section-heading
+        eyebrow="Book a campus visit"
+        title="Come and see Christu Jyoti"
+        headingId="visit-title"
+        intro="Tell us when suits you and which class you’re considering. The office will call to confirm a time."
+      />
+      <div class="frame visit__img">
+        <app-picture
+          id="building-front"
+          alt="Front of the school building under a blue sky"
+          fill
+          sizes="(min-width: 1024px) 40vw, 100vw"
+        />
+      </div>
+    </div>
+    <div class="panel">
+      <app-enquiry-form source="visit" submitLabel="Request a visit" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,224 @@
+<app-page-hero
+  eyebrow="Academics"
+  title="ICSE and ISC, taught with care"
+  [intro]="ac.intro"
+  [image]="{
+    id: 'lab-science',
+    alt: 'Senior students in lab coats conducting an experiment in the science laboratory',
+  }"
+/>
+
+<nav class="subnav" aria-label="On this page">
+  <div class="container">
+    <ul>
+      <li><a routerLink="." fragment="stages">ICSE & ISC</a></li>
+      <li><a routerLink="." fragment="pedagogy">How we teach</a></li>
+      <li><a routerLink="." fragment="beyond">Beyond the classroom</a></li>
+      <li><a routerLink="." fragment="results">Results</a></li>
+      <li><a routerLink="." fragment="handbook">Parent handbook</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Stages -->
+<section id="stages" class="section" aria-labelledby="stages-title">
+  <div class="container">
+    <app-section-heading
+      eyebrow="The journey"
+      title="One school, Nursery to Class XII"
+      headingId="stages-title"
+      intro="Affiliated to the Council for the Indian School Certificate Examinations, New Delhi. English is the medium of instruction throughout."
+    />
+    <ol class="stages">
+      @for (s of ac.stages; track s.id; let i = $index) {
+        <li class="stage" [appReveal]="i * 90">
+          <p class="stage__classes">{{ s.classes }}</p>
+          <h3>{{ s.name }}</h3>
+          <p class="stage__board">{{ s.board }}</p>
+          <p>{{ s.summary }}</p>
+          <ul class="ticks">
+            @for (p of s.points; track p) {
+              <li>{{ p }}</li>
+            }
+          </ul>
+        </li>
+      }
+    </ol>
+
+    <div class="isc panel panel--paper" appReveal>
+      <div>
+        <h3>ISC subject options, Class XI</h3>
+        <p class="isc__note"><app-rich [text]="ac.iscSubjects.note" /></p>
+      </div>
+      <div>
+        <p class="isc__label">Compulsory</p>
+        <ul class="tags">
+          @for (s of ac.iscSubjects.compulsory; track s) {
+            <li>{{ s }}</li>
+          }
+        </ul>
+        <p class="isc__label">Subjects</p>
+        <ul class="tags">
+          @for (s of ac.iscSubjects.electives; track s) {
+            <li>{{ s }}</li>
+          }
+        </ul>
+      </div>
+      <div class="isc__xi">
+        <h3>Admission to Class XI</h3>
+        <p>Selection is based on:</p>
+        <ul class="ticks">
+          @for (c of ac.xiAdmission.criteria; track c) {
+            <li>{{ c }}</li>
+          }
+        </ul>
+        <p class="isc__small">{{ ac.xiAdmission.note }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pedagogy -->
+<section id="pedagogy" class="section section--paper" aria-labelledby="ped-title">
+  <div class="container split">
+    <div>
+      <app-section-heading
+        eyebrow="How we teach"
+        title="Rigour with a human face"
+        headingId="ped-title"
+        intro="We have embraced the National Education Policy to give every child a holistic, future-ready education."
+      />
+      <div class="frame frame--tall ped__img" appReveal>
+        <app-picture
+          id="lab-computer"
+          alt="Students at computers in the school computer lab"
+          fill
+          sizes="(min-width: 1024px) 30vw, 100vw"
+        />
+      </div>
+    </div>
+    <ul class="ruled ruled--2">
+      @for (p of ac.pedagogy; track p.title) {
+        <li appReveal>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.text }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- Beyond -->
+<section id="beyond" class="section" aria-labelledby="beyond-title">
+  <div class="container">
+    <app-section-heading
+      eyebrow="Beyond the classroom"
+      title="A well-rounded personality"
+      headingId="beyond-title"
+      intro="Sports, arts, clubs, competitions and community service are an integral part of the education we offer."
+    />
+    <div class="beyond__strip">
+      <div class="frame">
+        <app-picture
+          id="y24-volleyball"
+          alt="The school volleyball team with their coaches"
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+        />
+      </div>
+      <div class="frame">
+        <app-picture
+          id="id25-folk"
+          alt="Students in regional costumes on stage"
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+        />
+      </div>
+      <div class="frame">
+        <app-picture
+          id="y24-expo"
+          alt="Students presenting a science model at an exhibition"
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+        />
+      </div>
+    </div>
+    <ul class="ruled ruled--3">
+      @for (c of ac.coCurricular; track c.title) {
+        <li appReveal>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.text }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- Results -->
+<section id="results" class="section section--paper" aria-labelledby="results-title">
+  <div class="container">
+    <div class="results__head">
+      <app-section-heading
+        eyebrow="Results archive"
+        title="Board toppers, year by year"
+        headingId="results-title"
+        intro="The top scorers of recent sessions in the ICSE and ISC examinations, as published by the school."
+      />
+      <div class="chips" role="group" aria-label="Choose a session">
+        @for (y of results.years; track y.session) {
+          <button
+            type="button"
+            class="chip"
+            [attr.aria-pressed]="session() === y.session"
+            (click)="session.set(y.session)"
+          >
+            {{ y.session }}
+          </button>
+        }
+      </div>
+    </div>
+    @if (year().note) {
+      <p class="results__note"><app-rich [text]="year().note!" /></p>
+    }
+    @for (y of [year()]; track y.session) {
+      <app-toppers [result]="y" idPrefix="results" />
+    }
+  </div>
+</section>
+
+<!-- Handbook -->
+<section id="handbook" class="section" aria-labelledby="hb-title">
+  <div class="container split">
+    <div>
+      <app-section-heading
+        eyebrow="Parent handbook"
+        title="Rules, rhythms and expectations"
+        headingId="hb-title"
+        intro="The handbook is a link between school and home. Here are the essentials."
+      />
+    </div>
+    <div class="handbook">
+      <div>
+        <h3>The code of discipline</h3>
+        <ol class="code">
+          @for (c of ac.codeOfDiscipline; track c) {
+            <li>{{ c }}</li>
+          }
+        </ol>
+      </div>
+      <div>
+        <h3>School uniform</h3>
+        <p class="muted">{{ ac.uniformNote }}</p>
+        <app-accordion [items]="uniformItems" name="uniform" />
+      </div>
+      <div>
+        <h3>Fees</h3>
+        <p class="muted">{{ ac.fees }}</p>
+        <p class="muted"><app-rich text="[[TO CONFIRM: fee structure by class]]" /></p>
+        <a class="link-arrow" routerLink="/admissions"
+          >Admissions guide <app-icon name="arrow"
+        /></a>
+      </div>
+    </div>
+  </div>
+</section>

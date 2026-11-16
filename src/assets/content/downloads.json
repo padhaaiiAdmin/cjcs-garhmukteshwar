@@ -1,0 +1,200 @@
+{
+  "note": "Holiday homework uploaded for the summer vacation of 2024. [[TO CONFIRM: upload the current session’s homework]]",
+  "items": [
+    {
+      "id": "hh-nursery",
+      "title": "Holiday Homework · Nursery",
+      "kind": "Holiday Homework",
+      "className": "Nursery",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-nursery.pdf",
+      "sizeKb": 35,
+      "pages": 1
+    },
+    {
+      "id": "hh-lkg",
+      "title": "Holiday Homework · LKG",
+      "kind": "Holiday Homework",
+      "className": "LKG",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-lkg.pdf",
+      "sizeKb": 35,
+      "pages": 1
+    },
+    {
+      "id": "hh-ukg",
+      "title": "Holiday Homework · UKG",
+      "kind": "Holiday Homework",
+      "className": "UKG",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-ukg.pdf",
+      "sizeKb": 40,
+      "pages": 1
+    },
+    {
+      "id": "hh-class-1",
+      "title": "Holiday Homework · Class I",
+      "kind": "Holiday Homework",
+      "className": "Class I",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-1.pdf",
+      "sizeKb": 45,
+      "pages": 1
+    },
+    {
+      "id": "hh-class-2",
+      "title": "Holiday Homework · Class II",
+      "kind": "Holiday Homework",
+      "className": "Class II",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-2.pdf",
+      "sizeKb": 58,
+      "pages": 2
+    },
+    {
+      "id": "hh-class-3",
+      "title": "Holiday Homework · Class III",
+      "kind": "Holiday Homework",
+      "className": "Class III",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-3.pdf",
+      "sizeKb": 57,
+      "pages": 2
+    },
+    {
+      "id": "hh-class-4",
+      "title": "Holiday Homework · Class IV",
+      "kind": "Holiday Homework",
+      "className": "Class IV",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-4.pdf",
+      "sizeKb": 57,
+      "pages": 2
+    },
+    {
+      "id": "hh-class-5",
+      "title": "Holiday Homework · Class V",
+      "kind": "Holiday Homework",
+      "className": "Class V",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-5.pdf",
+      "sizeKb": 62,
+      "pages": 2
+    },
+    {
+      "id": "hh-class-6",
+      "title": "Holiday Homework · Class VI",
+      "kind": "Holiday Homework",
+      "className": "Class VI",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-6.pdf",
+      "sizeKb": 79,
+      "pages": 3
+    },
+    {
+      "id": "hh-class-7",
+      "title": "Holiday Homework · Class VII",
+      "kind": "Holiday Homework",
+      "className": "Class VII",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-7.pdf",
+      "sizeKb": 58,
+      "pages": 3
+    },
+    {
+      "id": "hh-class-8",
+      "title": "Holiday Homework · Class VIII",
+      "kind": "Holiday Homework",
+      "className": "Class VIII",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-8.pdf",
+      "sizeKb": 57,
+      "pages": 2
+    },
+    {
+      "id": "hh-class-9",
+      "title": "Holiday Homework · Class IX",
+      "kind": "Holiday Homework",
+      "className": "Class IX",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-9.pdf",
+      "sizeKb": 49,
+      "pages": 2
+    },
+    {
+      "id": "hh-class-10",
+      "title": "Holiday Homework · Class X",
+      "kind": "Holiday Homework",
+      "className": "Class X",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-10.pdf",
+      "sizeKb": 71,
+      "pages": 3
+    },
+    {
+      "id": "hh-class-11",
+      "title": "Holiday Homework · Class XI",
+      "kind": "Holiday Homework",
+      "className": "Class XI",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-11.pdf",
+      "sizeKb": 69,
+      "pages": 3
+    },
+    {
+      "id": "hh-class-12",
+      "title": "Holiday Homework · Class XII",
+      "kind": "Holiday Homework",
+      "className": "Class XII",
+      "subject": "All subjects",
+      "session": "Summer 2024",
+      "file": "/assets/downloads/holiday-homework-class-12.pdf",
+      "sizeKb": 159,
+      "pages": 4
+    },
+    {
+      "id": "mandatory-disclosure",
+      "title": "Mandatory Public Disclosure",
+      "kind": "Disclosure",
+      "className": "All",
+      "subject": "General",
+      "session": "[[TO CONFIRM]]",
+      "file": "",
+      "sizeKb": 0
+    },
+    {
+      "id": "transfer-certificate",
+      "title": "Transfer Certificate request form",
+      "kind": "Form",
+      "className": "All",
+      "subject": "General",
+      "session": "[[TO CONFIRM]]",
+      "file": "",
+      "sizeKb": 0
+    },
+    {
+      "id": "booklist",
+      "title": "Book list",
+      "kind": "Syllabus",
+      "className": "All",
+      "subject": "General",
+      "session": "[[TO CONFIRM]]",
+      "file": "",
+      "sizeKb": 0
+    }
+  ]
+}

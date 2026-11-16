@@ -1,0 +1,84 @@
+{
+  "intro": "An English-medium, co-educational school founded by the Franciscan Clarist sisters in answer to a town’s long-held hope: a convent school of its own.",
+  "story": [
+    "The people of Garhmukteshwar had long wished for a convent school in their hometown. That wish found a champion in Chief Justice O. P. Verma, a son of Garhmukteshwar, who had seen the value-based schools run by religious sisters in Kerala. He reached out to several religious orders, and finally to the Franciscan Clarist Congregation (FCC).",
+    "His appeal reached the then Mother General, Rev. Sr. Marianna, who shared it with Rev. Sr. Abraham, then Provincial Superior of St. Paul Province, Delhi. Seeing the region’s need for education, culture and moral formation, the sisters agreed unanimously, with the blessings of the FCC Mother General and the late Rt. Rev. Dr. Patrick Nair, Bishop of Meerut.",
+    "A quarter of a century later, the school has grown into a symbol of educational excellence and moral values in the region. Its alumni include IITians and doctors serving in India and abroad, and many more good citizens on whom the nation can count."
+  ],
+  "timeline": [
+    {
+      "year": "The call",
+      "title": "A town asks for a convent school",
+      "text": "Chief Justice O. P. Verma invites the FCC sisters to Garhmukteshwar; the Mother General and the Provincial of St. Paul Province, Delhi, say yes."
+    },
+    {
+      "year": "1998",
+      "title": "The lamp is lit",
+      "text": "On 31 October 1998 Rt. Rev. Louis Oswald, Bishop of Meerut, inaugurates the school and takes its first admission. Classes begin in a rented building at Subhash Gate under Rev. Sr. Ruby (Principal and Superior), with Rev. Sr. Lucia and Rev. Sr. Grace."
+    },
+    {
+      "year": "2005",
+      "title": "A campus of our own",
+      "text": "On 6 May 2005 Rt. Rev. Dr. Patrick Nair, Bishop of Meerut, blesses and opens the new school building at Jyotinagar."
+    },
+    {
+      "year": "2023",
+      "title": "Silver Jubilee",
+      "text": "Twenty-five years, eight principals and eight managers on, the school counts 1,500 students, 15 ICSE batches and 5 ISC batches passed out with meritorious results."
+    },
+    {
+      "year": "Today",
+      "title": "Future-ready, rooted in values",
+      "text": "The school embraces the National Education Policy, with online resources, interactive learning platforms and regular parent workshops."
+    }
+  ],
+  "vision": "[[TO CONFIRM: a one-line vision statement, if the school uses one]]",
+  "mission": [
+    "To achieve the all-round development of the child.",
+    "To boost spiritual and ethical rejuvenation.",
+    "To inculcate a sense of social responsibility and religious tolerance.",
+    "To enhance competence and confidence to meet the challenges that lie ahead.",
+    "To provide insight into self-reliance and integrity.",
+    "To uphold human values and our composite culture."
+  ],
+  "motto": {
+    "words": ["Wisdom", "Life", "Light"],
+    "text": "Students strive for the ideals of justice, charity, honesty, truthfulness, generosity, loyalty and gratitude, working hard at school and at home, and learning the dignity of labour.",
+    "scripture": "“Train up a child in the way he should go; even when he is old he will not depart from it.”"
+  },
+  "management": {
+    "society": "Christu Jyothi Educational Society",
+    "text": [
+      "The school is established and conducted by the Sisters of the Franciscan Clarist Congregation, St. Paul Province, Delhi, and registered under the Christu Jyothi Educational Society, headquartered in Baghpat, Uttar Pradesh. It opened as a branch of Christu Jyothi Convent School, Baghpat.",
+      "The FCC sisters run schools across India where young people of every creed, social class, community and language are educated. These schools are part of the Catholic Church’s contribution to education, always at the service of the whole nation.",
+      "Christu Jyoti Convent Sr. Sec. School is an unaided minority institution, recognised by the CISCE. Students sit for the ICSE and ISC examinations, and English is the medium of instruction."
+    ],
+    "image": {
+      "id": "management",
+      "alt": "The Franciscan Clarist sisters of the school management standing together holding bouquets"
+    }
+  },
+  "principal": {
+    "name": "Sr. Retty F.C.C.",
+    "title": "Principal",
+    "image": {
+      "id": "principal",
+      "alt": "Sr. Retty F.C.C., Principal, seated at her desk in the principal’s office"
+    },
+    "greeting": "Dear parents, students and esteemed members of the Christu Jyoti family, peace be with you.",
+    "scripture": {
+      "text": "You are the light of the world. A town built on a hill cannot be hidden… Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.",
+      "ref": "Matthew 5:14–16"
+    },
+    "paragraphs": [
+      "Christu Jyoti means “Light of Christ”. It speaks of the presence, guidance and divine illumination of Jesus Christ in the life of believers.",
+      "Our name carries a mission: to spread Christ’s love, truth and hope in a world that seeks spiritual direction, and to show how His light leads people out of darkness towards faith, righteousness and compassion.",
+      "Let us strive to become a light in this world. We are called to shine brightly in kindness, in faith and in service to others. Let your light be a beacon that leads hearts out of darkness and into the joy of God’s presence. May you walk in His light, and become a light for others.",
+      "Welcome to this journey of faith, purpose and divine love through the apostolate of education."
+    ],
+    "closingQuote": "Education is the bridge that connects potential to achievement.",
+    "signOff": "With love, appreciation and best wishes,",
+    "teaser": "Let us strive to become a light in this world: to shine brightly in kindness, in faith and in service to others."
+  },
+  "gratitude": "We remember with gratitude the pioneers and guiding stars under whose patronage the school has flourished: Rev. Mother Abraham, Rev. Sr. Rosalind, Rev. Sr. Annie Wilsy and the present Provincial Superior, Rev. Sr. Linsa Paul; the I.M.S. Fathers of Gajraula and the T.O.R. Fathers of Garhmukteshwar for their spiritual care; and every manager, teacher, staff member, student and parent who has carried the light."
+}

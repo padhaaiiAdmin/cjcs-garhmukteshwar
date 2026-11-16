@@ -1,0 +1,106 @@
+@use 'mixins' as *;
+
+.contact {
+  padding-top: 0;
+}
+.ways {
+  list-style: none;
+  margin: 0 0 var(--sp-8);
+  padding: 0;
+  display: grid;
+  gap: var(--sp-3);
+  @include up(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include up(lg) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+  }
+}
+.way {
+  display: grid;
+  gap: 0.2rem;
+  height: 100%;
+  padding: var(--sp-5);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  background: var(--c-surface);
+  color: var(--c-ink);
+  text-decoration: none;
+  transition:
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+  &:hover {
+    color: var(--c-ink);
+    border-color: var(--c-gold-500);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  app-icon {
+    font-size: 1.5rem;
+    color: var(--c-maroon-700);
+    margin-bottom: var(--sp-3);
+  }
+}
+.way__label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-gold-600);
+}
+.way__value {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  color: var(--c-maroon-900);
+  overflow-wrap: anywhere;
+}
+.way__hint {
+  font-size: var(--fs-xs);
+  color: var(--c-ink-mute);
+}
+.info {
+  display: grid;
+  gap: var(--sp-7) var(--grid-gap);
+  @include up(lg) {
+    grid-template-columns: 7fr 5fr;
+  }
+}
+.map {
+  aspect-ratio: 4 / 3;
+  @include up(lg) {
+    aspect-ratio: auto;
+    min-height: 26rem;
+  }
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: saturate(0.85);
+  }
+}
+.hours h2 {
+  font-size: var(--fs-xl);
+}
+.muted {
+  color: var(--c-text-soft);
+  font-size: var(--fs-sm);
+  margin-top: var(--sp-4);
+}
+.visit {
+  display: grid;
+  gap: var(--sp-7) var(--grid-gap);
+  @include up(lg) {
+    grid-template-columns: 5fr 6fr;
+    gap: var(--sp-9);
+  }
+}
+.visit__img {
+  display: none;
+  @include up(lg) {
+    display: block;
+  }
+}

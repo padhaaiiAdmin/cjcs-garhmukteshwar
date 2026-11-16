@@ -1,0 +1,153 @@
+{
+  "albums": [
+    {
+      "id": "results-2025-26",
+      "title": "Honouring our toppers",
+      "year": 2026,
+      "date": "2026-05-01",
+      "category": "Achievements",
+      "cover": {
+        "id": "r26-group",
+        "alt": "Board toppers in garlands and sashes in the school hall"
+      },
+      "images": [
+        { "id": "r26-group", "alt": "Board toppers in garlands and sashes in the school hall" },
+        {
+          "id": "r26-felicitation",
+          "alt": "A sister and guests felicitating garlanded toppers holding bouquets"
+        },
+        { "id": "r26-toppers", "alt": "Two smiling toppers in garlands with a guest" }
+      ]
+    },
+    {
+      "id": "christmas-2025",
+      "title": "Christmas Day",
+      "year": 2025,
+      "date": "2025-12",
+      "category": "Celebrations",
+      "cover": {
+        "id": "christmas-2025",
+        "alt": "Christmas Celebration title card showing Santa Claus figures on the decorated school stage"
+      },
+      "images": [
+        {
+          "id": "christmas-2025",
+          "alt": "Christmas Celebration title card showing Santa Claus figures on the decorated school stage"
+        }
+      ],
+      "note": "[[TO CONFIRM: add the rest of the Christmas 2025 photographs]]"
+    },
+    {
+      "id": "independence-day-2025",
+      "title": "Independence Day",
+      "year": 2025,
+      "date": "2025-08-15",
+      "category": "Celebrations",
+      "cover": {
+        "id": "id25-band",
+        "alt": "The school band in red and white uniforms marching with trumpets"
+      },
+      "images": [
+        {
+          "id": "id25-band",
+          "alt": "The school band in red and white uniforms marching with trumpets"
+        },
+        {
+          "id": "id25-guard",
+          "alt": "The band forms a guard of honour as an army officer walks down the red carpet"
+        },
+        { "id": "id25-ground", "alt": "Students marching across the green school ground" },
+        {
+          "id": "id25-welcome",
+          "alt": "Sisters and guests holding bouquets in front of the school entrance"
+        },
+        { "id": "id25-guests", "alt": "Guests and sisters seated on the dais under the trees" },
+        { "id": "id25-song", "alt": "Students in tricolour costumes singing a patriotic song" },
+        { "id": "id25-honour", "alt": "A guest receiving a memento from two sisters" },
+        {
+          "id": "id25-certificate",
+          "alt": "Sisters presenting a certificate of honour to a guest"
+        },
+        { "id": "id25-skit", "alt": "Students performing a patriotic skit on stage" },
+        {
+          "id": "id25-salute",
+          "alt": "Students in uniform saluting in front of the Divine Mercy Rangmanch stage"
+        },
+        {
+          "id": "id25-folk",
+          "alt": "Students in regional costumes presenting the diversity of India"
+        },
+        { "id": "id25-dance", "alt": "Students in folk costumes dancing on stage" },
+        { "id": "id25-dandiya", "alt": "Two girls performing a dandiya dance" },
+        { "id": "id25-offering", "alt": "Girls in traditional dress offering flowers on stage" },
+        { "id": "id25-classical", "alt": "Girls in orange costumes performing a group dance" },
+        { "id": "id25-tableau", "alt": "A tableau with a student holding the national flag aloft" },
+        { "id": "id25-group", "alt": "Students and staff gathered on the school ground" }
+      ]
+    },
+    {
+      "id": "glimpse-2024",
+      "title": "A glimpse of 2024",
+      "year": 2024,
+      "category": "School life",
+      "cover": {
+        "id": "y24-house",
+        "alt": "Students in house colours gathered with teachers on the lawn"
+      },
+      "images": [
+        {
+          "id": "y24-house",
+          "alt": "Students in house colours gathered with teachers on the lawn"
+        },
+        {
+          "id": "y24-investiture",
+          "alt": "Newly invested student council members in sashes at the Investiture Ceremony"
+        },
+        { "id": "y24-choir", "alt": "The school choir in white and red on stage" },
+        { "id": "y24-staff", "alt": "Teachers and staff together on the stage" },
+        { "id": "y24-sports-day", "alt": "Colourful flags lining the field on sports day" },
+        { "id": "y24-race", "alt": "Children sprinting on sports day" },
+        { "id": "y24-football", "alt": "Students playing football on the school court" },
+        { "id": "y24-football-2", "alt": "A football match watched by students along the fence" },
+        { "id": "y24-volleyball", "alt": "The school volleyball team with their coaches" },
+        { "id": "y24-winners", "alt": "Medal-winning students with trophies and teachers" },
+        { "id": "y24-drill", "alt": "Rows of students doing a mass drill on the ground" },
+        { "id": "y24-yoga", "alt": "Students practising yoga together in the courtyard" },
+        {
+          "id": "y24-juniors",
+          "alt": "Junior students seated on a red carpet for a class photograph"
+        },
+        { "id": "y24-pre-primary", "alt": "Pre-primary children with their teachers on the lawn" },
+        { "id": "y24-stage", "alt": "Students seated on the steps of the open-air stage" },
+        { "id": "y24-expo", "alt": "Students presenting a science model at an exhibition" },
+        { "id": "y24-speech", "alt": "A student speaking at the microphone during an assembly" },
+        {
+          "id": "y24-presentation",
+          "alt": "Boys presenting with a microphone during a school programme"
+        },
+        {
+          "id": "campus-assembly-building",
+          "alt": "Students in house sashes assembled in front of the school building"
+        }
+      ]
+    },
+    {
+      "id": "silver-jubilee",
+      "title": "Silver Jubilee celebrations",
+      "year": 2023,
+      "category": "Celebrations",
+      "cover": {
+        "id": "jubilee-choir",
+        "alt": "Students in white and red singing on a lit stage beside a large ‘25’"
+      },
+      "images": [
+        {
+          "id": "jubilee-choir",
+          "alt": "Students in white and red singing on a lit stage beside a large ‘25’"
+        },
+        { "id": "values-band", "alt": "The school band performing on a festive stage" }
+      ],
+      "note": "[[TO CONFIRM: Silver Jubilee date and more photographs]]"
+    }
+  ]
+}

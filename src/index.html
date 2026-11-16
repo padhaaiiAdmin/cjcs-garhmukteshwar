@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Christu Jyoti Convent Sr. Sec. School, Garhmukteshwar</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#3e1814" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["School", "EducationalOrganization"],
+        "@id": "https://cjcsgarh.com/#school",
+        "name": "Christu Jyoti Convent Sr. Sec. School",
+        "alternateName": ["Christu Jyoti Convent School, Garhmukteshwar", "CJCS Garhmukteshwar"],
+        "url": "https://cjcsgarh.com/",
+        "logo": "https://cjcsgarh.com/assets/images/logo-240.png",
+        "image": "https://cjcsgarh.com/og-image.jpg",
+        "description": "Co-educational, English-medium CISCE (ICSE & ISC) school in Garhmukteshwar, Hapur, run by the Franciscan Clarist Congregation since 1998.",
+        "foundingDate": "1998-10-31",
+        "telephone": "+91-7500001547",
+        "email": "cjcsgarh@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jyotinagar",
+          "addressLocality": "Garhmukteshwar",
+          "addressRegion": "Uttar Pradesh",
+          "postalCode": "245205",
+          "addressCountry": "IN"
+        },
+        "areaServed": ["Garhmukteshwar", "Hapur"],
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Christu Jyothi Educational Society"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+    <script>
+      // Hide a dismissed announcement before first paint (no layout shift).
+      try {
+        var a = document.querySelector('[data-ann-id]');
+        if (
+          a &&
+          localStorage.getItem('cjcs-announcement-dismissed') === a.getAttribute('data-ann-id')
+        )
+          a.hidden = true;
+      } catch (e) {}
+    </script>
+  </body>
+</html>

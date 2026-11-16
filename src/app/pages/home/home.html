@@ -1,0 +1,264 @@
+<!-- ═══ Hero ═══ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__media">
+    <app-picture
+      id="campus-hero"
+      alt="The Christu Jyoti Convent school building at Jyotinagar, with its tall cross motifs and landscaped gardens"
+      fill
+      priority
+      sizes="100vw"
+      position="60% 55%"
+    />
+  </div>
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="container hero__content">
+    <p class="hero__eyebrow">
+      <span>Est. {{ site.founded }}</span
+      ><span aria-hidden="true">·</span><span>CISCE · ICSE &amp; ISC</span
+      ><span aria-hidden="true">·</span><span>{{ site.locality }}</span>
+    </p>
+    <h1 id="hero-title" class="hero__title">{{ site.heroLine }}</h1>
+    <p class="hero__intro">{{ site.heroIntro }}</p>
+    <div class="hero__ctas">
+      <a appButton variant="gold" routerLink="/admissions"
+        >Apply for Admission <app-icon name="arrow"
+      /></a>
+      <a appButton variant="ghost-light" routerLink="/contact" fragment="visit"
+        >Book a Campus Visit</a
+      >
+    </div>
+  </div>
+  <p class="hero__motto" aria-hidden="true">{{ site.motto }}</p>
+</section>
+
+<!-- ═══ Stats ═══ -->
+<section class="stats" aria-label="The school at a glance">
+  <div class="container">
+    <dl class="stats__list">
+      @for (s of site.stats; track s.label; let i = $index) {
+        <div class="stat" [appReveal]="i * 80">
+          <dt>{{ s.label }}</dt>
+          <dd class="stat__value"><app-rich [text]="s.value" /></dd>
+          @if (s.note) {
+            <dd class="stat__note"><app-rich [text]="s.note" /></dd>
+          }
+        </div>
+      }
+    </dl>
+  </div>
+</section>
+
+<!-- ═══ Welcome ═══ -->
+<section class="section welcome" aria-labelledby="welcome-title">
+  <div class="container grid-12">
+    <div class="welcome__text" appReveal>
+      <p class="eyebrow">Our story</p>
+      <h2 id="welcome-title">A convent school the town <em>asked for</em></h2>
+      <p class="lead">{{ about.intro }}</p>
+      <p>
+        Since its first admission on {{ site.foundedOn }}, Christu Jyoti has grown from a rented
+        building at Subhash Gate into a place of pride in Hapur district: a school where wisdom,
+        life and light are not just a motto, but a daily practice.
+      </p>
+      <a class="link-arrow" routerLink="/about" fragment="history"
+        >Read our history <app-icon name="arrow"
+      /></a>
+    </div>
+    <div class="welcome__media" appReveal="120">
+      <div class="welcome__img welcome__img--main">
+        <app-picture
+          id="building-front"
+          alt="Front of the school building with a statue and potted plants under a blue sky"
+          fill
+          sizes="(min-width: 1024px) 40vw, 90vw"
+        />
+      </div>
+      <div class="welcome__img welcome__img--inset">
+        <app-picture
+          id="y24-pre-primary"
+          alt="Pre-primary children with their teachers on the lawn"
+          fill
+          sizes="(min-width: 1024px) 20vw, 45vw"
+        />
+      </div>
+      <p class="welcome__caption">
+        <span>{{ site.motto }}</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ We Stand For ═══ -->
+<section class="section section--paper values" aria-labelledby="values-title">
+  <div class="container grid-12">
+    <div class="values__head">
+      <app-section-heading
+        eyebrow="We stand for"
+        title="Six commitments, one formation"
+        headingId="values-title"
+        intro="Everything we teach, celebrate and correct is measured against these six commitments."
+      />
+      <div class="values__media" appReveal>
+        <app-picture
+          id="values-band"
+          alt="The school band performing in ceremonial uniform on a festive stage"
+          fill
+          sizes="(min-width: 1024px) 33vw, 100vw"
+        />
+      </div>
+    </div>
+    <ol class="values__list">
+      @for (v of site.values; track v.title; let i = $index) {
+        <li [appReveal]="(i % 2) * 90">
+          <span class="values__num" aria-hidden="true">{{ numerals[i] }}</span>
+          <h3>{{ v.title }}</h3>
+          <p>{{ v.text }}</p>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ Toppers ═══ -->
+<section class="section toppers" aria-labelledby="toppers-title">
+  <div class="container">
+    <div class="toppers__head">
+      <app-section-heading
+        [eyebrow]="'Board results ' + latest.session"
+        title="Our toppers, our pride"
+        headingId="toppers-title"
+        intro="Celebrating the students who led this year’s ICSE and ISC results."
+      />
+      <a class="link-arrow" routerLink="/academics" fragment="results"
+        >All results <app-icon name="arrow"
+      /></a>
+    </div>
+    <app-toppers [result]="latest" idPrefix="home-toppers" />
+  </div>
+</section>
+
+<!-- ═══ Principal ═══ -->
+<section class="principal" aria-labelledby="principal-title">
+  <div class="container principal__grid">
+    <div class="principal__media" appReveal>
+      <app-picture
+        [id]="about.principal.image.id"
+        [alt]="about.principal.image.alt"
+        fill
+        position="50% 40%"
+        sizes="(min-width: 1024px) 42vw, 100vw"
+      />
+    </div>
+    <div class="principal__text" appReveal="120">
+      <p class="eyebrow">From the Principal’s desk</p>
+      <h2 id="principal-title" class="visually-hidden">A message from the Principal</h2>
+      <blockquote>
+        <p>“{{ about.principal.teaser }}”</p>
+      </blockquote>
+      <p class="principal__name">
+        {{ about.principal.name }}<span>{{ about.principal.title }}</span>
+      </p>
+      <a class="link-arrow" routerLink="/about" fragment="principal"
+        >Read the full message <app-icon name="arrow"
+      /></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Boarding ═══ -->
+<section class="boarding" aria-labelledby="boarding-title">
+  <div class="boarding__media">
+    <app-picture
+      [id]="boarding.image.id"
+      [alt]="boarding.image.alt"
+      fill
+      sizes="(min-width: 1024px) 55vw, 100vw"
+    />
+  </div>
+  <div class="boarding__panel">
+    <p class="eyebrow">Boarding</p>
+    <h2 id="boarding-title">{{ boarding.lead }}</h2>
+    <p>{{ boarding.text[0] }}</p>
+    <p class="boarding__sub">{{ boarding.text[1] }}</p>
+    <a appButton variant="ghost-light" routerLink="/facilities" fragment="boarding"
+      >Life as a boarder <app-icon name="arrow"
+    /></a>
+  </div>
+</section>
+
+<!-- ═══ Campus life ═══ -->
+<section class="section campus" aria-labelledby="campus-title">
+  <div class="container">
+    <div class="campus__head">
+      <app-section-heading
+        eyebrow="Campus life"
+        title="Days full of light"
+        headingId="campus-title"
+        intro="Labs and libraries, fields and stages: a glimpse of everyday life at Christu Jyoti."
+      />
+      <a class="link-arrow" routerLink="/gallery">Visit the gallery <app-icon name="arrow" /></a>
+    </div>
+    <ul class="mosaic">
+      @for (m of mosaic; track m.id; let i = $index) {
+        <li class="mosaic__item" [class]="'m' + i" [appReveal]="i * 70">
+          <a routerLink="/gallery">
+            <app-picture
+              [id]="m.id"
+              [alt]="m.alt"
+              fill
+              [sizes]="i === 0 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 50vw'"
+            />
+            <span class="mosaic__cap">{{ m.caption }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ News ═══ -->
+<section class="section section--paper news" aria-labelledby="news-title">
+  <div class="container">
+    <div class="campus__head">
+      <app-section-heading
+        eyebrow="News & events"
+        title="Latest from school"
+        headingId="news-title"
+      />
+      <a class="link-arrow" routerLink="/news">All news <app-icon name="arrow" /></a>
+    </div>
+    <div class="news__grid">
+      @for (n of news; track n.id; let i = $index) {
+        <app-news-card [item]="n" [appReveal]="i * 90" />
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Admissions band ═══ -->
+<section class="admit" aria-labelledby="admit-title">
+  <div class="container">
+    <div class="admit__grid">
+      <div>
+        <p class="eyebrow">Admissions</p>
+        <h2 id="admit-title">Begin your child’s journey at Christu Jyoti</h2>
+        <p class="admit__lead">
+          Admission is open to all good and earnest students, irrespective of caste or creed. Four
+          simple steps, and our office is here to help at every one.
+        </p>
+        <div class="admit__ctas">
+          <a
+            appButton
+            variant="gold"
+            [href]="site.portals.registration"
+            target="_blank"
+            rel="noopener"
+            >Register online <app-icon name="external"
+          /></a>
+          <a appButton variant="ghost-light" routerLink="/admissions">Admission guide</a>
+        </div>
+      </div>
+      <app-stepper [steps]="steps" [compact]="true" [light]="true" />
+    </div>
+  </div>
+</section>

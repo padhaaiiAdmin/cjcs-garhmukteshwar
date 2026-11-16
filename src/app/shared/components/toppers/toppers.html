@@ -1,0 +1,69 @@
+<div class="tabs" role="tablist" [attr.aria-label]="'Board toppers ' + result().session">
+  @for (t of tabs; track t.id) {
+    <button
+      #tabBtn
+      type="button"
+      role="tab"
+      class="tab"
+      [id]="idPrefix() + '-tab-' + t.id"
+      [attr.aria-selected]="tab() === t.id"
+      [attr.aria-controls]="idPrefix() + '-panel'"
+      [attr.tabindex]="tab() === t.id ? 0 : -1"
+      (click)="select(t.id)"
+      (keydown)="onKey($event)"
+    >
+      {{ t.label }} <span class="tab__exam">{{ t.exam }}</span>
+    </button>
+  }
+</div>
+
+<div
+  class="tabpanel"
+  role="tabpanel"
+  [id]="idPrefix() + '-panel'"
+  [attr.aria-labelledby]="idPrefix() + '-tab-' + tab()"
+  tabindex="0"
+>
+  @for (key of [tab()]; track key) {
+    <ol class="podium">
+      @for (s of top(); track s.name; let i = $index) {
+        <li class="card" [appReveal]="i * 90">
+          <div class="card__photo">
+            @if (s.image) {
+              <app-picture
+                [id]="s.image"
+                [alt]="'Portrait of ' + s.name"
+                fill
+                position="50% 20%"
+                sizes="(min-width: 1024px) 26vw, (min-width: 480px) 33vw, 50vw"
+              />
+            } @else {
+              <span class="card__initial" aria-hidden="true">{{ s.name.charAt(0) }}</span>
+            }
+            <span class="card__rank">{{ rank(i) }}</span>
+          </div>
+          <div class="card__body">
+            <p class="card__pct">{{ s.percent }}<span>%</span></p>
+            <h3 class="card__name">{{ s.name }}</h3>
+          </div>
+        </li>
+      }
+    </ol>
+
+    @if (rest().length) {
+      <ol class="roll" [start]="featured() + 1">
+        @for (s of rest(); track s.name) {
+          <li [class.no-photo]="!s.image">
+            @if (s.image) {
+              <span class="roll__photo">
+                <app-picture [id]="s.image" [alt]="''" fill position="50% 18%" sizes="64px" />
+              </span>
+            }
+            <span class="roll__name">{{ s.name }}</span>
+            <span class="roll__pct">{{ s.percent }}%</span>
+          </li>
+        }
+      </ol>
+    }
+  }
+</div>

@@ -1,0 +1,296 @@
+{
+  "name": "Christu Jyoti Convent Sr. Sec. School",
+  "shortName": "Christu Jyoti Convent",
+  "locality": "Garhmukteshwar",
+  "motto": "Wisdom · Life · Light",
+  "heroLine": "Nurturing competence, character and compassion since 1998",
+  "heroIntro": "A co-educational CISCE school in Garhmukteshwar, run by the Franciscan Clarist sisters, where children from Nursery to Class XII grow in knowledge, faith and service.",
+  "founded": 1998,
+  "foundedOn": "31 October 1998",
+  "board": "CISCE",
+  "boardExams": "ICSE (Class X) · ISC (Class XII)",
+  "affiliationNumber": "[[TO CONFIRM: CISCE affiliation / school code]]",
+  "medium": "English",
+  "type": "Co-educational · Unaided minority institution",
+  "management": "Christu Jyothi Educational Society",
+  "congregation": "Franciscan Clarist Congregation (FCC), St. Paul Province, Delhi",
+  "principal": "Sr. Retty F.C.C.",
+  "url": "https://cjcsgarh.com",
+  "address": {
+    "line1": "Jyotinagar",
+    "city": "Garhmukteshwar",
+    "district": "Hapur",
+    "state": "Uttar Pradesh",
+    "postalCode": "245205",
+    "country": "IN"
+  },
+  "mapQuery": "Christu Jyoti Convent School, Jyotinagar, Garhmukteshwar, Uttar Pradesh 245205",
+  "phone": {
+    "display": "+91 75000 01547",
+    "tel": "+917500001547"
+  },
+  "altPhones": [
+    {
+      "display": "+91 98733 36049",
+      "tel": "+919873336049",
+      "note": "[[TO CONFIRM: second number listed on the old Contact page; keep or remove?]]"
+    }
+  ],
+  "whatsapp": {
+    "number": "917500001547",
+    "note": "[[TO CONFIRM: is +91 75000 01547 on WhatsApp?]]"
+  },
+  "email": "cjcsgarh@gmail.com",
+  "officeHours": "9:00 AM – 1:00 PM",
+  "timings": [
+    {
+      "label": "School hours",
+      "summer": "7:30 AM – 1:30 PM",
+      "winter": "8:30 AM – 2:30 PM"
+    },
+    {
+      "label": "Office hours",
+      "summer": "8:00 AM – 1:00 PM",
+      "winter": "9:00 AM – 2:00 PM"
+    }
+  ],
+  "principalHours": "The Principal meets parents on working days, 9:00 AM – 12:00 noon in summer and 10:00 AM – 1:00 PM in winter, or by appointment. No school business is transacted on holidays.",
+  "portals": {
+    "staffLogin": "https://cjcssh.sms.m-cms.com",
+    "parentLogin": "https://cjcssh.sms.m-cms.com",
+    "registration": "https://cjcssh.sms.m-cms.com/mg_student_admission_requests/guardian_admission"
+  },
+  "announcement": {
+    "enabled": true,
+    "id": "admissions-2027",
+    "text": "Admissions open for session [[TO CONFIRM: 2027–28]] · Nursery to Class IX",
+    "cta": {
+      "label": "Register online",
+      "url": "https://cjcssh.sms.m-cms.com/mg_student_admission_requests/guardian_admission",
+      "external": true
+    }
+  },
+  "admissionsOpen": true,
+  "stats": [
+    {
+      "value": "1998",
+      "label": "Established",
+      "note": "Inaugurated 31 October 1998"
+    },
+    {
+      "value": "CISCE",
+      "label": "ICSE & ISC affiliated"
+    },
+    {
+      "value": "1,500",
+      "label": "Students on roll",
+      "note": "As recorded at the Silver Jubilee. [[TO CONFIRM: current strength]]"
+    },
+    {
+      "value": "[[TO CONFIRM: number]]",
+      "label": "Faculty members"
+    }
+  ],
+  "values": [
+    {
+      "title": "The whole child",
+      "text": "The all-round development of every child: mind, body, heart and spirit."
+    },
+    {
+      "title": "Spiritual & ethical renewal",
+      "text": "Daily formation that renews the spirit and grounds young people in ethics."
+    },
+    {
+      "title": "Responsibility & tolerance",
+      "text": "A lived sense of social responsibility and respect for every faith."
+    },
+    {
+      "title": "Competence & confidence",
+      "text": "The skills and self-belief to meet the challenges that lie ahead."
+    },
+    {
+      "title": "Self-reliance & integrity",
+      "text": "Insight into standing on one’s own feet, and standing for what is right."
+    },
+    {
+      "title": "Human values & heritage",
+      "text": "Upholding human values and the composite culture of India."
+    }
+  ],
+  "social": [
+    {
+      "network": "facebook",
+      "label": "Facebook",
+      "url": ""
+    },
+    {
+      "network": "instagram",
+      "label": "Instagram",
+      "url": ""
+    },
+    {
+      "network": "x",
+      "label": "X (Twitter)",
+      "url": ""
+    },
+    {
+      "network": "pinterest",
+      "label": "Pinterest",
+      "url": ""
+    }
+  ],
+  "mandatoryDisclosureUrl": "",
+  "nav": [
+    {
+      "label": "About",
+      "path": "/about",
+      "description": "Twenty-five years of light in Garhmukteshwar.",
+      "children": [
+        {
+          "label": "Brief History",
+          "path": "/about",
+          "fragment": "history",
+          "description": "From a rented building at Subhash Gate to a place of pride in Hapur district."
+        },
+        {
+          "label": "Vision & Mission",
+          "path": "/about",
+          "fragment": "vision",
+          "description": "What we stand for, and why."
+        },
+        {
+          "label": "Management",
+          "path": "/about",
+          "fragment": "management",
+          "description": "Christu Jyothi Educational Society and the FCC sisters."
+        },
+        {
+          "label": "Principal’s Desk",
+          "path": "/about",
+          "fragment": "principal",
+          "description": "A message from Sr. Retty F.C.C."
+        }
+      ],
+      "image": {
+        "id": "building-front",
+        "alt": "Front of the school building under a blue sky"
+      }
+    },
+    {
+      "label": "Academics",
+      "path": "/academics",
+      "description": "ICSE and ISC, taught with care.",
+      "children": [
+        {
+          "label": "ICSE & ISC",
+          "path": "/academics",
+          "fragment": "stages",
+          "description": "Nursery to Class X, and Classes XI–XII."
+        },
+        {
+          "label": "How we teach",
+          "path": "/academics",
+          "fragment": "pedagogy",
+          "description": "NEP-aligned, digitally enabled, deeply personal."
+        },
+        {
+          "label": "Beyond the classroom",
+          "path": "/academics",
+          "fragment": "beyond",
+          "description": "Sports, arts, clubs and community service."
+        },
+        {
+          "label": "Results",
+          "path": "/academics",
+          "fragment": "results",
+          "description": "Board toppers, year by year."
+        }
+      ],
+      "image": {
+        "id": "lab-science",
+        "alt": "Students conducting an experiment in the science laboratory"
+      }
+    },
+    {
+      "label": "Admissions",
+      "path": "/admissions",
+      "description": "Open to all good and earnest students.",
+      "children": [
+        {
+          "label": "How to apply",
+          "path": "/admissions",
+          "fragment": "process",
+          "description": "Registration, test, interview, admission."
+        },
+        {
+          "label": "Eligibility & age",
+          "path": "/admissions",
+          "fragment": "eligibility",
+          "description": "Who can apply and when."
+        },
+        {
+          "label": "Documents & dates",
+          "path": "/admissions",
+          "fragment": "documents",
+          "description": "What to bring, and key dates."
+        },
+        {
+          "label": "Questions",
+          "path": "/admissions",
+          "fragment": "faq",
+          "description": "Answers for parents."
+        }
+      ],
+      "image": {
+        "id": "y24-pre-primary",
+        "alt": "Pre-primary children with their teachers on the lawn"
+      }
+    },
+    {
+      "label": "Campus",
+      "path": "/facilities",
+      "description": "Labs, library, fields and a home away from home.",
+      "children": [
+        {
+          "label": "Facilities",
+          "path": "/facilities",
+          "fragment": "facilities",
+          "description": "Labs, library, computers, sports."
+        },
+        {
+          "label": "Boarding",
+          "path": "/facilities",
+          "fragment": "boarding",
+          "description": "An environment close to home."
+        },
+        {
+          "label": "Safety & care",
+          "path": "/facilities",
+          "fragment": "safety",
+          "description": "Transport, surveillance, outreach."
+        },
+        {
+          "label": "Gallery",
+          "path": "/gallery",
+          "description": "Albums from school life."
+        }
+      ],
+      "image": {
+        "id": "y24-sports-day",
+        "alt": "Colourful flags lining the school field on sports day"
+      }
+    },
+    {
+      "label": "News",
+      "path": "/news"
+    },
+    {
+      "label": "Downloads",
+      "path": "/downloads"
+    },
+    {
+      "label": "Contact",
+      "path": "/contact"
+    }
+  ]
+}

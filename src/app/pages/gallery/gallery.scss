@@ -1,0 +1,70 @@
+@use 'mixins' as *;
+
+.gallery {
+  padding-top: 0;
+}
+.album-index ul {
+  list-style: none;
+  margin: 0 0 var(--sp-8);
+  padding: 0;
+  display: grid;
+  gap: var(--sp-5) var(--sp-4);
+  grid-template-columns: repeat(2, 1fr);
+  @include up(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include up(lg) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.album-card {
+  display: grid;
+  gap: var(--sp-2);
+  text-decoration: none;
+  color: var(--c-ink);
+  &:hover .album-card__title {
+    color: var(--c-primary);
+  }
+  &:hover ::ng-deep img {
+    transform: scale(1.04);
+  }
+  ::ng-deep img {
+    transition: transform 1.2s var(--ease-out);
+  }
+}
+.album-card__img {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--c-sand);
+}
+.album-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  line-height: 1.25;
+  color: var(--c-maroon-900);
+  transition: color var(--dur-fast) var(--ease);
+}
+.album-card__meta {
+  font-size: var(--fs-xs);
+  color: var(--c-ink-mute);
+}
+.album {
+  padding-top: var(--sp-8);
+  border-top: 1px solid var(--c-line);
+  margin-top: var(--sp-6);
+  scroll-margin-top: calc(var(--header-h) + 1rem);
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+.album__head {
+  margin-bottom: var(--sp-6);
+}
+.album__note {
+  font-size: var(--fs-sm);
+}

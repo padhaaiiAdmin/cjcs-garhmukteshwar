@@ -1,0 +1,245 @@
+@use 'mixins' as *;
+
+.story p:first-child::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-size: 4.2em;
+  line-height: 0.85;
+  padding: 0.08em 0.12em 0 0;
+  color: var(--c-maroon-700);
+}
+.timeline {
+  list-style: none;
+  margin: var(--sp-8) 0 0;
+  padding: 0;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0.35rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 1px;
+    background: var(--c-stone);
+    @include up(md) {
+      left: 7.35rem;
+    }
+  }
+  li {
+    position: relative;
+    display: grid;
+    gap: var(--sp-2);
+    padding: 0 0 var(--sp-7) var(--sp-6);
+    @include up(md) {
+      grid-template-columns: 6rem 1fr;
+      gap: var(--sp-7);
+      padding-left: 0;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: var(--c-bg);
+      border: 1px solid var(--c-gold-500);
+      @include up(md) {
+        left: 7rem;
+      }
+    }
+  }
+  h3 {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--sp-2);
+  }
+  p {
+    margin: 0;
+    color: var(--c-text-soft);
+  }
+}
+.timeline__year {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-md);
+  color: var(--c-gold-600);
+  line-height: 1.5;
+}
+
+.motto {
+  padding-block: var(--section-y);
+  text-align: center;
+}
+.motto__inner {
+  max-width: 56rem;
+  .eyebrow::after {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+  }
+}
+.motto__words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.4em;
+  font-size: var(--fs-3xl);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-6);
+}
+.motto__dot {
+  color: var(--c-gold-300);
+}
+.motto__scripture {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--c-gold-300);
+  max-width: 40ch;
+  margin-inline: auto;
+}
+.motto__text {
+  max-width: 60ch;
+  margin: var(--sp-5) auto 0;
+}
+
+.vision {
+  font-family: var(--font-serif);
+  font-size: var(--fs-lg);
+  color: var(--c-maroon-800);
+  margin-top: var(--sp-5);
+}
+.mission li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: var(--sp-3);
+  p {
+    font-size: var(--fs-md);
+    color: var(--c-ink);
+  }
+}
+.mission__num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--c-gold-600);
+  font-size: var(--fs-md);
+}
+
+.facts {
+  display: grid;
+  gap: var(--sp-3);
+  margin: var(--sp-6) 0 0;
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--c-line-strong);
+  div {
+    display: grid;
+    gap: 0.15rem;
+    @include up(sm) {
+      grid-template-columns: 9rem 1fr;
+    }
+  }
+  dt {
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--c-ink-mute);
+    padding-top: 0.2rem;
+  }
+  dd {
+    margin: 0;
+  }
+}
+
+.principal {
+  display: grid;
+  gap: var(--sp-7);
+  @include up(lg) {
+    grid-template-columns: 4fr 7fr;
+    gap: var(--sp-9);
+  }
+}
+.principal__aside {
+  @include up(lg) {
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+    align-self: start;
+  }
+}
+.principal__name {
+  display: grid;
+  margin-top: var(--sp-4);
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  color: var(--c-maroon-800);
+  span {
+    font-family: var(--font-sans);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-ink-mute);
+  }
+}
+.principal__letter {
+  max-width: var(--measure);
+  h2 {
+    font-size: var(--fs-3xl);
+    font-style: italic;
+    font-weight: 350;
+  }
+}
+.principal__greeting {
+  font-size: var(--fs-md);
+  color: var(--c-ink);
+}
+.scripture {
+  margin: var(--sp-6) 0;
+  padding: var(--sp-5) 0 var(--sp-5) var(--sp-6);
+  border-left: 2px solid var(--c-gold-500);
+  p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--fs-lg);
+    line-height: 1.45;
+    color: var(--c-maroon-800);
+    margin-bottom: var(--sp-3);
+  }
+  cite {
+    font-style: normal;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-gold-600);
+  }
+}
+.closing {
+  margin: var(--sp-7) 0 var(--sp-5);
+  font-style: italic;
+}
+.signoff {
+  color: var(--c-text-soft);
+  strong {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: var(--fs-md);
+    color: var(--c-maroon-900);
+  }
+}
+.thanks {
+  text-align: center;
+  .pull {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--sp-6);
+  }
+  .eyebrow::after {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+  }
+}

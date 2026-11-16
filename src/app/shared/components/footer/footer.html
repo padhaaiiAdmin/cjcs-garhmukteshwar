@@ -1,0 +1,117 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="/assets/images/logo-240.webp" alt="" width="240" height="207" loading="lazy" />
+        <div>
+          <p class="footer__name">{{ site.name }}</p>
+          <p class="footer__motto">{{ site.motto }}</p>
+        </div>
+      </div>
+      <a class="btn btn--gold" routerLink="/admissions"
+        >Apply for Admission <app-icon name="arrow"
+      /></a>
+    </div>
+
+    <div class="footer__grid">
+      <section aria-labelledby="f-visit">
+        <h2 id="f-visit">Visit</h2>
+        <address>
+          {{ site.address.line1 }}, {{ site.address.city }}<br />
+          District {{ site.address.district }}, {{ site.address.state }}
+          {{ site.address.postalCode }}
+        </address>
+        <a class="footer__link" [href]="mapsUrl" target="_blank" rel="noopener"
+          >Get directions <app-icon name="external"
+        /></a>
+      </section>
+
+      <section aria-labelledby="f-contact">
+        <h2 id="f-contact">Contact</h2>
+        <ul>
+          <li>
+            <a [href]="'tel:' + site.phone.tel"
+              ><app-icon name="phone" />{{ site.phone.display }}</a
+            >
+          </li>
+          <li>
+            <a [href]="'mailto:' + site.email"><app-icon name="mail" />{{ site.email }}</a>
+          </li>
+          <li><app-icon name="clock" />Office: {{ site.officeHours }}</li>
+        </ul>
+      </section>
+
+      <nav aria-labelledby="f-explore">
+        <h2 id="f-explore">Explore</h2>
+        <ul>
+          <li><a routerLink="/about">About the school</a></li>
+          <li><a routerLink="/about" fragment="principal">Principal’s Desk</a></li>
+          <li><a routerLink="/academics">Academics</a></li>
+          <li><a routerLink="/academics" fragment="results">Results</a></li>
+          <li><a routerLink="/facilities">Campus & Boarding</a></li>
+          <li><a routerLink="/gallery">Gallery</a></li>
+          <li><a routerLink="/news">News & Events</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-labelledby="f-parents">
+        <h2 id="f-parents">Parents</h2>
+        <ul>
+          <li><a routerLink="/admissions">Admissions</a></li>
+          <li>
+            <a [href]="site.portals.registration" target="_blank" rel="noopener"
+              >Online Registration</a
+            >
+          </li>
+          <li>
+            <a [href]="site.portals.parentLogin" target="_blank" rel="noopener">Parent Login</a>
+          </li>
+          <li>
+            <a [href]="site.portals.staffLogin" target="_blank" rel="noopener">Staff Login</a>
+          </li>
+          <li><a routerLink="/downloads">Holiday Homework & Downloads</a></li>
+          <li><a routerLink="/contact">Contact & Enquiry</a></li>
+        </ul>
+      </nav>
+
+      <section aria-labelledby="f-follow">
+        <h2 id="f-follow">Follow</h2>
+        <ul class="footer__social">
+          @for (s of site.social; track s.network) {
+            <li>
+              @if (s.url) {
+                <a [href]="s.url" target="_blank" rel="noopener" [attr.aria-label]="s.label">
+                  <app-icon [name]="s.network" />
+                </a>
+              } @else {
+                <span class="footer__social-tbc" [title]="s.label + ' profile URL to be confirmed'">
+                  <app-icon [name]="s.network" /><span class="visually-hidden">{{ s.label }}</span>
+                </span>
+              }
+            </li>
+          }
+        </ul>
+        @if (site.social[0] && !site.social[0].url) {
+          <p class="footer__note"><app-rich text="[[TO CONFIRM: social profile URLs]]" /></p>
+        }
+      </section>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© {{ year }} {{ site.name }}, {{ site.locality }}. Managed by {{ site.management }}.</p>
+      <p>
+        Affiliated to the {{ site.board }}, New Delhi · Affiliation no.
+        <app-rich [text]="site.affiliationNumber" />
+      </p>
+      <p>
+        @if (site.mandatoryDisclosureUrl) {
+          <a [href]="site.mandatoryDisclosureUrl" target="_blank" rel="noopener"
+            >Mandatory Disclosure</a
+          >
+        } @else {
+          <a routerLink="/downloads" fragment="disclosure">Mandatory Disclosure</a>
+        }
+      </p>
+    </div>
+  </div>
+</footer>

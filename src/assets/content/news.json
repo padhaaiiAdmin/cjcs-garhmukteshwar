@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "id": "board-results-2025-26",
+      "title": "Board results 2025–26: Anushka Thakur and Dishant Ravi lead the way",
+      "date": "2026-05-01",
+      "dateLabel": "May 2026",
+      "category": "Achievement",
+      "summary": "Anushka Thakur tops ICSE with 96.6% and Dishant Ravi tops ISC with 95%, as nineteen students are honoured at a school felicitation.",
+      "body": [
+        "Our Class X and Class XII students have once again made the school proud. In the ICSE examination, Anushka Thakur leads with 96.6%, followed by Subhvan Singh (95.4%) and Parv Bansal (94%). In the ISC examination, Dishant Ravi tops with 95%, followed by Izma Anjum (94.75%) and Om Agarwal (93.25%).",
+        "The toppers were garlanded and honoured with their families at a felicitation in the school hall. Congratulations to every student, and thank you to the teachers and parents who stood behind them."
+      ],
+      "image": {
+        "id": "r26-group",
+        "alt": "Board toppers in garlands and sashes in the school hall"
+      },
+      "albumId": "results-2025-26"
+    },
+    {
+      "id": "admissions-2026-27",
+      "title": "Admissions registration opened for Nursery to Class IX",
+      "date": "2025-12-29",
+      "category": "Admissions",
+      "summary": "Online registration for Nursery to Class IX opened on 29 December 2025.",
+      "body": [
+        "Registration for admission to Nursery through Class IX opened on 29 December 2025. Parents can register online through the school portal or contact the office on +91 75000 01547.",
+        "[[TO CONFIRM: replace with the announcement for the next admission cycle]]"
+      ]
+    },
+    {
+      "id": "christmas-2025",
+      "title": "Christmas Day celebrated with joy",
+      "date": "2025-12-24",
+      "dateLabel": "December 2025",
+      "category": "Celebration",
+      "summary": "The school celebrated Christmas on a festively decorated stage, with a visit from Santa Claus.",
+      "body": [
+        "The school community came together to celebrate Christmas, the feast of the birth of Christ. [[TO CONFIRM: date and programme details]]"
+      ],
+      "image": {
+        "id": "christmas-2025",
+        "alt": "Christmas Celebration title card showing Santa Claus figures on the decorated school stage"
+      },
+      "albumId": "christmas-2025"
+    },
+    {
+      "id": "prize-distribution-2025",
+      "title": "Prize Distribution 2025",
+      "date": "2025-12-01",
+      "dateLabel": "2025",
+      "category": "Event",
+      "summary": "Students were honoured for excellence in academics, sports and co-curricular activities.",
+      "body": [
+        "The annual Prize Distribution recognised students’ achievements across the year. [[TO CONFIRM: date, chief guest, highlights and photographs]]"
+      ]
+    },
+    {
+      "id": "independence-day-2025",
+      "title": "Independence Day 2025: a celebration of India’s many colours",
+      "date": "2025-08-15",
+      "category": "Celebration",
+      "summary": "The band led the march-past, guests were honoured, and students brought India’s diversity to the stage in song and dance.",
+      "body": [
+        "The 79th Independence Day began with the school band in full ceremonial dress, a march-past across the green and a guard of honour for our guests.",
+        "On the Divine Mercy Rangmanch stage, students presented patriotic songs, a skit, folk and classical dances and a tableau celebrating the many cultures of India. Sisters and guests honoured invited dignitaries with mementos and certificates."
+      ],
+      "image": {
+        "id": "id25-band",
+        "alt": "The school band in red and white uniforms marching with trumpets"
+      },
+      "albumId": "independence-day-2025"
+    },
+    {
+      "id": "glimpse-2024",
+      "title": "A glimpse of 2024",
+      "date": "2024-12-31",
+      "dateLabel": "2024",
+      "category": "Event",
+      "summary": "Sports day, the Investiture Ceremony, science exhibitions and assemblies: a year of school life in pictures.",
+      "body": [
+        "From the Investiture Ceremony of the student council to sports day on the main field, science exhibitions, yoga and assemblies, 2024 was a full and joyful year at Christu Jyoti."
+      ],
+      "image": {
+        "id": "y24-investiture",
+        "alt": "Newly invested student council members in sashes at the Investiture Ceremony"
+      },
+      "albumId": "glimpse-2024"
+    }
+  ]
+}

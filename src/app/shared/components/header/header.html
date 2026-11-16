@@ -1,0 +1,194 @@
+<!-- Utility bar: contact + portals (desktop) -->
+<div class="utility" role="region" aria-label="Quick contact and portals">
+  <div class="container utility__inner">
+    <ul class="utility__contact">
+      <li>
+        <a [href]="'tel:' + site.phone.tel"><app-icon name="phone" />{{ site.phone.display }}</a>
+      </li>
+      <li>
+        <a [href]="'mailto:' + site.email"><app-icon name="mail" />{{ site.email }}</a>
+      </li>
+      <li><app-icon name="clock" />Office {{ site.officeHours }}</li>
+    </ul>
+    <ul class="utility__portals">
+      <li>
+        <a [href]="site.portals.staffLogin" target="_blank" rel="noopener">Staff Login</a>
+      </li>
+      <li>
+        <a [href]="site.portals.parentLogin" target="_blank" rel="noopener">Parent Login</a>
+      </li>
+      <li>
+        <a [href]="site.portals.registration" target="_blank" rel="noopener"
+          >Online Registration<app-icon name="external"
+        /></a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<header class="bar" #host (mouseleave)="hoverMega(null)">
+  <div class="container bar__inner">
+    <a class="brand" routerLink="/" aria-label="Christu Jyoti Convent Sr. Sec. School, home">
+      <img
+        class="brand__crest"
+        src="/assets/images/logo-240.webp"
+        alt=""
+        width="240"
+        height="207"
+        fetchpriority="high"
+      />
+      <span class="brand__text">
+        <span class="brand__name">Christu Jyoti Convent</span>
+        <span class="brand__sub"
+          >Sr. Sec. School<span class="brand__loc"> · {{ site.locality }}</span></span
+        >
+      </span>
+    </a>
+
+    <nav class="primary" aria-label="Main" (focusout)="onMegaFocusOut($event, host)">
+      <ul>
+        @for (item of nav; track trackNav(item)) {
+          <li
+            [class.has-mega]="item.children"
+            (mouseenter)="item.children ? hoverMega(item.label) : hoverMega(null)"
+          >
+            @if (item.children) {
+              <button
+                type="button"
+                class="primary__link"
+                [class.is-open]="openMega() === item.label"
+                [attr.aria-expanded]="openMega() === item.label"
+                [attr.aria-controls]="'mega-' + item.label"
+                [class.is-active]="isActive(item)"
+                (click)="toggleMega(item.label)"
+              >
+                {{ item.label }}<app-icon name="chevron" />
+              </button>
+              <div
+                class="mega"
+                [id]="'mega-' + item.label"
+                [class.is-open]="openMega() === item.label"
+                [attr.inert]="openMega() === item.label ? null : ''"
+              >
+                <div class="container mega__inner">
+                  <div class="mega__intro">
+                    <p class="eyebrow">{{ item.label }}</p>
+                    <p class="mega__title">{{ item.description }}</p>
+                    <a class="link-arrow" [routerLink]="item.path"
+                      >{{ item.label }} overview <app-icon name="arrow"
+                    /></a>
+                  </div>
+                  <ul class="mega__links">
+                    @for (child of item.children; track child.label) {
+                      <li>
+                        <a [routerLink]="child.path" [fragment]="child.fragment">
+                          <span class="mega__label">{{ child.label }}</span>
+                          <span class="mega__desc">{{ child.description }}</span>
+                        </a>
+                      </li>
+                    }
+                  </ul>
+                  @if (item.image && openMega() === item.label) {
+                    <div class="mega__media">
+                      <app-picture [id]="item.image.id" [alt]="item.image.alt" fill sizes="22vw" />
+                    </div>
+                  }
+                </div>
+              </div>
+            } @else {
+              <a
+                class="primary__link"
+                [routerLink]="item.path"
+                routerLinkActive="is-active"
+                ariaCurrentWhenActive="page"
+                >{{ item.label }}</a
+              >
+            }
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="actions">
+      @if (site.admissionsOpen) {
+        <a class="badge" routerLink="/admissions">
+          <span class="badge__dot" aria-hidden="true"></span>Admissions Open
+        </a>
+      }
+      <button
+        type="button"
+        class="burger"
+        (click)="openMenu()"
+        aria-label="Open menu"
+        aria-haspopup="dialog"
+        [attr.aria-expanded]="menuOpen()"
+      >
+        <app-icon name="menu" />
+      </button>
+    </div>
+  </div>
+  <div class="scrim" [class.is-open]="openMega()" aria-hidden="true" (click)="closeMega()"></div>
+</header>
+
+<!-- Full-screen menu (mobile & tablet) -->
+<dialog #menu class="menu" aria-label="Site menu" (close)="onMenuClosed()">
+  <div class="menu__top">
+    <a class="brand brand--light" routerLink="/" aria-label="Home">
+      <img
+        class="brand__crest"
+        src="/assets/images/logo-240.webp"
+        alt=""
+        width="240"
+        height="207"
+      />
+      <span class="brand__text">
+        <span class="brand__name">Christu Jyoti Convent</span>
+        <span class="brand__sub"
+          >Sr. Sec. School<span class="brand__loc"> · {{ site.locality }}</span></span
+        >
+      </span>
+    </a>
+    <button type="button" class="menu__close" (click)="closeMenu()" aria-label="Close menu">
+      <app-icon name="close" />
+    </button>
+  </div>
+  <nav aria-label="Main (mobile)">
+    <ul class="menu__list">
+      <li><a routerLink="/" class="menu__link">Home</a></li>
+      @for (item of nav; track trackNav(item); let i = $index) {
+        <li [style.--i]="i + 1">
+          @if (item.children) {
+            <details class="menu__group">
+              <summary class="menu__link">{{ item.label }}<app-icon name="chevron" /></summary>
+              <ul>
+                <li>
+                  <a [routerLink]="item.path">{{ item.label }} overview</a>
+                </li>
+                @for (child of item.children; track child.label) {
+                  <li>
+                    <a [routerLink]="child.path" [fragment]="child.fragment">{{ child.label }}</a>
+                  </li>
+                }
+              </ul>
+            </details>
+          } @else {
+            <a [routerLink]="item.path" class="menu__link">{{ item.label }}</a>
+          }
+        </li>
+      }
+    </ul>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn btn--gold" [href]="site.portals.registration" target="_blank" rel="noopener"
+      >Online Registration <app-icon name="external"
+    /></a>
+    <a class="btn btn--ghost-light" [href]="'tel:' + site.phone.tel"
+      ><app-icon name="phone" /> {{ site.phone.display }}</a
+    >
+    <p class="menu__portals">
+      <a [href]="site.portals.staffLogin" target="_blank" rel="noopener">Staff Login</a>
+      <span aria-hidden="true">·</span>
+      <a [href]="site.portals.parentLogin" target="_blank" rel="noopener">Parent Login</a>
+    </p>
+  </div>
+</dialog>

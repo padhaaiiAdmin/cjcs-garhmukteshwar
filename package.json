@@ -1,0 +1,51 @@
+{
+  "name": "cjcs-garhmukteshwar",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build",
+    "build:dev": "ng build --configuration development",
+    "prerender": "npm run build",
+    "serve:static": "npx --yes serve@14 dist/cjcs-garhmukteshwar/browser -l 4300",
+    "watch": "ng build --watch --configuration development",
+    "lint": "ng lint",
+    "format": "prettier --write \"src/**/*.{ts,html,scss,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,scss,json}\"",
+    "images": "node scripts/optimize-images.mjs",
+    "ng": "ng",
+    "prebuild": "node scripts/generate-sitemap.mjs",
+    "postbuild": "node scripts/postbuild.mjs"
+  },
+  "private": true,
+  "packageManager": "npm@11.19.1",
+  "dependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@angular/platform-server": "^22.2.0",
+    "@angular/router": "^22.2.0",
+    "@angular/ssr": "^22.2.7",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.7",
+    "@angular/cli": "^22.2.7",
+    "@angular/compiler-cli": "^22.2.0",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.12.0",
+    "angular-eslint": "22.7.0",
+    "eslint": "^10.14.0",
+    "prettier": "^3.8.1",
+    "sharp": "^0.34.5",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "8.72.1"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  }
+}
