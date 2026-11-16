@@ -12,7 +12,7 @@
 }
 .stage {
   padding: var(--sp-6) 0 0;
-  border-top: 2px solid var(--c-maroon-700);
+  border-top: 2px solid var(--c-blue-700);
   h3 {
     font-size: var(--fs-2xl);
     margin: var(--sp-2) 0 0.2rem;
@@ -147,7 +147,7 @@
     border-bottom: 1px solid var(--c-line);
     font-family: var(--font-serif);
     font-size: var(--fs-md);
-    color: var(--c-maroon-900);
+    color: var(--c-blue-900);
     &::before {
       content: counter(code, upper-roman);
       font-style: italic;

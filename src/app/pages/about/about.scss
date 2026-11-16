@@ -6,7 +6,7 @@
   font-size: 4.2em;
   line-height: 0.85;
   padding: 0.08em 0.12em 0 0;
-  color: var(--c-maroon-700);
+  color: var(--c-blue-700);
 }
 .timeline {
   list-style: none;
@@ -109,7 +109,7 @@
 .vision {
   font-family: var(--font-serif);
   font-size: var(--fs-lg);
-  color: var(--c-maroon-800);
+  color: var(--c-blue-800);
   margin-top: var(--sp-5);
 }
 .mission li {
@@ -174,7 +174,7 @@
   margin-top: var(--sp-4);
   font-family: var(--font-serif);
   font-size: var(--fs-md);
-  color: var(--c-maroon-800);
+  color: var(--c-blue-800);
   span {
     font-family: var(--font-sans);
     font-size: var(--fs-xs);
@@ -205,7 +205,7 @@
     font-style: italic;
     font-size: var(--fs-lg);
     line-height: 1.45;
-    color: var(--c-maroon-800);
+    color: var(--c-blue-800);
     margin-bottom: var(--sp-3);
   }
   cite {
@@ -227,7 +227,7 @@
     font-family: var(--font-serif);
     font-weight: 500;
     font-size: var(--fs-md);
-    color: var(--c-maroon-900);
+    color: var(--c-blue-900);
   }
 }
 .thanks {

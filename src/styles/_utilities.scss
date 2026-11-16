@@ -41,7 +41,7 @@
   left: var(--sp-4);
   top: -100px;
   z-index: 1000;
-  background: var(--c-maroon-900);
+  background: var(--c-blue-900);
   color: var(--c-snow);
   padding: var(--sp-3) var(--sp-5);
   border-radius: var(--radius);
@@ -79,7 +79,7 @@
     border-color var(--dur) var(--ease),
     transform var(--dur) var(--ease);
   &:hover {
-    --btn-bg: var(--c-maroon-900);
+    --btn-bg: var(--c-blue-900);
     color: var(--btn-fg);
   }
   &:active {
@@ -101,7 +101,7 @@
 }
 .btn--gold {
   --btn-bg: var(--c-gold-300);
-  --btn-fg: var(--c-maroon-950);
+  --btn-fg: var(--c-blue-950);
   &:hover {
     --btn-bg: var(--c-gold-100);
   }
@@ -111,9 +111,9 @@
   --btn-fg: var(--c-primary);
   --btn-border: var(--c-line-strong);
   &:hover {
-    --btn-bg: var(--c-maroon-700);
+    --btn-bg: var(--c-blue-700);
     --btn-fg: var(--c-snow);
-    --btn-border: var(--c-maroon-700);
+    --btn-border: var(--c-blue-700);
   }
 }
 .btn--ghost-light {
@@ -122,7 +122,7 @@
   --btn-border: rgb(255 253 249 / 55%);
   &:hover {
     --btn-bg: var(--c-snow);
-    --btn-fg: var(--c-maroon-900);
+    --btn-fg: var(--c-blue-900);
     --btn-border: var(--c-snow);
   }
 }
@@ -192,8 +192,8 @@
   }
   &[aria-pressed='true'],
   &[aria-selected='true'] {
-    background: var(--c-maroon-700);
-    border-color: var(--c-maroon-700);
+    background: var(--c-blue-700);
+    border-color: var(--c-blue-700);
     color: var(--c-snow);
   }
 }

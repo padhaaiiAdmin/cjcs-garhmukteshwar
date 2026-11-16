@@ -39,10 +39,10 @@ const KEY = 'cjcs-announcement-dismissed';
   styles: `
     @use 'mixins' as *;
     .ann {
-      background: var(--c-gold-100);
-      color: var(--c-maroon-900);
+      background: var(--c-sky-100);
+      color: var(--c-blue-900);
       font-size: var(--fs-sm);
-      border-bottom: 1px solid color-mix(in srgb, var(--c-gold-500) 35%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--c-sky-400) 45%, transparent);
     }
     .ann__inner {
       display: flex;
@@ -62,7 +62,8 @@ const KEY = 'cjcs-announcement-dismissed';
       height: 0.4rem;
       margin-right: 0.6rem;
       border-radius: 50%;
-      background: var(--c-maroon-600);
+      background: var(--c-sky-400);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-sky-400) 30%, transparent);
       vertical-align: middle;
     }
     a {
@@ -71,7 +72,7 @@ const KEY = 'cjcs-announcement-dismissed';
       gap: 0.3em;
       margin-left: 0.6rem;
       font-weight: 700;
-      color: var(--c-maroon-700);
+      color: var(--c-blue-700);
       white-space: nowrap;
     }
     button {
@@ -83,9 +84,9 @@ const KEY = 'cjcs-announcement-dismissed';
       border: 0;
       border-radius: 50%;
       background: transparent;
-      color: var(--c-maroon-900);
+      color: var(--c-blue-900);
       &:hover {
-        background: rgb(62 24 20 / 8%);
+        background: rgb(15 42 92 / 8%);
       }
     }
   `,

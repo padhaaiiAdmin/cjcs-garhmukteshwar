@@ -27,10 +27,10 @@
     background var(--dur) var(--ease),
     color var(--dur) var(--ease);
   &[aria-selected='true'] {
-    background: var(--c-maroon-700);
+    background: var(--c-blue-700);
     color: var(--c-snow);
     .tab__exam {
-      color: var(--c-gold-300);
+      color: var(--c-sky-300);
     }
   }
 }
@@ -98,7 +98,7 @@
   padding: 0.3rem 0.7rem;
   border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--c-ivory) 90%, transparent);
-  color: var(--c-maroon-800);
+  color: var(--c-blue-800);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -109,7 +109,7 @@
   font-family: var(--font-serif);
   font-size: var(--fs-2xl);
   line-height: 1;
-  color: var(--c-maroon-700);
+  color: var(--c-blue-700);
   font-variant-numeric: lining-nums;
   span {
     font-size: 0.5em;
@@ -166,6 +166,6 @@
 .roll__pct {
   font-family: var(--font-serif);
   font-size: var(--fs-md);
-  color: var(--c-maroon-700);
+  color: var(--c-blue-700);
   font-variant-numeric: tabular-nums;
 }

@@ -1,7 +1,7 @@
 @use 'mixins' as *;
 
 .footer {
-  background: var(--c-maroon-950);
+  background: var(--c-blue-950);
   color: rgb(255 253 249 / 75%);
   font-size: var(--fs-sm);
   padding: var(--sp-8) 0 calc(var(--sp-6) + 5rem);
@@ -12,7 +12,7 @@
     color: var(--c-snow);
     text-decoration: none;
     &:hover {
-      color: var(--c-gold-300);
+      color: var(--c-sky-300);
     }
   }
 }
@@ -48,7 +48,7 @@
   margin: 0.2rem 0 0;
   font-family: var(--font-serif);
   font-style: italic;
-  color: var(--c-gold-300);
+  color: var(--c-sky-300);
 }
 .footer__grid {
   display: grid;
@@ -67,7 +67,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--c-gold-300);
+    color: var(--c-sky-300);
     margin-bottom: var(--sp-4);
   }
   ul {
@@ -84,7 +84,7 @@
     gap: 0.55em;
   }
   app-icon {
-    color: var(--c-gold-300);
+    color: var(--c-sky-300);
   }
   address {
     font-style: normal;
@@ -137,6 +137,17 @@
     margin: 0;
   }
   a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+.footer__credit {
+  margin: var(--sp-5) 0 0;
+  font-size: var(--fs-xs);
+  color: rgb(255 253 249 / 60%);
+  text-align: center;
+  a {
+    font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 0.2em;
   }

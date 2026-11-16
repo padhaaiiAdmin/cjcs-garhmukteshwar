@@ -116,7 +116,7 @@
     text-align: left;
     font-family: var(--font-serif);
     font-size: var(--fs-md);
-    color: var(--c-maroon-900);
+    color: var(--c-blue-900);
     padding-bottom: var(--sp-3);
   }
   th,
@@ -153,14 +153,14 @@
 
 // Dark band
 .band-dark {
-  background: var(--c-maroon-900);
+  background: var(--c-blue-900);
   color: rgb(255 253 249 / 85%);
   h2,
   h3 {
     color: var(--c-snow);
   }
   .eyebrow {
-    color: var(--c-gold-300);
+    color: var(--c-sky-300);
   }
 }
 
@@ -170,7 +170,7 @@
   font-weight: 350;
   font-size: var(--fs-xl);
   line-height: 1.35;
-  color: var(--c-maroon-900);
+  color: var(--c-blue-900);
   margin: 0;
   text-wrap: pretty;
 }
@@ -247,11 +247,11 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgb(44 17 14 / 0%);
+    background: rgb(10 26 58 / 0%);
     transition: background var(--dur) var(--ease);
   }
   &:hover::after {
-    background: rgb(44 17 14 / 12%);
+    background: rgb(10 26 58 / 12%);
   }
 }
 

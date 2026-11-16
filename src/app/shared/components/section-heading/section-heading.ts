@@ -52,7 +52,7 @@ import { Rich } from '../rich/rich';
         color: var(--c-snow);
       }
       .eyebrow {
-        color: var(--c-gold-300);
+        color: var(--c-sky-300);
       }
       .lead {
         color: rgb(255 253 249 / 82%);

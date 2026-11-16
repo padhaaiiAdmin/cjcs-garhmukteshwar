@@ -13,7 +13,7 @@
   min-height: max(32rem, min(88svh, 52rem));
   overflow: hidden;
   color: var(--c-snow);
-  background: var(--c-maroon-900);
+  background: var(--c-blue-900);
   isolation: isolate;
 }
 .hero__media {
@@ -40,12 +40,12 @@
   background:
     linear-gradient(
       180deg,
-      rgb(44 17 14 / 10%) 0%,
-      rgb(44 17 14 / 0%) 30%,
-      rgb(44 17 14 / 72%) 78%,
-      rgb(44 17 14 / 88%) 100%
+      rgb(10 26 58 / 10%) 0%,
+      rgb(10 26 58 / 0%) 30%,
+      rgb(10 26 58 / 72%) 78%,
+      rgb(10 26 58 / 88%) 100%
     ),
-    linear-gradient(90deg, rgb(44 17 14 / 55%) 0%, rgb(44 17 14 / 0%) 65%);
+    linear-gradient(90deg, rgb(10 26 58 / 55%) 0%, rgb(10 26 58 / 0%) 65%);
 }
 .hero__content {
   padding-block: var(--sp-9) clamp(3rem, 2rem + 4vw, 6rem);
@@ -58,7 +58,7 @@
   flex-wrap: wrap;
   gap: 0.35rem 0.7rem;
   @include eyebrow;
-  color: var(--c-gold-300);
+  color: var(--c-sky-300);
   margin-bottom: var(--sp-5);
 }
 .hero__title {
@@ -69,7 +69,7 @@
   color: var(--c-snow);
   max-width: 17ch;
   margin-bottom: var(--sp-5);
-  text-shadow: 0 2px 30px rgb(44 17 14 / 30%);
+  text-shadow: 0 2px 30px rgb(10 26 58 / 30%);
 }
 .hero__intro {
   font-size: var(--fs-md);
@@ -106,7 +106,7 @@
 
 // ═══ Stats ══════════════════════════════════════════════════
 .stats {
-  background: var(--c-maroon-800);
+  background: var(--c-blue-800);
   color: var(--c-snow);
 }
 .stats__list {
@@ -164,7 +164,7 @@
     font-family: var(--font-serif);
     font-size: var(--fs-2xl);
     line-height: 1.05;
-    color: var(--c-gold-300);
+    color: var(--c-sky-300);
     ::ng-deep .tbc {
       font-size: 0.8rem;
       line-height: 1.4;
@@ -181,7 +181,7 @@
   }
   h2 em {
     font-style: italic;
-    color: var(--c-maroon-600);
+    color: var(--c-blue-600);
   }
   .lead {
     margin-bottom: var(--sp-4);
@@ -326,7 +326,7 @@
       font-size: var(--fs-xl);
       font-weight: 350;
       line-height: 1.35;
-      color: var(--c-maroon-900);
+      color: var(--c-blue-900);
       margin: 0;
       text-wrap: pretty;
     }
@@ -337,7 +337,7 @@
   gap: 0.1rem;
   font-family: var(--font-serif);
   font-size: var(--fs-md);
-  color: var(--c-maroon-800);
+  color: var(--c-blue-800);
   margin-bottom: var(--sp-5);
   padding-left: var(--sp-5);
   border-left: 2px solid var(--c-gold-500);
@@ -354,7 +354,7 @@
 // ═══ Boarding ═══════════════════════════════════════════════
 .boarding {
   display: grid;
-  background: var(--c-maroon-900);
+  background: var(--c-blue-900);
   color: rgb(255 253 249 / 85%);
   @include up(lg) {
     grid-template-columns: 11fr 9fr;
@@ -373,7 +373,7 @@
     padding: var(--sp-9) var(--sp-8);
   }
   .eyebrow {
-    color: var(--c-gold-300);
+    color: var(--c-sky-300);
   }
   h2 {
     color: var(--c-snow);
@@ -430,7 +430,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 55%, rgb(44 17 14 / 70%));
+    background: linear-gradient(180deg, transparent 55%, rgb(10 26 58 / 70%));
   }
 }
 .mosaic__cap {
@@ -461,11 +461,11 @@
   position: relative;
   padding-block: var(--section-y);
   background:
-    radial-gradient(ellipse at 85% 0%, rgb(217 194 154 / 14%), transparent 55%), var(--c-maroon-800);
+    radial-gradient(ellipse at 85% 0%, rgb(74 203 255 / 14%), transparent 55%), var(--c-blue-800);
   color: rgb(255 253 249 / 85%);
   overflow: hidden;
   .eyebrow {
-    color: var(--c-gold-300);
+    color: var(--c-sky-300);
   }
   h2 {
     color: var(--c-snow);

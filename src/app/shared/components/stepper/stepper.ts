@@ -73,7 +73,7 @@ import { Rich } from '../rich/rich';
       border: 1px solid var(--c-gold-500);
       font-family: var(--font-serif);
       font-size: var(--fs-md);
-      color: var(--c-maroon-700);
+      color: var(--c-blue-700);
       background: var(--c-bg);
     }
     h3 {
@@ -88,8 +88,8 @@ import { Rich } from '../rich/rich';
     :host(.is-light) {
       .num {
         background: transparent;
-        color: var(--c-gold-300);
-        border-color: var(--c-gold-300);
+        color: var(--c-sky-300);
+        border-color: var(--c-sky-300);
       }
       h3 {
         color: var(--c-snow);

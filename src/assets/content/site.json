@@ -15,7 +15,7 @@
   "management": "Christu Jyothi Educational Society",
   "congregation": "Franciscan Clarist Congregation (FCC), St. Paul Province, Delhi",
   "principal": "Sr. Retty F.C.C.",
-  "url": "https://cjcsgarh.com",
+  "url": "https://alaeonsample.com",
   "address": {
     "line1": "Jyotinagar",
     "city": "Garhmukteshwar",
@@ -292,5 +292,9 @@
       "label": "Contact",
       "path": "/contact"
     }
-  ]
+  ],
+  "credit": {
+    "label": "aleaon.com",
+    "url": "https://aleaon.com"
+  }
 }

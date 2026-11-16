@@ -69,12 +69,12 @@ import { Picture } from '../picture/picture';
       margin: 0;
       padding: 0;
       border: 0;
-      background: #1c0c0a;
+      background: #081228;
       color: var(--c-snow);
       overscroll-behavior: contain;
       touch-action: pan-y;
       &::backdrop {
-        background: rgb(28 12 10 / 80%);
+        background: rgb(8 18 40 / 80%);
       }
       &:focus,
       &:focus-visible {
@@ -116,7 +116,7 @@ import { Picture } from '../picture/picture';
     }
     .count {
       font-variant-numeric: tabular-nums;
-      color: var(--c-gold-300);
+      color: var(--c-sky-300);
       flex: none;
     }
     button {
@@ -127,7 +127,7 @@ import { Picture } from '../picture/picture';
       height: 3rem;
       border-radius: 50%;
       border: 1px solid rgb(255 253 249 / 30%);
-      background: rgb(28 12 10 / 50%);
+      background: rgb(8 18 40 / 50%);
       color: var(--c-snow);
       font-size: 1.25rem;
       transition: background var(--dur-fast) var(--ease);
@@ -135,7 +135,7 @@ import { Picture } from '../picture/picture';
         background: rgb(255 253 249 / 15%);
       }
       &:focus-visible {
-        outline: 2px solid var(--c-gold-300);
+        outline: 2px solid var(--c-sky-300);
         outline-offset: 2px;
       }
     }

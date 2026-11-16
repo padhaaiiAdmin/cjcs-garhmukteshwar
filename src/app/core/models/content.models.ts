@@ -81,6 +81,8 @@ export interface SiteContent {
   values: { title: string; text: string }[];
   social: SocialLink[];
   mandatoryDisclosureUrl: string;
+  /** Website credit shown at the very bottom of the footer */
+  credit: { label: string; url: string };
   nav: NavItem[];
 }
 

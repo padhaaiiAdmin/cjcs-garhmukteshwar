@@ -64,7 +64,7 @@ a {
   text-underline-offset: 0.2em;
   transition: color var(--dur-fast) var(--ease);
   &:hover {
-    color: var(--c-maroon-900);
+    color: var(--c-blue-900);
   }
 }
 
@@ -76,7 +76,7 @@ a {
 
 ::selection {
   background: var(--c-gold-100);
-  color: var(--c-maroon-900);
+  color: var(--c-blue-900);
 }
 
 hr {

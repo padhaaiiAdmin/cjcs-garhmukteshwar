@@ -46,7 +46,7 @@ export interface AccordionItem {
       cursor: pointer;
       font-family: var(--font-serif);
       font-size: var(--fs-md);
-      color: var(--c-maroon-900);
+      color: var(--c-blue-900);
       transition: color var(--dur-fast) var(--ease);
       &::-webkit-details-marker {
         display: none;

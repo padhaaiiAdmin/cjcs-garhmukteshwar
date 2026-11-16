@@ -41,7 +41,7 @@ import { Icon } from '../icon/icon';
       gap: 0.5rem;
       padding: 0.35rem;
       border-radius: var(--radius-pill);
-      background: color-mix(in srgb, var(--c-maroon-900) 94%, transparent);
+      background: color-mix(in srgb, var(--c-blue-900) 94%, transparent);
       box-shadow: var(--shadow-lg);
       backdrop-filter: blur(8px);
       opacity: 0;
@@ -77,19 +77,19 @@ import { Icon } from '../icon/icon';
         background: rgb(255 253 249 / 10%);
       }
       app-icon {
-        color: var(--c-gold-300);
+        color: var(--c-sky-300);
         font-size: 1.15rem;
       }
     }
     .fab__btn--wa {
       background: var(--c-gold-300);
-      color: var(--c-maroon-950);
+      color: var(--c-blue-950);
       app-icon {
-        color: var(--c-maroon-900);
+        color: var(--c-blue-900);
       }
       &:hover {
         background: var(--c-gold-100);
-        color: var(--c-maroon-950);
+        color: var(--c-blue-950);
       }
     }
   `,

@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // Design tokens: Christu Jyoti Convent Sr. Sec. School
-// Palette derived from the school crest (terracotta-maroon #8F4232
-// and the gold of the lamp flame), set on warm ivory paper.
+// Palette from the school's identity: royal blue, sky blue and amber gold,
+// set on warm ivory with soft blue-tinted section backgrounds.
 // ─────────────────────────────────────────────────────────────
 
 // Breakpoints (SCSS, because media queries cannot read custom properties)
@@ -14,41 +14,44 @@ $bp: (
 );
 
 :root {
-  // Colour: brand
-  --c-maroon-950: #2c110e;
-  --c-maroon-900: #3e1814;
-  --c-maroon-800: #561f19;
-  --c-maroon-700: #6e2a21; // primary
-  --c-maroon-600: #8f4232; // crest
-  --c-maroon-100: #f3e3dc;
-  --c-gold-600: #7a5c2b; // gold for text on light (AA on ivory, paper and sand)
-  --c-gold-500: #b48c4e; // accent rules, icons, large display
-  --c-gold-300: #d9c29a; // gold for text on maroon (AA on maroon-800+)
-  --c-gold-100: #f2e8d5;
+  // Colour: brand (Christu Jyoti royal blue #1D50A7, sky #4ACBFF, amber gold #C77E1A)
+  --c-blue-950: #0a1a3a;
+  --c-blue-900: #0f2a5c;
+  --c-blue-800: #163d82;
+  --c-blue-700: #1d50a7; // primary: the school's royal blue
+  --c-blue-600: #2f66c4;
+  --c-blue-100: #e3ecfa;
+  --c-sky-400: #4acbff; // the school's sky blue (accents, highlights)
+  --c-sky-300: #8fdcff; // sky for text on dark blue (AA on blue-700 and darker)
+  --c-sky-100: #e6f7ff;
+  --c-gold-600: #8a540b; // amber for text on light (AA on ivory, mist and sand)
+  --c-gold-500: #c77e1a; // the school's amber: rules, icons, large display
+  --c-gold-300: #f5cf86; // light amber: buttons and accents on dark blue
+  --c-gold-100: #fbefd9;
 
   // Colour: neutrals (no pure black, no pure white)
-  --c-ivory: #fbf8f2;
-  --c-paper: #f5efe4;
-  --c-sand: #ebe2d2;
-  --c-stone: #d8ccb8;
-  --c-ink: #2a2421; // charcoal body text
-  --c-ink-soft: #5b504a;
-  --c-ink-mute: #6f635b; // AA (4.9:1) on ivory
-  --c-snow: #fffdf9;
+  --c-ivory: #fbfaf6;
+  --c-paper: #eef3fa; // soft blue-tinted section background
+  --c-sand: #e3e9f2;
+  --c-stone: #c9d3e2;
+  --c-ink: #1f2633; // blue-charcoal body text
+  --c-ink-soft: #475063;
+  --c-ink-mute: #5a6375; // AA on ivory, paper and sand
+  --c-snow: #fffefb;
 
   // Colour: semantic
   --c-bg: var(--c-ivory);
   --c-surface: var(--c-snow);
   --c-text: var(--c-ink);
   --c-text-soft: var(--c-ink-soft);
-  --c-primary: var(--c-maroon-700);
-  --c-primary-strong: var(--c-maroon-800);
+  --c-primary: var(--c-blue-700);
+  --c-primary-strong: var(--c-blue-800);
   --c-accent: var(--c-gold-500);
   --c-line: color-mix(in srgb, var(--c-ink) 14%, transparent);
   --c-line-strong: color-mix(in srgb, var(--c-ink) 26%, transparent);
-  --c-focus: #b5651d;
+  --c-focus: #c77e1a;
   --c-success: #2f6b46;
-  --c-error: #a3271b;
+  --c-error: #b3261e;
   --c-tbc-bg: #fff1c2;
   --c-tbc-text: #6b4a00;
 
@@ -97,9 +100,9 @@ $bp: (
   --radius: 4px;
   --radius-lg: 10px;
   --radius-pill: 999px;
-  --shadow-sm: 0 1px 2px rgb(42 36 33 / 6%);
-  --shadow: 0 10px 30px -12px rgb(62 24 20 / 22%);
-  --shadow-lg: 0 30px 60px -24px rgb(62 24 20 / 35%);
+  --shadow-sm: 0 1px 2px rgb(31 38 51 / 6%);
+  --shadow: 0 10px 30px -12px rgb(15 42 92 / 22%);
+  --shadow-lg: 0 30px 60px -24px rgb(15 42 92 / 35%);
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-fast: 160ms;
