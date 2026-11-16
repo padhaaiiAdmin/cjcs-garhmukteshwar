@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alaeonsample.com/sitemap.xml
+Sitemap: https://aleaonsample.com/sitemap.xml

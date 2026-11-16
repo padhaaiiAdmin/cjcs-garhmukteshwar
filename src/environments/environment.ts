@@ -8,5 +8,5 @@ export const environment = {
    * WhatsApp / phone so no enquiry is silently lost. See README → "Forms".
    */
   enquiryEndpoint: '',
-  siteUrl: 'https://alaeonsample.com',
+  siteUrl: 'https://aleaonsample.com',
 };
