@@ -7,9 +7,6 @@ import { Rich } from '../rich/rich';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { '[class.is-center]': "align() === 'center'", '[class.is-light]': 'light()' },
   template: `
-    @if (eyebrow()) {
-      <p class="eyebrow">{{ eyebrow() }}</p>
-    }
     @switch (level()) {
       @case (1) {
         <h1 [id]="headingId()">{{ title() }}</h1>
@@ -38,21 +35,12 @@ import { Rich } from '../rich/rich';
       .lead {
         margin-inline: auto;
       }
-      .eyebrow::after {
-        content: '';
-        width: 1.75rem;
-        height: 1px;
-        background: currentColor;
-      }
     }
     :host(.is-light) {
       h1,
       h2,
       h3 {
         color: var(--c-snow);
-      }
-      .eyebrow {
-        color: var(--c-sky-300);
       }
       .lead {
         color: rgb(255 253 249 / 82%);
@@ -65,7 +53,6 @@ import { Rich } from '../rich/rich';
   `,
 })
 export class SectionHeading {
-  readonly eyebrow = input('');
   readonly title = input.required<string>();
   readonly intro = input('');
   readonly level = input<1 | 2 | 3>(2);

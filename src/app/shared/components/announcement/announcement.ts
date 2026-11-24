@@ -26,8 +26,10 @@ const KEY = 'cjcs-announcement-dismissed';
               [href]="ann.cta.url"
               [attr.target]="ann.cta.external ? '_blank' : null"
               rel="noopener"
-              >{{ ann.cta.label }} <app-icon name="arrow"
-            /></a>
+              >{{ ann.cta.label }} <app-icon name="arrow" />@if (ann.cta.external) {
+                <span class="visually-hidden"> (opens in new tab)</span>
+              }</a
+            >
           </p>
           <button type="button" (click)="dismiss()" aria-label="Dismiss announcement">
             <app-icon name="close" />
@@ -107,6 +109,8 @@ export class Announcement {
 
   protected dismiss(): void {
     this.visible.set(false);
+    // The button disappears with the bar; hand keyboard focus to the next landmark.
+    document.querySelector<HTMLElement>('.bar .brand')?.focus();
     try {
       localStorage.setItem(KEY, this.ann.id);
     } catch {

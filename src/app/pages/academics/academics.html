@@ -1,5 +1,5 @@
 <app-page-hero
-  eyebrow="Academics"
+  crumb="Academics"
   title="ICSE and ISC, taught with care"
   [intro]="ac.intro"
   [image]="{
@@ -8,7 +8,7 @@
   }"
 />
 
-<nav class="subnav" aria-label="On this page">
+<nav class="subnav" appSubnav aria-label="On this page">
   <div class="container">
     <ul>
       <li><a routerLink="." fragment="stages">ICSE & ISC</a></li>
@@ -24,7 +24,6 @@
 <section id="stages" class="section" aria-labelledby="stages-title">
   <div class="container">
     <app-section-heading
-      eyebrow="The journey"
       title="One school, Nursery to Class XII"
       headingId="stages-title"
       intro="Affiliated to the Council for the Indian School Certificate Examinations, New Delhi. English is the medium of instruction throughout."
@@ -83,8 +82,7 @@
   <div class="container split">
     <div>
       <app-section-heading
-        eyebrow="How we teach"
-        title="Rigour with a human face"
+        title="How we teach"
         headingId="ped-title"
         intro="We have embraced the National Education Policy to give every child a holistic, future-ready education."
       />
@@ -112,8 +110,7 @@
 <section id="beyond" class="section" aria-labelledby="beyond-title">
   <div class="container">
     <app-section-heading
-      eyebrow="Beyond the classroom"
-      title="A well-rounded personality"
+      title="Beyond the classroom"
       headingId="beyond-title"
       intro="Sports, arts, clubs, competitions and community service are an integral part of the education we offer."
     />
@@ -159,7 +156,6 @@
   <div class="container">
     <div class="results__head">
       <app-section-heading
-        eyebrow="Results archive"
         title="Board toppers, year by year"
         headingId="results-title"
         intro="The top scorers of recent sessions in the ICSE and ISC examinations, as published by the school."
@@ -191,8 +187,7 @@
   <div class="container split">
     <div>
       <app-section-heading
-        eyebrow="Parent handbook"
-        title="Rules, rhythms and expectations"
+        title="Parent handbook"
         headingId="hb-title"
         intro="The handbook is a link between school and home. Here are the essentials."
       />
@@ -222,3 +217,8 @@
     </div>
   </div>
 </section>
+
+<app-next-steps
+  heading="See how your child would learn here"
+  text="Register online for admission, or book a visit to meet the teachers and see the classrooms and labs."
+/>

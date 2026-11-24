@@ -21,7 +21,7 @@ import { Icon } from '../icon/icon';
         [href]="whatsapp"
         target="_blank"
         rel="noopener"
-        aria-label="Chat with the school office on WhatsApp"
+        aria-label="Chat with the school office on WhatsApp (opens WhatsApp)"
       >
         <app-icon name="whatsapp" /><span>WhatsApp</span>
       </a>
@@ -102,10 +102,30 @@ export class FloatingContact {
   constructor() {
     const destroyRef = inject(DestroyRef);
     afterNextRender(() => {
-      const onScroll = () => this.visible.set(window.scrollY > window.innerHeight * 0.6);
-      onScroll();
-      window.addEventListener('scroll', onScroll, { passive: true });
-      destroyRef.onDestroy(() => window.removeEventListener('scroll', onScroll));
+      // Hidden while someone types in a form: on phones the bar would sit on top of the
+      // field, right above the on-screen keyboard.
+      let typing = false;
+      const isField = (t: EventTarget | null) =>
+        t instanceof HTMLElement && t.matches('input, textarea, select');
+      const update = () =>
+        this.visible.set(!typing && window.scrollY > window.innerHeight * 0.6);
+      const onFocusIn = (e: FocusEvent) => {
+        typing = isField(e.target);
+        update();
+      };
+      const onFocusOut = () => {
+        typing = false;
+        update();
+      };
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      document.addEventListener('focusin', onFocusIn);
+      document.addEventListener('focusout', onFocusOut);
+      destroyRef.onDestroy(() => {
+        window.removeEventListener('scroll', update);
+        document.removeEventListener('focusin', onFocusIn);
+        document.removeEventListener('focusout', onFocusOut);
+      });
     });
   }
   protected readonly whatsapp = `https://wa.me/${this.site.whatsapp.number}?text=${encodeURIComponent(

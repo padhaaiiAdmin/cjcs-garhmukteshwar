@@ -169,12 +169,30 @@
   opacity: 1;
   transform: none;
 }
+// Never print a section that has not scrolled into view yet
+@media print {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 
 // Chips (filters)
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: var(--sp-2);
+  @include down(md) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gutter));
+    padding-inline: var(--gutter);
+    scroll-padding-inline: var(--gutter);
+    > * {
+      flex: none;
+    }
+  }
 }
 .chip {
   border: 1px solid var(--c-line-strong);

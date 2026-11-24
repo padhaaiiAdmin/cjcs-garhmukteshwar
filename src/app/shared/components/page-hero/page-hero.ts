@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import type { ImageRef } from '../../../core/models/content.models';
 import { Picture } from '../picture/picture';
 import { Rich } from '../rich/rich';
@@ -6,11 +7,16 @@ import { Rich } from '../rich/rich';
 /** Editorial page opener used by every inner page. */
 @Component({
   selector: 'app-page-hero',
-  imports: [Picture, Rich],
+  imports: [Picture, Rich, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <header class="container head">
-      <p class="eyebrow">{{ eyebrow() }}</p>
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a routerLink="/">Home</a></li>
+          <li aria-current="page">{{ crumb() }}</li>
+        </ol>
+      </nav>
       <h1>{{ title() }}</h1>
       @if (intro()) {
         <p class="lead"><app-rich [text]="intro()" /></p>
@@ -44,10 +50,36 @@ import { Rich } from '../rich/rich';
         grid-template-columns: 7fr 5fr;
         column-gap: var(--grid-gap);
         align-items: end;
-        .eyebrow {
+        .crumbs {
           grid-column: 1 / -1;
         }
       }
+    }
+    .crumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: var(--fs-sm);
+      color: var(--c-ink-mute);
+    }
+    .crumbs li + li::before {
+      content: '/';
+      margin-right: 0.4rem;
+      color: var(--c-stone);
+    }
+    .crumbs a {
+      color: var(--c-primary);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .crumbs [aria-current] {
+      font-weight: 600;
+      color: var(--c-ink-soft);
     }
     h1 {
       font-size: var(--fs-display);
@@ -69,7 +101,8 @@ import { Rich } from '../rich/rich';
   `,
 })
 export class PageHero {
-  readonly eyebrow = input.required<string>();
+  /** This page's name in the "Home / …" breadcrumb. */
+  readonly crumb = input.required<string>();
   readonly title = input.required<string>();
   readonly intro = input('');
   readonly image = input<ImageRef | null>(null);

@@ -37,6 +37,8 @@ export class Header {
 
   private readonly menu = viewChild.required<ElementRef<HTMLDialogElement>>('menu');
   private hoverTimer: ReturnType<typeof setTimeout> | undefined;
+  /** When the open panel was last opened by hovering, so a follow-up click doesn't close it. */
+  private hoverOpenedAt = 0;
 
   constructor() {
     const destroyRef = inject(DestroyRef);
@@ -60,13 +62,22 @@ export class Header {
   }
 
   protected toggleMega(label: string): void {
+    clearTimeout(this.hoverTimer);
+    // A mouse user hovers (panel opens), then clicks the label: keep it open.
+    if (this.openMega() === label && Date.now() - this.hoverOpenedAt < 600) return;
     this.openMega.update((open) => (open === label ? null : label));
   }
 
   protected hoverMega(label: string | null): void {
     clearTimeout(this.hoverTimer);
     // Small grace period so the panel doesn't flicker when the pointer crosses gaps.
-    this.hoverTimer = setTimeout(() => this.openMega.set(label), label ? 80 : 220);
+    this.hoverTimer = setTimeout(
+      () => {
+        if (label && this.openMega() !== label) this.hoverOpenedAt = Date.now();
+        this.openMega.set(label);
+      },
+      label ? 80 : 220,
+    );
   }
 
   protected onMegaFocusOut(event: FocusEvent, host: HTMLElement): void {
@@ -74,6 +85,13 @@ export class Header {
   }
 
   closeMega(): void {
+    const open = this.openMega();
+    if (!open) return;
+    // Closing makes the panel inert; if focus is inside it, return it to the trigger first.
+    const panel = document.getElementById('mega-' + open);
+    if (panel?.contains(document.activeElement)) {
+      document.getElementById('trigger-' + open)?.focus();
+    }
     this.openMega.set(null);
   }
 

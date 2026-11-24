@@ -20,6 +20,8 @@ export interface EnquiryResult {
 @Injectable({ providedIn: 'root' })
 export class EnquiryService {
   private readonly http = inject(HttpClient);
+  /** No endpoint yet: enquiries can only reach the school by WhatsApp or phone. */
+  readonly isDemo = !environment.enquiryEndpoint;
 
   submit(enquiry: Enquiry): Observable<EnquiryResult> {
     const endpoint = environment.enquiryEndpoint;

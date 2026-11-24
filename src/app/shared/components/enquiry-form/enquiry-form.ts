@@ -2,6 +2,8 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  Injector,
+  afterNextRender,
   inject,
   input,
   signal,
@@ -49,6 +51,9 @@ export class EnquiryForm {
   private readonly fb = inject(NonNullableFormBuilder);
   private readonly api = inject(EnquiryService);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
+  private readonly injector = inject(Injector);
+  /** Without a form endpoint the form hands off to WhatsApp, so say so up front. */
+  protected readonly demoMode = this.api.isDemo;
   protected readonly site = inject(ContentService).site;
   protected readonly classes = inject(ContentService).admissions.classes;
   protected readonly id = `enq-${++uid}`;
@@ -65,20 +70,36 @@ export class EnquiryForm {
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(80),
-        Validators.pattern(/^[\p{L} .'-]+$/u),
+        // \p{M} keeps Devanagari vowel signs (e.g. "राम शर्मा"); "/" and "()" allow "S/o …"
+        Validators.pattern(/^[\p{L}\p{M} .'/()-]+$/u),
       ],
     ],
     phone: ['', [Validators.required, indianMobileValidator]],
     classApplying: ['', Validators.required],
+    preferredTime: ['', Validators.maxLength(80)],
     message: ['', Validators.maxLength(1000)],
     company: [''], // honeypot: real people never see or fill this
   });
 
   protected whatsappLink(): string {
     const v = this.form.getRawValue();
-    const text =
-      `Hello, I am ${this.submittedName()}. I have an enquiry${v.classApplying ? ` for ${v.classApplying}` : ''}. ${v.message}`.trim();
+    const name = this.submittedName() || v.parentName.trim();
+    const forClass =
+      v.classApplying && v.classApplying !== 'General enquiry' ? ` for ${v.classApplying}` : '';
+    const lines =
+      this.source() === 'visit'
+        ? [
+            `Campus visit request: I am ${name} and would like to visit the school${forClass}.`,
+            v.preferredTime.trim() ? `Preferred day/time: ${v.preferredTime.trim()}.` : '',
+          ]
+        : [`Hello, I am ${name}. I have an enquiry${forClass}.`];
+    if (v.message.trim()) lines.push(v.message.trim());
+    const text = lines.filter(Boolean).join('\n');
     return `https://wa.me/${this.site.whatsapp.number}?text=${encodeURIComponent(text)}`;
+  }
+
+  protected buttonLabel(): string {
+    return this.demoMode ? 'Continue on WhatsApp' : this.submitLabel();
   }
 
   protected show(name: keyof typeof this.form.controls): boolean {
@@ -91,7 +112,7 @@ export class EnquiryForm {
     switch (name) {
       case 'parentName':
         if (e['required']) return 'Please tell us your name.';
-        if (e['pattern']) return 'Please use letters only.';
+        if (e['pattern']) return 'Names can use letters, spaces and . \' - / ( ) only.';
         return 'Please enter your full name.';
       case 'phone':
         if (e['required']) return 'We need a number to call you back.';
@@ -137,7 +158,12 @@ export class EnquiryForm {
         parentName: v.parentName.trim(),
         phone: normaliseIndianMobile(v.phone),
         classApplying: v.classApplying,
-        message: v.message.trim(),
+        message: [
+          v.preferredTime.trim() ? `Preferred day/time: ${v.preferredTime.trim()}` : '',
+          v.message.trim(),
+        ]
+          .filter(Boolean)
+          .join('\n'),
         source: this.source(),
       })
       .subscribe({
@@ -147,8 +173,10 @@ export class EnquiryForm {
           const d = normaliseIndianMobile(v.phone);
           this.submittedPhone.set(`+91 ${d.slice(0, 5)} ${d.slice(5)}`);
           this.status.set('success');
-          queueMicrotask(() =>
-            this.host.nativeElement.querySelector<HTMLElement>('.success')?.focus(),
+          // The success panel only exists after the next render (zoneless); focus it then.
+          afterNextRender(
+            () => this.host.nativeElement.querySelector<HTMLElement>('.success')?.focus(),
+            { injector: this.injector },
           );
         },
         error: () => this.status.set('error'),

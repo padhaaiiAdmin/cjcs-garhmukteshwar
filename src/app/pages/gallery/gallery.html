@@ -1,5 +1,5 @@
 <app-page-hero
-  eyebrow="Gallery"
+  crumb="Gallery"
   title="School life, in pictures"
   intro="Celebrations, achievements and everyday moments from Christu Jyoti, gathered into albums by event and year."
 />
@@ -28,7 +28,7 @@
       <ul>
         @for (a of shown(); track a.id; let i = $index) {
           <li>
-            <a [href]="'#' + a.id" class="album-card">
+            <a [routerLink]="[]" [fragment]="a.id" class="album-card">
               <span class="album-card__img">
                 <app-picture
                   [id]="a.cover.id"
@@ -81,3 +81,8 @@
   </div>
   <app-lightbox [images]="lightboxImages()" [(index)]="open" />
 </section>
+
+<app-next-steps
+  heading="Come and see it in person"
+  text="Book a campus visit, or register online for admission."
+/>

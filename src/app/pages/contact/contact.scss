@@ -37,11 +37,17 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow);
   }
-  app-icon {
+  > app-icon {
     font-size: 1.5rem;
     color: var(--c-blue-700);
     margin-bottom: var(--sp-3);
   }
+}
+.way__hint app-icon {
+  display: inline-block;
+  vertical-align: -0.1em;
+  font-size: 0.9em;
+  margin-left: 0.15em;
 }
 .way__label {
   font-size: var(--fs-xs);
@@ -81,6 +87,27 @@
     border: 0;
     filter: saturate(0.85);
   }
+}
+.map__fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--sp-2);
+  margin: 0;
+  color: var(--c-ink-mute);
+  font-size: var(--fs-sm);
+  app-icon {
+    font-size: 1.5rem;
+    color: var(--c-gold-600);
+  }
+}
+.map__open {
+  position: absolute;
+  right: var(--sp-3);
+  bottom: var(--sp-3);
+  box-shadow: var(--shadow);
 }
 .hours h2 {
   font-size: var(--fs-xl);

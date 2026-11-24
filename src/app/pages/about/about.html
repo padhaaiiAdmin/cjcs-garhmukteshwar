@@ -1,5 +1,5 @@
 <app-page-hero
-  eyebrow="About the school"
+  crumb="About"
   title="Twenty-five years of light"
   [intro]="about.intro"
   [image]="{
@@ -9,7 +9,7 @@
   position="50% 40%"
 />
 
-<nav class="subnav" aria-label="On this page">
+<nav class="subnav" appSubnav aria-label="On this page">
   <div class="container">
     <ul>
       <li><a routerLink="." fragment="history">Brief History</a></li>
@@ -25,7 +25,6 @@
   <div class="container split split--sticky">
     <div>
       <app-section-heading
-        eyebrow="Brief history"
         title="A town’s hope, answered"
         headingId="history-title"
       />
@@ -54,8 +53,7 @@
 <!-- Motto -->
 <section class="motto band-dark" aria-labelledby="motto-title">
   <div class="container motto__inner">
-    <p class="eyebrow">Our motto</p>
-    <h2 id="motto-title" class="motto__words">
+    <h2 id="motto-title" class="motto__words" aria-label="Our motto: Wisdom, Life, Light">
       @for (w of about.motto.words; track w; let last = $last) {
         <span>{{ w }}</span>
         @if (!last) {
@@ -73,8 +71,7 @@
   <div class="container split">
     <div>
       <app-section-heading
-        eyebrow="Vision & mission"
-        title="What we stand for"
+        title="Vision & mission"
         headingId="vision-title"
       />
       <p class="vision"><app-rich [text]="about.vision" /></p>
@@ -105,8 +102,8 @@
     </div>
     <div>
       <app-section-heading
-        eyebrow="Management"
-        [title]="about.management.society"
+        title="Management"
+        [intro]="'The school is run by the ' + about.management.society + '.'"
         headingId="mgmt-title"
       />
       <div class="prose">
@@ -154,8 +151,8 @@
       </p>
     </aside>
     <article class="principal__letter">
-      <p class="eyebrow">Principal’s desk</p>
-      <h2 id="principal-title">“Let your light shine”</h2>
+      <h2 id="principal-title">From the Principal’s desk</h2>
+      <p class="principal__theme">“Let your light shine”</p>
       <p class="principal__greeting">{{ about.principal.greeting }}</p>
       <blockquote class="scripture">
         <p>{{ about.principal.scripture.text }}</p>
@@ -178,10 +175,9 @@
 <!-- Gratitude -->
 <section class="section section--paper section--tight" aria-labelledby="thanks-title">
   <div class="container container--narrow thanks">
-    <h2 id="thanks-title" class="eyebrow">With gratitude</h2>
+    <h2 id="thanks-title" class="thanks__title">With gratitude</h2>
     <p class="pull">{{ about.gratitude }}</p>
-    <a class="btn" routerLink="/admissions"
-      >Join the Christu Jyoti family <app-icon name="arrow"
-    /></a>
   </div>
 </section>
+
+<app-next-steps />

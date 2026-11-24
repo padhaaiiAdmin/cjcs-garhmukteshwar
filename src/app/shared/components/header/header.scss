@@ -121,11 +121,15 @@
   @media (max-width: 399.98px) {
     display: none;
   }
+  // Room for the full desktop nav until the bar is wide enough for both
+  @media (min-width: 1280px) and (max-width: 1439.98px) {
+    display: none;
+  }
 }
 .brand__sub {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--c-gold-600);
   white-space: nowrap;
@@ -501,4 +505,9 @@
     opacity: 0;
     transform: translateY(12px);
   }
+}
+
+// "You are here" in the full-screen menu
+.menu a.is-active {
+  color: var(--c-gold-300);
 }

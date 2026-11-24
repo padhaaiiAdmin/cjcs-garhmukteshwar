@@ -1,5 +1,5 @@
 <app-page-hero
-  eyebrow="Contact"
+  crumb="Contact"
   title="We’d love to hear from you"
   intro="Call, WhatsApp or write to the school office, or come and see the campus for yourself."
 />
@@ -16,10 +16,16 @@
         </a>
       </li>
       <li>
-        <a class="way" [href]="whatsapp" target="_blank" rel="noopener">
+        <a
+          class="way"
+          [href]="whatsapp"
+          target="_blank"
+          rel="noopener"
+          [attr.aria-label]="'WhatsApp the office on ' + site.phone.display + ' (opens WhatsApp)'"
+        >
           <app-icon name="whatsapp" />
           <span class="way__label">WhatsApp</span>
-          <span class="way__value">{{ site.phone.display }}</span>
+          <span class="way__value">Message the office</span>
           <span class="way__hint"><app-rich [text]="site.whatsapp.note" /></span>
         </a>
       </li>
@@ -32,19 +38,33 @@
         </a>
       </li>
       <li>
-        <a class="way" [href]="directions" target="_blank" rel="noopener">
+        <a
+          class="way"
+          [href]="directions"
+          target="_blank"
+          rel="noopener"
+          [attr.aria-label]="
+            'Directions to ' + site.address.line1 + ', ' + site.address.city + ' (opens Google Maps)'
+          "
+        >
           <app-icon name="pin" />
           <span class="way__label">Visit</span>
           <span class="way__value">{{ site.address.line1 }}, {{ site.address.city }}</span>
           <span class="way__hint"
-            >{{ site.address.state }} {{ site.address.postalCode }} · Directions ↗</span
-          >
+            >{{ site.address.state }} {{ site.address.postalCode }} · Get directions
+            <app-icon name="external"
+          /></span>
         </a>
       </li>
     </ul>
 
     <div class="info">
       <div class="map frame">
+        <!-- Shown until (or if) the embedded map loads -->
+        <p class="map__fallback">
+          <app-icon name="pin" />
+          <span>{{ site.address.line1 }}, {{ site.address.city }}</span>
+        </p>
         <iframe
           [src]="mapSrc"
           title="Map showing Christu Jyoti Convent School, Jyotinagar, Garhmukteshwar"
@@ -52,6 +72,11 @@
           referrerpolicy="no-referrer-when-downgrade"
           allowfullscreen
         ></iframe>
+        <a class="btn btn--sm map__open" [href]="directions" target="_blank" rel="noopener"
+          >Open in Google Maps <app-icon name="external" /><span class="visually-hidden">
+            (opens in new tab)</span
+          ></a
+        >
       </div>
       <div class="hours">
         <h2>Timings</h2>
@@ -92,8 +117,7 @@
   <div class="container visit">
     <div>
       <app-section-heading
-        eyebrow="Book a campus visit"
-        title="Come and see Christu Jyoti"
+        title="Book a campus visit"
         headingId="visit-title"
         intro="Tell us when suits you and which class you’re considering. The office will call to confirm a time."
       />
