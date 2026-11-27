@@ -1,3 +1,5 @@
+import { NextSteps } from '../../shared/components/next-steps/next-steps';
+import { RouterLink } from '@angular/router';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import type { Album, ImageRef } from '../../core/models/content.models';
 import { ContentService } from '../../core/services/content.service';
@@ -8,7 +10,7 @@ import { Rich } from '../../shared/components/rich/rich';
 
 @Component({
   selector: 'app-gallery',
-  imports: [Lightbox, PageHero, Picture, Rich],
+  imports: [Lightbox, PageHero, Picture, Rich, RouterLink, NextSteps],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './gallery.html',
   styleUrl: './gallery.scss',

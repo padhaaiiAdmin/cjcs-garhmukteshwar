@@ -187,10 +187,18 @@
 .principal__letter {
   max-width: var(--measure);
   h2 {
-    font-size: var(--fs-3xl);
-    font-style: italic;
-    font-weight: 350;
+    font-size: var(--fs-2xl);
+    margin-bottom: var(--sp-2);
   }
+}
+.principal__theme {
+  margin: 0 0 var(--sp-5);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 350;
+  font-size: var(--fs-xl);
+  line-height: 1.2;
+  color: var(--c-blue-700);
 }
 .principal__greeting {
   font-size: var(--fs-md);
@@ -234,12 +242,12 @@
   text-align: center;
   .pull {
     font-size: var(--fs-lg);
-    margin-bottom: var(--sp-6);
+    margin: 0;
   }
-  .eyebrow::after {
-    content: '';
-    width: 1.75rem;
-    height: 1px;
-    background: currentColor;
-  }
+}
+.thanks__title {
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--c-gold-600);
+  margin-bottom: var(--sp-4);
 }

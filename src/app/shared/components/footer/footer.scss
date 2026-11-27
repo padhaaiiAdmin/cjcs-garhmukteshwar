@@ -54,9 +54,12 @@
   display: grid;
   gap: var(--sp-7) var(--grid-gap);
   padding-block: var(--sp-7);
-  grid-template-columns: 1fr;
-  @include up(sm) {
-    grid-template-columns: 1fr 1fr;
+  // Two columns even on phones: the link lists are short, single column doubled the footer.
+  grid-template-columns: 1fr 1fr;
+  @include down(sm) {
+    > :nth-child(-n + 2) {
+      grid-column: 1 / -1;
+    }
   }
   @include up(lg) {
     grid-template-columns: 1.3fr 1.3fr 1fr 1.1fr 0.9fr;

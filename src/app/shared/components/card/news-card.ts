@@ -9,11 +9,11 @@ import { plain } from '../rich/rich';
   selector: 'app-news-card',
   imports: [RouterLink, Picture, DatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { '[class.is-feature]': 'feature()' },
+  host: { '[class.is-feature]': 'feature()', '[class.is-text]': '!item().image' },
   template: `
     <article>
-      <a class="media" [routerLink]="['/news', item().id]" tabindex="-1" aria-hidden="true">
-        @if (item().image; as img) {
+      @if (item().image; as img) {
+        <a class="media" [routerLink]="['/news', item().id]" tabindex="-1" aria-hidden="true">
           <app-picture
             [id]="img.id"
             [alt]="img.alt"
@@ -25,18 +25,8 @@ import { plain } from '../rich/rich';
                 : '(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw'
             "
           />
-        } @else {
-          <span class="placeholder">
-            <img
-              src="/assets/images/logo-240.webp"
-              alt=""
-              width="240"
-              height="207"
-              loading="lazy"
-            />
-          </span>
-        }
-      </a>
+        </a>
+      }
       <div class="body">
         <p class="meta">
           <span class="cat">{{ item().category }}</span>
@@ -76,16 +66,16 @@ import { plain } from '../rich/rich';
     article:hover .media ::ng-deep img {
       transform: scale(1.04);
     }
-    .placeholder {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
+    // No photo: a text card, rather than a pale crest that reads as a broken image.
+    :host(.is-text) article {
+      align-content: start;
+      padding: var(--sp-6);
       background: var(--c-paper);
-      img {
-        width: 34%;
-        opacity: 0.5;
-      }
+      border: 1px solid var(--c-line);
+      border-radius: var(--radius-lg);
+    }
+    :host(.is-text) h3 {
+      font-size: var(--fs-xl);
     }
     .meta {
       display: flex;

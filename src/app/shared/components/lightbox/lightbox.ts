@@ -27,8 +27,9 @@ import { Picture } from '../picture/picture';
       tabindex="-1"
       (close)="index.set(null)"
       (keydown)="onKey($event)"
-      (pointerdown)="startX = $event.clientX"
-      (pointerup)="onSwipe($event.clientX)"
+      (pointerdown)="onPointerDown($event)"
+      (pointerup)="onSwipe($event)"
+      (pointercancel)="pointers = 0"
       (click)="onBackdrop($event)"
     >
       @if (current(); as img) {
@@ -72,7 +73,7 @@ import { Picture } from '../picture/picture';
       background: #081228;
       color: var(--c-snow);
       overscroll-behavior: contain;
-      touch-action: pan-y;
+      touch-action: pan-y pinch-zoom;
       &::backdrop {
         background: rgb(8 18 40 / 80%);
       }
@@ -171,6 +172,9 @@ export class Lightbox {
     return i === null ? null : (this.images()[i] ?? null);
   });
   protected startX = 0;
+  /** Pointers currently down: a two-finger pinch must never count as a swipe. */
+  protected pointers = 0;
+  private multiTouch = false;
 
   constructor() {
     effect(() => {
@@ -191,8 +195,20 @@ export class Lightbox {
     if (e.key === 'ArrowLeft') this.step(-1);
   }
 
-  protected onSwipe(endX: number): void {
-    const dx = endX - this.startX;
+  protected onPointerDown(e: PointerEvent): void {
+    this.pointers++;
+    if (this.pointers > 1) this.multiTouch = true;
+    if (e.isPrimary) this.startX = e.clientX;
+  }
+
+  protected onSwipe(e: PointerEvent): void {
+    this.pointers = Math.max(0, this.pointers - 1);
+    const zoomed = (window.visualViewport?.scale ?? 1) > 1.01;
+    const wasPinch = this.multiTouch;
+    if (this.pointers === 0) this.multiTouch = false;
+    // Parents zoom into group photos to find their child: no swiping while pinching or zoomed.
+    if (!e.isPrimary || wasPinch || zoomed) return;
+    const dx = e.clientX - this.startX;
     if (Math.abs(dx) > 50) this.step(dx < 0 ? 1 : -1);
   }
 

@@ -1,3 +1,4 @@
+import { SubnavDirective } from '../../shared/directives/subnav.directive';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../core/services/content.service';
@@ -24,6 +25,7 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
     SectionHeading,
     Stepper,
     RevealDirective,
+    SubnavDirective,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './admissions.html',

@@ -1,5 +1,5 @@
 <app-page-hero
-  eyebrow="Campus & boarding"
+  crumb="Campus & boarding"
   title="Room to learn, room to grow"
   [intro]="fac.intro"
   [image]="{
@@ -9,7 +9,7 @@
   position="50% 60%"
 />
 
-<nav class="subnav" aria-label="On this page">
+<nav class="subnav" appSubnav aria-label="On this page">
   <div class="container">
     <ul>
       <li><a routerLink="." fragment="facilities">Facilities</a></li>
@@ -24,7 +24,6 @@
 <section id="facilities" class="section" aria-labelledby="fac-title">
   <div class="container">
     <app-section-heading
-      eyebrow="Facilities"
       title="Everything a full school day needs"
       headingId="fac-title"
     />
@@ -73,7 +72,6 @@
     />
   </div>
   <div class="boarding__text">
-    <p class="eyebrow">{{ fac.boarding.title }}</p>
     <h2 id="boarding-title">{{ fac.boarding.lead }}</h2>
     @for (p of fac.boarding.text; track $index) {
       <p>{{ p }}</p>
@@ -93,8 +91,7 @@
   <div class="container split">
     <div>
       <app-section-heading
-        eyebrow="Safety & care"
-        title="Calm, ordered and watched over"
+        title="Safety & care"
         headingId="safety-title"
         intro="Parents entrust us with their children. These are the safeguards we keep."
       />
@@ -113,8 +110,7 @@
 <section id="service" class="section section--paper" aria-labelledby="service-title">
   <div class="container">
     <app-section-heading
-      eyebrow="Humanitarian service"
-      title="The rent we pay for our room on this earth"
+      title="Humanitarian service"
       headingId="service-title"
       intro="Service to others is part of what a Christu Jyoti education means."
     />
@@ -140,14 +136,14 @@
 <section id="photos" class="section" aria-labelledby="photos-title">
   <div class="container">
     <div class="filters">
-      <app-section-heading eyebrow="Around campus" title="Take a look" headingId="photos-title" />
+      <app-section-heading title="Around campus" headingId="photos-title" />
       <div class="chips" role="group" aria-label="Filter photos">
         @for (c of categories; track c) {
           <button
             type="button"
             class="chip"
             [attr.aria-pressed]="filter() === c"
-            (click)="filter.set(c)"
+            (click)="filter.set(c); expanded.set(false)"
           >
             {{ c }}
           </button>
@@ -155,8 +151,8 @@
       </div>
     </div>
     <p class="count" aria-live="polite">{{ shown().length }} photos</p>
-    <ul class="masonry photos">
-      @for (g of shown(); track g.id; let i = $index) {
+    <ul class="masonry photos" id="campus-photos">
+      @for (g of expanded() ? shown() : shown().slice(0, preview); track g.id; let i = $index) {
         <li>
           <button
             type="button"
@@ -173,6 +169,24 @@
         </li>
       }
     </ul>
+    <div class="photos__more">
+      @if (shown().length > preview && !expanded()) {
+        <button
+          type="button"
+          class="btn btn--ghost"
+          aria-controls="campus-photos"
+          (click)="expanded.set(true)"
+        >
+          Show all {{ shown().length }} photos
+        </button>
+      }
+      <a class="link-arrow" routerLink="/gallery">Visit the full gallery <app-icon name="arrow" /></a>
+    </div>
     <app-lightbox [images]="shown()" [(index)]="open" />
   </div>
 </section>
+
+<app-next-steps
+  heading="Walk the campus with us"
+  text="Book a visit to see the classrooms, labs, grounds and boarding, or register online for admission."
+/>

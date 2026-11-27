@@ -1,21 +1,24 @@
 @if (status() === 'success') {
   <div class="success" tabindex="-1" role="status">
     <span class="success__icon"><app-icon name="check" /></span>
-    <h3>Thank you, {{ submittedName() }}.</h3>
     @if (demo()) {
+      <h3>One more step, {{ submittedName() }}</h3>
       <p>
-        Your details are ready. To make sure the school office receives them, please send them on
-        WhatsApp too. It takes one tap.
+        Your message is ready. Tap <strong>Send on WhatsApp</strong> to deliver it to the school
+        office. Nothing is sent until you do.
       </p>
       <div class="success__actions">
         <a class="btn" [href]="whatsappLink()" target="_blank" rel="noopener"
-          ><app-icon name="whatsapp" /> Send on WhatsApp</a
+          ><app-icon name="whatsapp" /> Send on WhatsApp<span class="visually-hidden">
+            (opens WhatsApp)</span
+          ></a
         >
         <a class="btn btn--ghost" [href]="'tel:' + site.phone.tel"
           ><app-icon name="phone" /> Call {{ site.phone.display }}</a
         >
       </div>
     } @else {
+      <h3>Thank you, {{ submittedName() }}.</h3>
       <p>
         We’ve received your enquiry. The school office will call you on
         <strong>{{ submittedPhone() }}</strong> during office hours ({{ site.officeHours }}).
@@ -95,12 +98,30 @@
       }
     </div>
 
+    @if (source() === 'visit') {
+      <div class="field field--full">
+        <label [for]="id + '-when'">Preferred day and time <span class="opt">(optional)</span></label>
+        <input
+          [id]="id + '-when'"
+          type="text"
+          formControlName="preferredTime"
+          maxlength="80"
+          placeholder="e.g. Saturday morning"
+          [attr.aria-describedby]="id + '-when-hint'"
+        />
+        <p class="hint" [id]="id + '-when-hint'">
+          The office is open {{ site.officeHours }}; we’ll confirm a time with you.
+        </p>
+      </div>
+    }
+
     <div class="field field--full" [class.has-error]="show('message')">
       <label [for]="id + '-msg'">Message <span class="opt">(optional)</span></label>
       <textarea
         [id]="id + '-msg'"
         formControlName="message"
         rows="4"
+        maxlength="1000"
         [attr.aria-invalid]="show('message')"
         [attr.aria-describedby]="show('message') ? id + '-msg-err' : null"
       ></textarea>
@@ -110,20 +131,22 @@
     </div>
 
     <div class="hp" aria-hidden="true">
-      <label [for]="id + '-company'">Company</label>
+      <!-- Spam trap: a neutral label so browsers never autofill it for real parents -->
+      <label [for]="id + '-hpx'">Leave this field empty</label>
       <input
-        [id]="id + '-company'"
+        [id]="id + '-hpx'"
         type="text"
         formControlName="company"
         tabindex="-1"
-        autocomplete="off"
+        autocomplete="new-password"
       />
     </div>
 
     @if (status() === 'error') {
       <p class="form-error" role="alert">
-        Sorry, we couldn’t send that just now. Please try again, or call us on
-        <a [href]="'tel:' + site.phone.tel">{{ site.phone.display }}</a>.
+        Sorry, we couldn’t send that just now. Please try again, call us on
+        <a [href]="'tel:' + site.phone.tel">{{ site.phone.display }}</a>, or
+        <a [href]="whatsappLink()" target="_blank" rel="noopener">send it on WhatsApp</a>.
       </p>
     }
 
@@ -132,10 +155,15 @@
         @if (status() === 'submitting') {
           Sending…
         } @else {
-          {{ submitLabel() }} <app-icon name="arrow" />
+          {{ buttonLabel() }} <app-icon [name]="demoMode ? 'whatsapp' : 'arrow'" />
         }
       </button>
-      <p class="privacy">We use your details only to respond to this enquiry.</p>
+      <p class="privacy">
+        @if (demoMode) {
+          Next, you’ll send your message to the school office on WhatsApp.
+        }
+        We use your details only to respond to this enquiry.
+      </p>
     </div>
   </form>
 }

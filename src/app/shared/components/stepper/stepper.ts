@@ -83,7 +83,8 @@ import { Rich } from '../rich/rich';
     p {
       margin: 0;
       color: var(--c-text-soft);
-      font-size: var(--fs-sm);
+      font-size: var(--fs-base);
+      max-width: 34ch;
     }
     :host(.is-light) {
       .num {

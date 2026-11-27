@@ -1,16 +1,18 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ContentService } from '../../core/services/content.service';
 import { NewsCard } from '../../shared/components/card/news-card';
+import { NextSteps } from '../../shared/components/next-steps/next-steps';
 import { PageHero } from '../../shared/components/page-hero/page-hero';
 import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-news',
-  imports: [NewsCard, PageHero, RevealDirective],
+  imports: [NewsCard, PageHero, RevealDirective, NextSteps],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <app-page-hero
-      eyebrow="News & events"
+      crumb="News & events"
       title="What’s happening at school"
       intro="Results, celebrations, notices and events from the Christu Jyoti community."
     />
@@ -23,8 +25,8 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
               <button
                 type="button"
                 class="chip"
-                [attr.aria-pressed]="category() === c"
-                (click)="category.set(c)"
+                [attr.aria-pressed]="active() === c"
+                (click)="choose(c)"
               >
                 {{ c }}
               </button>
@@ -44,6 +46,7 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
         </div>
       </div>
     </section>
+    <app-next-steps />
   `,
   styles: `
     @use 'mixins' as *;
@@ -70,8 +73,19 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 export class NewsPage {
   private readonly news = inject(ContentService).news;
   protected readonly categories = ['All', ...new Set(this.news.map((n) => n.category))];
-  protected readonly category = signal('All');
+  private readonly router = inject(Router);
+  /** ?category=… so a filtered list survives opening a story and coming back, and can be shared. */
+  readonly category = input('');
+  protected readonly active = computed(() =>
+    this.categories.includes(this.category()) ? this.category() : 'All',
+  );
+  protected choose(c: string): void {
+    this.router.navigate([], {
+      queryParams: { category: c === 'All' ? null : c },
+      replaceUrl: true,
+    });
+  }
   protected readonly shown = computed(() =>
-    this.category() === 'All' ? this.news : this.news.filter((n) => n.category === this.category()),
+    this.active() === 'All' ? this.news : this.news.filter((n) => n.category === this.active()),
   );
 }

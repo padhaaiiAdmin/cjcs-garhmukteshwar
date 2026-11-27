@@ -53,21 +53,14 @@
     padding-right: 30%;
   }
 }
-.hero__eyebrow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.7rem;
-  @include eyebrow;
-  color: var(--c-sky-300);
-  margin-bottom: var(--sp-5);
-}
 .hero__title {
-  font-size: var(--fs-display);
+  // A full sentence, so capped below the display size kept for one-line titles
+  font-size: clamp(2.5rem, 1.6rem + 3.4vw, 4.5rem);
   font-weight: 350;
   line-height: 1.04;
   letter-spacing: -0.025em;
   color: var(--c-snow);
-  max-width: 17ch;
+  max-width: 20ch;
   margin-bottom: var(--sp-5);
   text-shadow: 0 2px 30px rgb(10 26 58 / 30%);
 }
@@ -87,6 +80,20 @@
       flex: 1 1 100%;
     }
   }
+}
+.hero__creds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+  max-width: 34rem;
+  margin: var(--sp-6) 0 0;
+  padding-top: var(--sp-4);
+  border-top: 1px solid rgb(255 253 249 / 22%);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(255 253 249 / 88%);
 }
 .hero__motto {
   position: absolute;
@@ -227,7 +234,11 @@
   font-size: var(--fs-md);
 }
 
-// ═══ Values ═════════════════════════════════════════════════
+// ═══ Values: the page's dark peak ═══════════════════════════
+.values {
+  background: var(--c-blue-900);
+  color: rgb(255 253 249 / 78%);
+}
 .values__head {
   @include up(lg) {
     grid-column: 1 / span 4;
@@ -239,7 +250,7 @@
 .values__media {
   position: relative;
   aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   display: none;
   @include up(lg) {
@@ -259,23 +270,29 @@
     grid-column: 6 / -1;
   }
   li {
-    padding: var(--sp-6) 0;
-    border-top: 1px solid var(--c-line-strong);
+    padding: var(--sp-5) 0 var(--sp-7);
+    border-top: 1px solid rgb(255 253 249 / 16%);
   }
   h3 {
     font-size: var(--fs-lg);
-    margin: var(--sp-3) 0 var(--sp-3);
+    color: var(--c-snow);
+    margin: var(--sp-4) 0 var(--sp-3);
   }
   p {
     margin: 0;
-    color: var(--c-text-soft);
+    max-width: 34ch;
+    color: rgb(255 253 249 / 74%);
   }
 }
 .values__num {
+  display: block;
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: var(--fs-md);
-  color: var(--c-gold-600);
+  font-weight: 300;
+  font-size: var(--fs-3xl);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--c-gold-300);
 }
 
 // ═══ Section heads with side link ═══════════════════════════
@@ -295,9 +312,31 @@
   }
 }
 
+// ═══ Toppers: raised podium (home only) ═════════════════════
+.toppers ::ng-deep .podium {
+  .card {
+    gap: var(--sp-4);
+    padding: var(--sp-3);
+    background: var(--c-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+  }
+  .card__photo {
+    border-radius: calc(var(--radius-lg) - 4px);
+  }
+  .card__body {
+    padding: 0 var(--sp-3) var(--sp-3);
+  }
+  > li:first-child .card__rank {
+    background: var(--c-gold-300);
+    color: var(--c-blue-950);
+  }
+}
+
 // ═══ Principal ══════════════════════════════════════════════
 .principal {
-  padding-bottom: var(--section-y);
+  padding-block: var(--section-y);
+  background: var(--c-paper);
 }
 .principal__grid {
   display: grid;
@@ -312,7 +351,8 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
   @include up(lg) {
     aspect-ratio: 4 / 4.4;
   }
@@ -321,9 +361,18 @@
   blockquote {
     position: relative;
     margin: 0 0 var(--sp-6);
+    &::before {
+      content: '“';
+      display: block;
+      height: 0.55em;
+      font-family: var(--font-serif);
+      font-size: clamp(6rem, 4rem + 6vw, 9rem);
+      line-height: 1;
+      color: var(--c-gold-500);
+    }
     p {
       font-family: var(--font-serif);
-      font-size: var(--fs-xl);
+      font-size: clamp(1.7rem, 1.25rem + 1.5vw, 2.5rem);
       font-weight: 350;
       line-height: 1.35;
       color: var(--c-blue-900);
@@ -456,6 +505,36 @@
   }
 }
 
+.news__grid ::ng-deep article {
+  gap: var(--sp-5);
+  align-content: start;
+  overflow: hidden;
+  background: var(--c-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow var(--dur) var(--ease),
+    translate var(--dur) var(--ease);
+  .media {
+    border-radius: 0;
+  }
+  .body {
+    padding: 0 var(--sp-5) var(--sp-6);
+  }
+}
+.news__grid ::ng-deep app-news-card.is-text article {
+  border: 0;
+  .body {
+    padding-top: var(--sp-2);
+  }
+  &:hover {
+    box-shadow: var(--shadow);
+    @include motion {
+      translate: 0 -4px;
+    }
+  }
+}
+
 // ═══ Admissions band ════════════════════════════════════════
 .admit {
   position: relative;
@@ -479,7 +558,13 @@
   gap: var(--sp-8);
   @include up(lg) {
     grid-template-columns: 6fr 6fr;
-    align-items: end;
+    align-items: center;
+  }
+  ::ng-deep app-stepper.is-light .num {
+    background: var(--c-gold-300);
+    border-color: var(--c-gold-300);
+    color: var(--c-blue-950);
+    font-weight: 500;
   }
 }
 .admit__lead {

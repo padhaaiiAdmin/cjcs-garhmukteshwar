@@ -1,5 +1,5 @@
 <app-page-hero
-  eyebrow="Admissions"
+  crumb="Admissions"
   title="Open to every earnest learner"
   [intro]="adm.intro"
   [image]="{
@@ -16,7 +16,7 @@
   </div>
 </app-page-hero>
 
-<nav class="subnav" aria-label="On this page">
+<nav class="subnav" appSubnav aria-label="On this page">
   <div class="container">
     <ul>
       <li><a routerLink="." fragment="process">How to apply</a></li>
@@ -31,10 +31,9 @@
 <section id="process" class="section" aria-labelledby="process-title">
   <div class="container">
     <app-section-heading
-      eyebrow="How to apply"
       title="Four steps to Christu Jyoti"
       headingId="process-title"
-      intro="Our office is open 9:00 AM – 1:00 PM to guide you through every step."
+      [intro]="'Our office is open ' + site.officeHours + ' to guide you through every step.'"
     />
     <app-stepper [steps]="adm.steps" />
     <div class="portal panel panel--paper" appReveal>
@@ -43,8 +42,10 @@
         <p>Register on the school’s admission portal. It takes a few minutes on any phone.</p>
       </div>
       <a appButton [href]="site.portals.registration" target="_blank" rel="noopener"
-        >Open the registration portal <app-icon name="external"
-      /></a>
+        >Register online <app-icon name="external" /><span class="visually-hidden">
+          (opens in new tab)</span
+        ></a
+      >
     </div>
   </div>
 </section>
@@ -52,14 +53,14 @@
 <section id="eligibility" class="section section--paper" aria-labelledby="elig-title">
   <div class="container split">
     <div>
-      <app-section-heading eyebrow="Eligibility" title="Who can apply" headingId="elig-title" />
-    </div>
-    <div class="elig">
+      <app-section-heading title="Who can apply" headingId="elig-title" />
       <ul class="ticks big">
         @for (e of adm.eligibility; track e) {
           <li>{{ e }}</li>
         }
       </ul>
+    </div>
+    <div class="elig">
       <table class="kv">
         <caption>
           Age norms
@@ -87,15 +88,16 @@
   <div class="container">
     <div class="docs">
       <div>
-        <app-section-heading eyebrow="Documents" title="What to bring" headingId="docs-title" />
+        <app-section-heading title="Documents to bring" headingId="docs-title" />
         <ul class="ticks">
           @for (d of adm.documents; track d) {
             <li><app-rich [text]="d" /></li>
           }
         </ul>
       </div>
-      <div>
-        <app-section-heading eyebrow="Key dates" title="When" [level]="2" />
+      <div class="docs__side">
+        <div>
+        <app-section-heading title="Key dates" [level]="2" />
         <table class="kv">
           <caption class="visually-hidden">
             Admission dates
@@ -109,10 +111,11 @@
             }
           </tbody>
         </table>
-      </div>
-      <div>
-        <app-section-heading eyebrow="Fees" title="Fees & concessions" [level]="2" />
-        <p class="muted"><app-rich [text]="adm.feesNote" /></p>
+        </div>
+        <div>
+          <app-section-heading title="Fees & concessions" [level]="2" />
+          <p class="muted"><app-rich [text]="adm.feesNote" /></p>
+        </div>
       </div>
     </div>
   </div>
@@ -122,8 +125,7 @@
   <div class="container split">
     <div>
       <app-section-heading
-        eyebrow="Questions"
-        title="What parents ask us"
+        title="Questions parents ask"
         headingId="faq-title"
         intro="Can’t find your answer? Call the office or send us a message below."
       />
@@ -136,7 +138,6 @@
   <div class="container split">
     <div>
       <app-section-heading
-        eyebrow="Enquire"
         title="Talk to our admissions office"
         headingId="enq-title"
         intro="Leave your number and we’ll call you back during office hours."

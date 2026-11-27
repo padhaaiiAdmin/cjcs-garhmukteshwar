@@ -1,3 +1,5 @@
+import { NextSteps } from '../../shared/components/next-steps/next-steps';
+import { SubnavDirective } from '../../shared/directives/subnav.directive';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../core/services/content.service';
@@ -11,7 +13,7 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
 
 @Component({
   selector: 'app-facilities',
-  imports: [RouterLink, Icon, Lightbox, PageHero, Picture, Rich, SectionHeading, RevealDirective],
+  imports: [RouterLink, Icon, Lightbox, PageHero, Picture, Rich, SectionHeading, RevealDirective, SubnavDirective, NextSteps],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './facilities.html',
   styleUrl: './facilities.scss',
@@ -24,6 +26,9 @@ export class FacilitiesPage {
 
   protected readonly categories = ['All', ...new Set(this.fac.gallery.map((g) => g.category))];
   protected readonly filter = signal('All');
+  /** Show a taste of the campus here; the full set lives on the Gallery page. */
+  protected readonly preview = 8;
+  protected readonly expanded = signal(false);
   protected readonly shown = computed(() =>
     this.filter() === 'All'
       ? this.fac.gallery

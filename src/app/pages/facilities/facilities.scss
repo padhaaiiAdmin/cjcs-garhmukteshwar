@@ -77,3 +77,11 @@
   margin: 0;
   padding: 0;
 }
+
+.photos__more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-4) var(--sp-6);
+  margin-top: var(--sp-6);
+}

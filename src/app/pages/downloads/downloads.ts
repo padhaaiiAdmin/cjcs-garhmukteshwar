@@ -1,4 +1,15 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { NextSteps } from '../../shared/components/next-steps/next-steps';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  computed,
+  effect,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
+import { Router } from '@angular/router';
 import type { DownloadItem } from '../../core/models/content.models';
 import { ContentService } from '../../core/services/content.service';
 import { Icon } from '../../shared/components/icon/icon';
@@ -7,7 +18,7 @@ import { Rich } from '../../shared/components/rich/rich';
 
 @Component({
   selector: 'app-downloads',
-  imports: [Icon, PageHero, Rich],
+  imports: [Icon, PageHero, Rich, NextSteps],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './downloads.html',
   styleUrl: './downloads.scss',
@@ -24,8 +35,17 @@ export class DownloadsPage {
     ...new Set(this.items.map((i) => i.subject)),
   ].filter((s, i, arr) => arr.indexOf(s) === i);
 
-  protected readonly kind = signal('All');
-  protected readonly klass = signal('All classes');
+  /** Only offer a subject filter once files are actually split by subject. */
+  protected readonly showSubject = this.subjects.length > 3;
+
+  /** ?class=…&type=… so a teacher can share "Class V homework" as one link. */
+  readonly class = input('');
+  readonly type = input('');
+  protected readonly kind = computed(() => (this.kinds.includes(this.type()) ? this.type() : 'All'));
+  protected readonly klass = computed(() =>
+    this.classes.includes(this.class()) ? this.class() : 'All classes',
+  );
+  private readonly router = inject(Router);
   protected readonly subject = signal('All subjects');
   protected readonly query = signal('');
 
@@ -45,9 +65,30 @@ export class DownloadsPage {
     return i.sizeKb >= 1024 ? `${(i.sizeKb / 1024).toFixed(1)} MB` : `${i.sizeKb} KB`;
   }
 
+  /** Announce the result count once typing pauses, not on every keystroke. */
+  protected readonly announced = signal('');
+
+  constructor() {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    inject(DestroyRef).onDestroy(() => clearTimeout(timer));
+    effect(() => {
+      const n = this.shown().length;
+      clearTimeout(timer);
+      timer = setTimeout(() => this.announced.set(`${n} ${n === 1 ? 'file' : 'files'}`), 600);
+    });
+  }
+
+  protected setFilter(key: 'class' | 'type', v: string): void {
+    const blank = key === 'class' ? v === 'All classes' : v === 'All';
+    this.router.navigate([], {
+      queryParams: { [key]: blank ? null : v },
+      queryParamsHandling: 'merge',
+      replaceUrl: true,
+    });
+  }
+
   protected reset(): void {
-    this.kind.set('All');
-    this.klass.set('All classes');
+    this.router.navigate([], { queryParams: {}, replaceUrl: true });
     this.subject.set('All subjects');
     this.query.set('');
   }

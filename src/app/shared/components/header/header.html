@@ -12,15 +12,15 @@
     </ul>
     <ul class="utility__portals">
       <li>
-        <a [href]="site.portals.staffLogin" target="_blank" rel="noopener">Staff Login</a>
+        <a [href]="site.portals.staffLogin" target="_blank" rel="noopener">Staff Login<span class="visually-hidden"> (opens in new tab)</span></a>
       </li>
       <li>
-        <a [href]="site.portals.parentLogin" target="_blank" rel="noopener">Parent Login</a>
+        <a [href]="site.portals.parentLogin" target="_blank" rel="noopener">Parent Login<span class="visually-hidden"> (opens in new tab)</span></a>
       </li>
       <li>
         <a [href]="site.portals.registration" target="_blank" rel="noopener"
-          >Online Registration<app-icon name="external"
-        /></a>
+          >Register online<app-icon name="external" /><span class="visually-hidden"> (opens in new tab)</span></a
+        >
       </li>
     </ul>
   </div>
@@ -59,6 +59,7 @@
                 [class.is-open]="openMega() === item.label"
                 [attr.aria-expanded]="openMega() === item.label"
                 [attr.aria-controls]="'mega-' + item.label"
+                [id]="'trigger-' + item.label"
                 [class.is-active]="isActive(item)"
                 (click)="toggleMega(item.label)"
               >
@@ -74,14 +75,18 @@
                   <div class="mega__intro">
                     <p class="eyebrow">{{ item.label }}</p>
                     <p class="mega__title">{{ item.description }}</p>
-                    <a class="link-arrow" [routerLink]="item.path"
+                    <a class="link-arrow" [routerLink]="item.path" (click)="closeMega()"
                       >{{ item.label }} overview <app-icon name="arrow"
                     /></a>
                   </div>
                   <ul class="mega__links">
                     @for (child of item.children; track child.label) {
                       <li>
-                        <a [routerLink]="child.path" [fragment]="child.fragment">
+                        <a
+                          [routerLink]="child.path"
+                          [fragment]="child.fragment"
+                          (click)="closeMega()"
+                        >
                           <span class="mega__label">{{ child.label }}</span>
                           <span class="mega__desc">{{ child.description }}</span>
                         </a>
@@ -127,13 +132,19 @@
       </button>
     </div>
   </div>
-  <div class="scrim" [class.is-open]="openMega()" aria-hidden="true" (click)="closeMega()"></div>
+  <div
+    class="scrim"
+    [class.is-open]="openMega()"
+    aria-hidden="true"
+    (click)="closeMega()"
+    (mouseenter)="hoverMega(null)"
+  ></div>
 </header>
 
 <!-- Full-screen menu (mobile & tablet) -->
 <dialog #menu class="menu" aria-label="Site menu" (close)="onMenuClosed()">
   <div class="menu__top">
-    <a class="brand brand--light" routerLink="/" aria-label="Home">
+    <a class="brand brand--light" routerLink="/" aria-label="Home" (click)="closeMenu()">
       <img
         class="brand__crest"
         src="/assets/images/logo-240.webp"
@@ -148,31 +159,63 @@
         >
       </span>
     </a>
-    <button type="button" class="menu__close" (click)="closeMenu()" aria-label="Close menu">
+    <button
+      type="button"
+      class="menu__close"
+      (click)="closeMenu()"
+      aria-label="Close menu"
+      autofocus
+    >
       <app-icon name="close" />
     </button>
   </div>
   <nav aria-label="Main (mobile)">
     <ul class="menu__list">
-      <li><a routerLink="/" class="menu__link">Home</a></li>
+      <li>
+        <a
+          routerLink="/"
+          class="menu__link"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page"
+          (click)="closeMenu()"
+          >Home</a
+        >
+      </li>
       @for (item of nav; track trackNav(item); let i = $index) {
         <li [style.--i]="i + 1">
           @if (item.children) {
-            <details class="menu__group">
+            <details class="menu__group" [open]="isActive(item)">
               <summary class="menu__link">{{ item.label }}<app-icon name="chevron" /></summary>
               <ul>
                 <li>
-                  <a [routerLink]="item.path">{{ item.label }} overview</a>
+                  <a
+                    [routerLink]="item.path"
+                    routerLinkActive="is-active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    ariaCurrentWhenActive="page"
+                    (click)="closeMenu()"
+                    >{{ item.label }} overview</a
+                  >
                 </li>
                 @for (child of item.children; track child.label) {
                   <li>
-                    <a [routerLink]="child.path" [fragment]="child.fragment">{{ child.label }}</a>
+                    <a [routerLink]="child.path" [fragment]="child.fragment" (click)="closeMenu()">{{
+                      child.label
+                    }}</a>
                   </li>
                 }
               </ul>
             </details>
           } @else {
-            <a [routerLink]="item.path" class="menu__link">{{ item.label }}</a>
+            <a
+              [routerLink]="item.path"
+              class="menu__link"
+              routerLinkActive="is-active"
+              ariaCurrentWhenActive="page"
+              (click)="closeMenu()"
+              >{{ item.label }}</a
+            >
           }
         </li>
       }
@@ -180,15 +223,15 @@
   </nav>
   <div class="menu__foot">
     <a class="btn btn--gold" [href]="site.portals.registration" target="_blank" rel="noopener"
-      >Online Registration <app-icon name="external"
-    /></a>
+      >Register online <app-icon name="external" /><span class="visually-hidden"> (opens in new tab)</span></a
+    >
     <a class="btn btn--ghost-light" [href]="'tel:' + site.phone.tel"
       ><app-icon name="phone" /> {{ site.phone.display }}</a
     >
     <p class="menu__portals">
-      <a [href]="site.portals.staffLogin" target="_blank" rel="noopener">Staff Login</a>
+      <a [href]="site.portals.staffLogin" target="_blank" rel="noopener">Staff Login<span class="visually-hidden"> (opens in new tab)</span></a>
       <span aria-hidden="true">·</span>
-      <a [href]="site.portals.parentLogin" target="_blank" rel="noopener">Parent Login</a>
+      <a [href]="site.portals.parentLogin" target="_blank" rel="noopener">Parent Login<span class="visually-hidden"> (opens in new tab)</span></a>
     </p>
   </div>
 </dialog>

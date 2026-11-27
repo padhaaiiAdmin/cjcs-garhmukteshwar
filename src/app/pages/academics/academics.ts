@@ -1,3 +1,5 @@
+import { NextSteps } from '../../shared/components/next-steps/next-steps';
+import { SubnavDirective } from '../../shared/directives/subnav.directive';
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ContentService } from '../../core/services/content.service';
@@ -22,6 +24,8 @@ import { RevealDirective } from '../../shared/directives/reveal.directive';
     SectionHeading,
     Toppers,
     RevealDirective,
+    SubnavDirective,
+    NextSteps,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './academics.html',

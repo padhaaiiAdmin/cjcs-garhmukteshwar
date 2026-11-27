@@ -1,5 +1,5 @@
 <app-page-hero
-  eyebrow="Downloads"
+  crumb="Downloads"
   title="Homework, forms & documents"
   intro="Find holiday homework for your child’s class and other school documents. All files are PDFs and open on any phone."
 />
@@ -10,63 +10,74 @@
     <p class="note"><app-rich [text]="note" /></p>
 
     <div class="toolbar" role="search">
+      <div class="selects">
+        <label class="field-label">
+          <span>Your child’s class</span>
+          <select [value]="klass()" (change)="setFilter('class', value($event))">
+            @for (c of classes; track c) {
+              <option [value]="c">{{ c === 'All' ? 'General (all classes)' : c }}</option>
+            }
+          </select>
+        </label>
+        @if (showSubject) {
+          <label class="field-label">
+            <span>Subject</span>
+            <select [value]="subject()" (change)="subject.set(value($event))">
+              @for (s of subjects; track s) {
+                <option [value]="s">{{ s }}</option>
+              }
+            </select>
+          </label>
+        }
+        <label class="field-label search">
+          <span>Search</span>
+          <input
+            type="search"
+            placeholder="e.g. homework, form"
+            [value]="query()"
+            (input)="query.set(value($event))"
+          />
+        </label>
+      </div>
       <div class="chips" role="group" aria-label="Filter by type">
         @for (k of kinds; track k) {
           <button
             type="button"
             class="chip"
             [attr.aria-pressed]="kind() === k"
-            (click)="kind.set(k)"
+            (click)="setFilter('type', k)"
           >
             {{ k }}
           </button>
         }
       </div>
-      <div class="selects">
-        <label>
-          <span class="visually-hidden">Class</span>
-          <select [value]="klass()" (change)="klass.set(value($event))">
-            @for (c of classes; track c) {
-              <option [value]="c">{{ c === 'All' ? 'General (all classes)' : c }}</option>
-            }
-          </select>
-        </label>
-        <label>
-          <span class="visually-hidden">Subject</span>
-          <select [value]="subject()" (change)="subject.set(value($event))">
-            @for (s of subjects; track s) {
-              <option [value]="s">{{ s }}</option>
-            }
-          </select>
-        </label>
-        <label class="search">
-          <span class="visually-hidden">Search files</span>
-          <input
-            type="search"
-            placeholder="Search…"
-            [value]="query()"
-            (input)="query.set(value($event))"
-          />
-        </label>
-      </div>
     </div>
 
-    <p class="count" aria-live="polite">
+    <p class="count" aria-hidden="true">
       {{ shown().length }} {{ shown().length === 1 ? 'file' : 'files' }}
     </p>
+    <p class="visually-hidden" aria-live="polite">{{ announced() }}</p>
 
     @if (shown().length) {
       <ul class="files">
         @for (f of shown(); track f.id) {
-          <li class="file" [id]="f.id === 'mandatory-disclosure' ? 'disclosure' : null">
+          <li class="file" [attr.id]="f.id === 'mandatory-disclosure' ? 'disclosure' : null">
             <span class="file__icon" aria-hidden="true"
               ><app-icon name="file" /><span>PDF</span></span
             >
             <div class="file__info">
-              <h3>{{ f.title }}</h3>
+              <h3>
+                @if (f.file) {
+                  <a [href]="f.file" target="_blank" rel="noopener">{{ f.title }}</a>
+                } @else {
+                  {{ f.title }}
+                }
+              </h3>
               <p>
                 <span>{{ f.kind }}</span>
-                <span>{{ f.subject }}</span>
+                @if (showSubject) {
+                  <span>{{ f.subject }}</span>
+                }
                 <span><app-rich [text]="f.session" /></span>
                 @if (f.pages) {
                   <span>{{ f.pages }} {{ f.pages === 1 ? 'page' : 'pages' }}</span>
@@ -75,14 +86,15 @@
             </div>
             @if (f.file) {
               <a
-                class="btn btn--ghost btn--sm"
+                class="btn btn--ghost btn--sm file__get"
                 [href]="f.file"
-                download
                 target="_blank"
                 rel="noopener"
-                [attr.aria-label]="'Download ' + f.title + ', PDF, ' + size(f)"
+                [attr.aria-label]="'Open ' + f.title + ', PDF, ' + size(f) + ', opens in new tab'"
               >
-                <app-icon name="download" /> {{ size(f) }}
+                <app-icon name="download" /> PDF<span class="file__size">{{
+                  size(f) ? ' · ' + size(f) : ''
+                }}</span>
               </a>
             } @else {
               <span class="file__pending"><app-rich text="[[TO CONFIRM: upload file]]" /></span>
@@ -100,3 +112,9 @@
     }
   </div>
 </section>
+
+<app-next-steps
+  mode="help"
+  heading="Can’t find a file?"
+  text="Call or WhatsApp the school office and we’ll help you find it."
+/>

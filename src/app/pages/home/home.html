@@ -12,11 +12,6 @@
   </div>
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="container hero__content">
-    <p class="hero__eyebrow">
-      <span>Est. {{ site.founded }}</span
-      ><span aria-hidden="true">·</span><span>CISCE · ICSE &amp; ISC</span
-      ><span aria-hidden="true">·</span><span>{{ site.locality }}</span>
-    </p>
     <h1 id="hero-title" class="hero__title">{{ site.heroLine }}</h1>
     <p class="hero__intro">{{ site.heroIntro }}</p>
     <div class="hero__ctas">
@@ -27,6 +22,11 @@
         >Book a Campus Visit</a
       >
     </div>
+    <p class="hero__creds">
+      <span>Est. {{ site.founded }}</span
+      ><span aria-hidden="true">·</span><span>CISCE · ICSE &amp; ISC</span
+      ><span aria-hidden="true">·</span><span>{{ site.locality }}</span>
+    </p>
   </div>
   <p class="hero__motto" aria-hidden="true">{{ site.motto }}</p>
 </section>
@@ -52,7 +52,6 @@
 <section class="section welcome" aria-labelledby="welcome-title">
   <div class="container grid-12">
     <div class="welcome__text" appReveal>
-      <p class="eyebrow">Our story</p>
       <h2 id="welcome-title">A convent school the town <em>asked for</em></h2>
       <p class="lead">{{ about.intro }}</p>
       <p>
@@ -89,12 +88,12 @@
 </section>
 
 <!-- ═══ We Stand For ═══ -->
-<section class="section section--paper values" aria-labelledby="values-title">
+<section class="section values" aria-labelledby="values-title">
   <div class="container grid-12">
     <div class="values__head">
       <app-section-heading
-        eyebrow="We stand for"
         title="Six commitments, one formation"
+        [light]="true"
         headingId="values-title"
         intro="Everything we teach, celebrate and correct is measured against these six commitments."
       />
@@ -124,10 +123,9 @@
   <div class="container">
     <div class="toppers__head">
       <app-section-heading
-        [eyebrow]="'Board results ' + latest.session"
         title="Our toppers, our pride"
         headingId="toppers-title"
-        intro="Celebrating the students who led this year’s ICSE and ISC results."
+        [intro]="'Celebrating the students who led the ' + latest.session + ' ICSE and ISC results.'"
       />
       <a class="link-arrow" routerLink="/academics" fragment="results"
         >All results <app-icon name="arrow"
@@ -150,10 +148,9 @@
       />
     </div>
     <div class="principal__text" appReveal="120">
-      <p class="eyebrow">From the Principal’s desk</p>
       <h2 id="principal-title" class="visually-hidden">A message from the Principal</h2>
       <blockquote>
-        <p>“{{ about.principal.teaser }}”</p>
+        <p>{{ about.principal.teaser }}</p>
       </blockquote>
       <p class="principal__name">
         {{ about.principal.name }}<span>{{ about.principal.title }}</span>
@@ -176,7 +173,6 @@
     />
   </div>
   <div class="boarding__panel">
-    <p class="eyebrow">Boarding</p>
     <h2 id="boarding-title">{{ boarding.lead }}</h2>
     <p>{{ boarding.text[0] }}</p>
     <p class="boarding__sub">{{ boarding.text[1] }}</p>
@@ -191,7 +187,6 @@
   <div class="container">
     <div class="campus__head">
       <app-section-heading
-        eyebrow="Campus life"
         title="Days full of light"
         headingId="campus-title"
         intro="Labs and libraries, fields and stages: a glimpse of everyday life at Christu Jyoti."
@@ -221,7 +216,6 @@
   <div class="container">
     <div class="campus__head">
       <app-section-heading
-        eyebrow="News & events"
         title="Latest from school"
         headingId="news-title"
       />
@@ -240,7 +234,6 @@
   <div class="container">
     <div class="admit__grid">
       <div>
-        <p class="eyebrow">Admissions</p>
         <h2 id="admit-title">Begin your child’s journey at Christu Jyoti</h2>
         <p class="admit__lead">
           Admission is open to all good and earnest students, irrespective of caste or creed. Four
